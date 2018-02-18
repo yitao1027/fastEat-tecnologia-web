@@ -19,7 +19,8 @@ session_start();
         <img class="logo img-responsive" src="img/logoP.png" alt="logo">
       </a>
       <button class="menu_carello" action="Carello.php">
-        <i class="fa fa-shopping-cart fa-2x list-item" aria-hidden="true"></i><span id="numProdotto" class="badge badge-primary badge-pill"></span></button>
+        <i class="fa fa-shopping-cart fa-2x list-item" aria-hidden="true"></i><span id="numProdotto" class="badge badge-primary badge-pill"></span>
+      </button>
         <button type="button" class="navbar-toggle" data-toggle="list-menu" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
           <span class="sr-only">Toggle navigation</span>
           <i class="fa fa-bars fa-2x"></i>
@@ -51,14 +52,211 @@ session_start();
 
             <div class="separator"></div>
             <section class="listPro">
-              <ul class="list-group">
-                <li class="list-group-item listPro-categoria">Antipasti</li>
-                <li class="list-group-item listPro-categoria">SiiNigiri</li>
-                <li class="list-group-item listPro-categoria">Hosura</li>
-                <li class="list-group-item listPro-categoria">TemakiLove</li>
-                <li class="list-group-item listPro-categoria">CaldiPrimi</li>
+              <h4>SiiNigiri (2pz)<i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></h4>
+              <ul class="list-group listPro-categoria">
+                <li class="list-group-item">
+                  <h5>Salmone</h5>
+                  <div class="pro-price"><p>€ 3,00</p></div>
+                  <button class="btn-pro-plus">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+                <li class="list-group-item">
+                  <h5>Tonno</h5>
+                  <div class="pro-price"><p>€ 4,00</p></div>
+                  <button class="btn-pro-plus">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+                <li class="list-group-item">
+                  <h5>Ebi</h5>
+                  <div class="pro-price"><p>€ 3,00</p></div>
+                  <button class="btn-pro-plus">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+                <li class="list-group-item">
+                  <h5>Branzino</h5>
+                  <div class="pro-price"><p>€ 3,00</p></div>
+                  <button class="btn-pro-plus">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+                <li class="list-group-item">
+                  <h5>Avocado</h5>
+                  <div class="pro-price"><p>€ 4,00</p></div>
+                  <button class="btn-pro-plus">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+                <li class="list-group-item">
+                  <h5>Sake Aburi</h5>
+                  <div class="pro-price"><p>€ 5,00</p></div>
+                  <button class="btn-pro-plus">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
               </ul>
             </section>
+
+
+            <section class="listPro">
+              <h4>PiccoliHoso(6pz)<i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></h4>
+              <ul class="list-group listPro-categoria">
+                <li class="list-group-item">
+                  <h5>Salmone</h5>
+                  <div class="pro-price"><p>€ 4,00</p></div>
+                  <button class="btn-pro-plus">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+                <li class="list-group-item">
+                  <h5>Tonno</h5>
+                  <div class="pro-price"><p>€ 5,00</p></div>
+                  <button class="btn-pro-plus">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+                <li class="list-group-item">
+                  <h5>Ebi</h5>
+                  <div class="pro-price"><p>€ 4,00</p></div>
+                  <button class="btn-pro-plus">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+                <li class="list-group-item">
+                  <h5>Branzino</h5>
+                  <div class="pro-price"><p>€ 4,00</p></div>
+                  <button class="btn-pro-plus">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+                <li class="list-group-item">
+                  <h5>Avocado</h5>
+                  <div class="pro-price"><p>€ 5,00</p></div>
+                  <button class="btn-pro-plus">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+                <li class="list-group-item">
+                  <h5>Fritto Phila Ichigo</h5>
+                  <div class="pro-price"><p>€ 8,00</p></div>
+                  <button class="btn-pro-plus">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+              </ul>
+            </section>
+
+            <section class="listPro">
+              <h4>GranUra (8pz)<i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></h4>
+              <ul class="list-group listPro-categoria">
+                <li class="list-group-item">
+                  <h5>Misto pesce (2 tipi a scelta)</h5>
+                  <div class="pro-price"><p>€ 10,00</p></div>
+                  <button class="btn-pro-plus">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+                <li class="list-group-item">
+                  <h5>MaCheFritto</h5>
+                  <div class="pro-price"><p>€ 10,00</p></div>
+                  <button class="btn-pro-plus">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+                <li class="list-group-item">
+                  <h5>SiAlVegetariano</h5>
+                  <div class="pro-price"><p>€ 10.00</p></div>
+                  <button class="btn-pro-plus">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+                <li class="list-group-item">
+                  <h5>PhiladelfiaTime</h5>
+                  <div class="pro-price"><p>€ 10,00</p></div>
+                  <button class="btn-pro-plus">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+                <li class="list-group-item">
+                  <h5>AllCotto</h5>
+                  <div class="pro-price"><p>€ 10,00</p></div>
+                  <button class="btn-pro-plus">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+              </ul>
+            </section>
+
+            <section class="listPro">
+              <h4 >TemakiLove(1pz)<i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></h4>
+              <ul class="list-group listPro-categoria">
+                <li class="list-group-item">
+                  <h5>Salmone</h5>
+                  <div class="pro-price"><p>€ 4,00</p></div>
+                  <button class="btn-pro-plus">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+                <li class="list-group-item">
+                  <h5>Tonno</h5>
+                  <div class="pro-price"><p>€ 5,00</p></div>
+                  <button class="btn-pro-plus">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+                <li class="list-group-item">
+                  <h5>Ebi</h5>
+                  <div class="pro-price"><p>€ 4,00</p></div>
+                  <button class="btn-pro-plus">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+                <li class="list-group-item">
+                  <h5>Ebiten</h5>
+                  <div class="pro-price"><p>€ 5,00</p></div>
+                  <button class="btn-pro-plus">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+              </ul>
+            </section>
+
+            <section class="listPro">
+              <h4>Bevande<i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></h4>
+              <ul class="list-group listPro-categoria">
+                <li class="list-group-item">
+                  <h5>Coca Cola/Fanta 33cl</h5>
+                  <div class="pro-price"><p>€ 2,50</p></div>
+                  <button class="btn-pro-plus">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+                <li class="list-group-item">
+                  <h5>Tè Verde Giapponese 33cl  </h5>
+                  <div class="pro-price"><p>€ 3,00</p></div>
+                  <button class="btn-pro-plus">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+                <li class="list-group-item">
+                  <h5>Birra Giapponese 50cl</h5>
+                  <div class="pro-price"><p>€ 5,00</p></div>
+                  <button class="btn-pro-plus">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+                <li class="list-group-item">
+                  <h5>Acqua 25cl</h5>
+                  <div class="pro-price"><p>€ 1,00</p></div>
+                  <button class="btn-pro-plus">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+              </ul>
+            </section>
+
             <footer class=" text-center container-fluid ">
               <div class="row first">
                 <div class="contact col-sm-3">

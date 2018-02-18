@@ -58,12 +58,12 @@ $(document).ready(function () {
   });
 
 
-  var totCarrello=5;
+  var totCarrello=0;
   $("#numProdotto").html(totCarrello);
-  /*if(".ProdottoAcquista").click(function(){
-    this.totCarrello++;
-    $("#numProdotto").val(totCarrello);
-  })*/
+  $(".btn-pro-plus").click(function(){
+    totCarrello++;
+    $("#numProdotto").html(totCarrello);
+  })
 
 
 

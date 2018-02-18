@@ -11,6 +11,7 @@ body {
 }
 
 .container-fluid {
+    display: flex;
     padding: 5px;
 }
 
@@ -249,26 +250,70 @@ footer.container-fluid {
 
 
 
-
 /*Menu php style*/
 
 .menu_carello{
+  margin: auto;
+  margin-left: 120px;
+  height: 35px;
     background-color: transparent;
-    width: 80px;
     position: relative;
-    top: 15px;
-    left: 120px;
     border-radius: 20px;
     border-color: white;
+    display: flex;
+
 }
 .menu_carello>i{
   color: white;
-  float: left;
 }
 .menu_carello>span{
   background-color:transparent;
   font-weight: 500;
   color: white;
   margin:2px;
-  font-size: 18px;
+  font-size: 16px;
+}
+
+
+
+/* list prodotto */
+.list-group-item{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h4{
+  padding:10px 15px;
+  color: orangered;
+  font-weight: bold;
+}
+
+.fa-angle-down{
+}
+
+h5{
+  width: 60%;
+}
+
+.pro-price{
+  margin-left: 10px;
+  width: 20%;
+  font-weight: 600;
+  font-size: 16px;
+}
+.pro-price>p{
+  margin: 5px 0;
+}
+
+.btn-pro-plus{
+  margin-left: 10px;
+  background-color:orangered;
+   border-width:thin;
+   border-radius:5px;
+
+}
+.fa-plus{
+  margin: 3px;
+  color: white;
+
 }
