@@ -18,7 +18,7 @@ session_start();
       <a class="navbar-brand" href="#">
         <img class="logo img-responsive" src="img/logoP.png" alt="logo">
       </a>
-      <button class="menu_carello"  formaction="/Carrello.php">
+      <button class="menu_carello" formaction="Carello.php">
         <i class="fa fa-shopping-cart fa-2x list-item" aria-hidden="true"></i><span id="numProdotto" class="badge badge-primary badge-pill"></span>
       </button>
         <button type="button" class="navbar-toggle" data-toggle="list-menu" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
