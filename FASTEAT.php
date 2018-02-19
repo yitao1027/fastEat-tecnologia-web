@@ -16,7 +16,7 @@ $_SESSION["logged"]="";
 
 <body>
   <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
+    <div class="header-nav container-fluid">
       <a class="navbar-brand" href="#">
         <img class="logo img-responsive" src="img/logoP.png" alt="logo">
       </a>
@@ -128,11 +128,10 @@ if($_SESSION["logged"]==false){
 
 
   <section id="cover" class="container-fluid">
-    <h2 class="text-uppercase">L'armonia tra
+    <h2 class=" slogan-h2 text-uppercase">L'armonia tra
       <strong style="color:rgb(48, 221, 48);">fast</strong> e
       <strong style="color:rgb(48, 221, 48);">Health</strong>
     </h2>
-    <div class="separator"></div>
     <div class="slogan text-uppercase">
       <h4>Stanco di solito pranzo</h4>
       <p>sushi freschi
