@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("db_con.php");
 ?>
 <!DOCTYPE html>
 <html lang="it">
@@ -56,7 +57,6 @@ session_start();
 
             }
             $_SESSION["numTot"]=array_sum($_SESSION["prodotto"]);
-            print_r($_SESSION["prodotto"]);
             header("Location:Menu.php");
           }
           ?>
@@ -67,7 +67,7 @@ session_start();
             <table class="table table-hover">
               <thead>
                 <tr>
-                  <th></th>
+                  <th>&nbsp&nbsp&nbsp</th>
                   <th>Carrello</th>
                   <th>Quantità</th>
                   <th>Totale</th>
@@ -76,9 +76,16 @@ session_start();
               </thead>
               <tbody>
 
+
                 <?php
-                  foreach ($_SESSION["prodotto"] as $key => $value) {
-                  echo "<tr><th></th><td>$key</td><td>$value</td><td></td></tr>";
+                foreach ($_SESSION["prodotto"] as $key => $value) {
+                  $query = "SELECT * FROM listaprodotto WHERE PiattoN='".$key."'";
+                  $result=$conn->query($query);
+                  if($result->num_rows>0){
+                    $row = $result->fetch_assoc();
+                    $totale=$value*$row["Prezzo"];
+                    echo "<tr><th> </th><td>".$row["piattoName"]."</td><td>$value</td><td>$totale €</td></tr>";
+                  }
                 }
                 ?>
 

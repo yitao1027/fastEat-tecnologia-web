@@ -7,8 +7,8 @@
 
     $query = "SELECT * FROM users WHERE username='".$_SESSION["username"]."' AND password ='".$_SESSION["password"]."'";
     $result=$conn->query($query);
-    if($result->num_rows>0){
-     $row = $result->fetch_assoc();
+      if($result->num_rows>0){
+       $row = $result->fetch_assoc();
      $_SESSION["logged"] =true;
      header("location:Menu.php");
     }
