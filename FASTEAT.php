@@ -37,8 +37,8 @@ $_SESSION["logged"]="";
       <i class="fa fa-share-alt fa-2x list-item" aria-hidden="true"></i>About Us</a>
     </li>
     <li>
-      <a href="#aboutUs">
-        <i class="fa fa-share-alt fa-2x list-item" aria-hidden="true"></i>About Us</a>
+      <a href="#Menu">
+        <i class="fa fa-share-alt fa-2x list-item" aria-hidden="true"></i>Menu</a>
       </li>
       <li>
         <a href="#accessForm" data-toggle="modal">
