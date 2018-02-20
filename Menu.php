@@ -19,7 +19,7 @@ session_start();
         <img class="logo img-responsive" src="img/logoP.png" alt="logo">
       </a>
       <a href="/FastEat/tecnologia-web/Carrello.php" class="menu_carello" >
-        <i class="fa fa-shopping-cart fa-2x list-item" aria-hidden="true"></i><span id="numProdotto"></span>
+        <i class="fa fa-shopping-cart fa-2x list-item" aria-hidden="true"></i><span><?php echo($_SESSION["numTot"]) ?></span>
       </a>
       <button type="button" class="navbar-toggle" data-toggle="list-menu" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
         <span class="sr-only">Toggle navigation</span>
@@ -35,7 +35,7 @@ session_start();
         </li>
         <li>
           <a href="/UserProfilo.php" data-toggle="modal">
-            <i class="fa fa-user-circle fa-2x  list-item" aria-hidden="true"></i><?php echo($_SESSION["username"]);  ?></a>
+            <i class="fa fa-user-circle fa-2x  list-item" aria-hidden="true"></i><?php echo($_SESSION["username"]);?></a>
           </li>
           <li>
             <a href="#aboutUs">
@@ -51,51 +51,72 @@ session_start();
 
 
           <div class="separator"></div>
+
+
           <section class="listPro">
+
             <h4>SiiNigiri (2pz)<i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></h4>
             <ul class="list-group listPro-categoria">
-              <li class="list-group-item">
-                <h5>Salmone</h5>
-                <div class="pro-price"><p>€ 3,00</p></div>
-                <button class="btn-pro-plus">
-                  <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                </button>
+              <form action="/FastEat/tecnologia-web/Carrello.php" method="post">
+                  <li class="list-group-item">
+                    <h5>Salmone</h5>
+                    <input type="text" name="prodotto" value="1" hidden></input>
+                    <div class="pro-price"><p>€ 3,00</p></div>
+                    <button class="btn-pro-plus" type="submit">
+                      <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+              </form>
+              <form action="/FastEat/tecnologia-web/Carrello.php" method="post">
+                <li class="list-group-item">
+                  <h5>Tonno</h5>
+                  <input name="prodotto" value="2" hidden></input>
+                  <div class="pro-price"><p>€ 4,00</p></div>
+                  <button class="btn-pro-plus" type="submit">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </form>
               </li>
-              <li class="list-group-item">
-                <h5>Tonno</h5>
-                <div class="pro-price"><p>€ 4,00</p></div>
-                <button class="btn-pro-plus">
-                  <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                </button>
-              </li>
-              <li class="list-group-item">
-                <h5>Ebi</h5>
-                <div class="pro-price"><p>€ 3,00</p></div>
-                <button class="btn-pro-plus">
-                  <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                </button>
-              </li>
-              <li class="list-group-item">
-                <h5>Branzino</h5>
-                <div class="pro-price"><p>€ 3,00</p></div>
-                <button class="btn-pro-plus">
-                  <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                </button>
-              </li>
-              <li class="list-group-item">
-                <h5>Avocado</h5>
-                <div class="pro-price"><p>€ 4,00</p></div>
-                <button class="btn-pro-plus">
-                  <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                </button>
-              </li>
-              <li class="list-group-item">
-                <h5>Sake Aburi</h5>
-                <div class="pro-price"><p>€ 5,00</p></div>
-                <button class="btn-pro-plus">
-                  <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                </button>
-              </li>
+              <form action="/FastEat/tecnologia-web/Carrello.php" method="post">
+                <li class="list-group-item">
+                  <h5>Ebi</h5>
+                  <input name="prodotto" value="3" hidden></input>
+                  <div class="pro-price"><p>€ 3,00</p></div>
+                  <button class="btn-pro-plus" type="submit">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+              </form>
+              <form action="/FastEat/tecnologia-web/Carrello.php" method="post">
+                <li class="list-group-item">
+                  <h5>Branzino</h5>
+                  <input name="prodotto" value="4" hidden></input>
+                  <div class="pro-price"><p>€ 3,00</p></div>
+                  <button class="btn-pro-plus" type="submit">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+              </form>
+              <form action="/FastEat/tecnologia-web/Carrello.php" method="post">
+                <li class="list-group-item">
+                  <h5>Avocado</h5>
+                  <input name="prodotto" value="5" hidden></input>
+                  <div class="pro-price"><p>€ 4,00</p></div>
+                  <button class="btn-pro-plus" type="submit">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+              </form>
+              <form action="/FastEat/tecnologia-web/Carrello.php" method="post">
+                <li class="list-group-item">
+                  <h5>Sake Aburi</h5>
+                  <input name="prodotto" value="6" hidden></input>
+                  <div class="pro-price"><p>€ 5,00</p></div>
+                  <button class="btn-pro-plus" type="submit">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+              </form>
             </ul>
           </section>
 
@@ -103,159 +124,217 @@ session_start();
           <section class="listPro">
             <h4>PiccoliHoso(6pz)<i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></h4>
             <ul class="list-group listPro-categoria">
-              <li class="list-group-item">
-                <h5>Salmone</h5>
-                <div class="pro-price"><p>€ 4,00</p></div>
-                <button class="btn-pro-plus">
-                  <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                </button>
-              </li>
-              <li class="list-group-item">
-                <h5>Tonno</h5>
-                <div class="pro-price"><p>€ 5,00</p></div>
-                <button class="btn-pro-plus">
-                  <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                </button>
-              </li>
-              <li class="list-group-item">
-                <h5>Ebi</h5>
-                <div class="pro-price"><p>€ 4,00</p></div>
-                <button class="btn-pro-plus">
-                  <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                </button>
-              </li>
-              <li class="list-group-item">
-                <h5>Branzino</h5>
-                <div class="pro-price"><p>€ 4,00</p></div>
-                <button class="btn-pro-plus">
-                  <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                </button>
-              </li>
-              <li class="list-group-item">
-                <h5>Avocado</h5>
-                <div class="pro-price"><p>€ 5,00</p></div>
-                <button class="btn-pro-plus">
-                  <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                </button>
-              </li>
-              <li class="list-group-item">
-                <h5>Fritto Phila Ichigo</h5>
-                <div class="pro-price"><p>€ 8,00</p></div>
-                <button class="btn-pro-plus">
-                  <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                </button>
-              </li>
+              <form action="/FastEat/tecnologia-web/Carrello.php" method="post">
+                <li class="list-group-item">
+                  <h5>Salmone</h5>
+                  <input name="prodotto" value="10" hidden></input>
+                  <div class="pro-price"><p>€ 4,00</p></div>
+                  <button class="btn-pro-plus" type="submit">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+              </form>
+              <form action="/FastEat/tecnologia-web/Carrello.php" method="post">
+                <li class="list-group-item">
+                  <h5>Tonno</h5>
+                  <input name="prodotto" value="11" hidden></input>
+                  <div class="pro-price"><p>€ 5,00</p></div>
+                  <button class="btn-pro-plus" type="submit">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+              </form>
+              <form action="/FastEat/tecnologia-web/Carrello.php" method="post">
+                <li class="list-group-item">
+                  <h5>Ebi</h5>
+                  <input name="prodotto" value="12" hidden></input>
+                  <div class="pro-price"><p>€ 4,00</p></div>
+                  <button class="btn-pro-plus" type="submit">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+              </form>
+              <form action="/FastEat/tecnologia-web/Carrello.php" method="post">
+                <li class="list-group-item">
+                  <h5>Branzino</h5>
+                  <input name="prodotto" value="13" hidden></input>
+                  <div class="pro-price"><p>€ 4,00</p></div>
+                  <button class="btn-pro-plus" type="submit">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+              </form>
+              <form action="/FastEat/tecnologia-web/Carrello.php" method="post">
+                <li class="list-group-item">
+                  <h5>Avocado</h5>
+                  <input name="prodotto" value="14" hidden></input>
+                  <div class="pro-price"><p>€ 5,00</p></div>
+                  <button class="btn-pro-plus" type="submit">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+              </form>
+              <form action="/FastEat/tecnologia-web/Carrello.php" method="post">
+                <li class="list-group-item">
+                  <h5>Fritto Phila Ichigo</h5>
+                  <input name="prodotto" value="15" hidden></input>
+                  <div class="pro-price"><p>€ 8,00</p></div>
+                  <button class="btn-pro-plus" type="submit">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+              </form>
             </ul>
           </section>
 
           <section class="listPro">
             <h4>GranUra (8pz)<i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></h4>
             <ul class="list-group listPro-categoria">
-              <li class="list-group-item">
-                <h5>Misto pesce (2 tipi a scelta)</h5>
-                <div class="pro-price"><p>€ 10,00</p></div>
-                <button class="btn-pro-plus">
-                  <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                </button>
-              </li>
-              <li class="list-group-item">
-                <h5>MaCheFritto</h5>
-                <div class="pro-price"><p>€ 10,00</p></div>
-                <button class="btn-pro-plus">
-                  <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                </button>
-              </li>
-              <li class="list-group-item">
-                <h5>SiAlVegetariano</h5>
-                <div class="pro-price"><p>€ 10.00</p></div>
-                <button class="btn-pro-plus">
-                  <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                </button>
-              </li>
-              <li class="list-group-item">
-                <h5>PhiladelfiaTime</h5>
-                <div class="pro-price"><p>€ 10,00</p></div>
-                <button class="btn-pro-plus">
-                  <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                </button>
-              </li>
-              <li class="list-group-item">
-                <h5>AllCotto</h5>
-                <div class="pro-price"><p>€ 10,00</p></div>
-                <button class="btn-pro-plus">
-                  <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                </button>
-              </li>
+              <form action="/FastEat/tecnologia-web/Carrello.php" method="post">
+                <li class="list-group-item">
+                  <h5>Misto pesce (2 tipi a scelta)</h5>
+                  <input name="prodotto" value="20" hidden></input>
+                  <div class="pro-price"><p>€ 10,00</p></div>
+                  <button class="btn-pro-plus" type="submit">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+              </form>
+              <form action="/FastEat/tecnologia-web/Carrello.php" method="post">
+                <li class="list-group-item">
+                  <h5>MaCheFritto</h5>
+                  <input name="prodotto" value="21" hidden></input>
+                  <div class="pro-price"><p>€ 10,00</p></div>
+                  <button class="btn-pro-plus" type="submit">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+              </form>
+              <form action="/FastEat/tecnologia-web/Carrello.php" method="post">
+                <li class="list-group-item">
+                  <h5>SiAlVegetariano</h5>
+                  <input name="prodotto" value="22" hidden></input>
+                  <div class="pro-price"><p>€ 10.00</p></div>
+                  <button class="btn-pro-plus" type="submit">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+              </form>
+              <form action="/FastEat/tecnologia-web/Carrello.php" method="post">
+                <li class="list-group-item">
+                  <h5>PhiladelfiaTime</h5>
+                  <input name="prodotto" value="23" hidden></input>
+                  <div class="pro-price"><p>€ 10,00</p></div>
+                  <button class="btn-pro-plus" type="submit">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+              </form>
+              <form action="/FastEat/tecnologia-web/Carrello.php" method="post">
+                <li class="list-group-item">
+                  <h5>AllCotto</h5>
+                  <input name="prodotto" value="24" hidden></input>
+                  <div class="pro-price"><p>€ 10,00</p></div>
+                  <button class="btn-pro-plus" type="submit">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+              </form>
             </ul>
           </section>
 
           <section class="listPro">
             <h4 >TemakiLove(1pz)<i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></h4>
             <ul class="list-group listPro-categoria">
-              <li class="list-group-item">
-                <h5>Salmone</h5>
-                <div class="pro-price"><p>€ 4,00</p></div>
-                <button class="btn-pro-plus">
-                  <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                </button>
-              </li>
-              <li class="list-group-item">
-                <h5>Tonno</h5>
-                <div class="pro-price"><p>€ 5,00</p></div>
-                <button class="btn-pro-plus">
-                  <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                </button>
-              </li>
-              <li class="list-group-item">
-                <h5>Ebi</h5>
-                <div class="pro-price"><p>€ 4,00</p></div>
-                <button class="btn-pro-plus">
-                  <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                </button>
-              </li>
-              <li class="list-group-item">
-                <h5>Ebiten</h5>
-                <div class="pro-price"><p>€ 5,00</p></div>
-                <button class="btn-pro-plus">
-                  <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                </button>
-              </li>
+              <form action="/FastEat/tecnologia-web/Carrello.php" method="post">
+                <li class="list-group-item">
+                  <h5>Salmone</h5>
+                  <input name="prodotto" value="30" hidden></input>
+                  <div class="pro-price"><p>€ 4,00</p></div>
+                  <button class="btn-pro-plus" type="submit">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+              </form>
+              <form action="/FastEat/tecnologia-web/Carrello.php" method="post">
+                <li class="list-group-item">
+                  <h5>Tonno</h5>
+                  <input name="prodotto" value="31" hidden></input>
+                  <div class="pro-price"><p>€ 5,00</p></div>
+                  <button class="btn-pro-plus" type="submit">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+              </form>
+              <form action="/FastEat/tecnologia-web/Carrello.php" method="post">
+                <li class="list-group-item">
+                  <h5>Ebi</h5>
+                  <input name="prodotto" value="32" hidden></input>
+                  <div class="pro-price"><p>€ 4,00</p></div>
+                  <button class="btn-pro-plus" type="submit">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+              </form>
+              <form action="/FastEat/tecnologia-web/Carrello.php" method="post">
+                <li class="list-group-item">
+                  <h5>Ebiten</h5>
+                  <input name="prodotto" value="33" hidden></input>
+                  <div class="pro-price"><p>€ 5,00</p></div>
+                  <button class="btn-pro-plus" type="submit">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+              </form>
             </ul>
           </section>
 
           <section class="listPro">
             <h4>Bevande<i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></h4>
             <ul class="list-group listPro-categoria">
-              <li class="list-group-item">
-                <h5>Coca Cola/Fanta 33cl</h5>
-                <div class="pro-price"><p>€ 2,50</p></div>
-                <button class="btn-pro-plus">
-                  <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                </button>
-              </li>
-              <li class="list-group-item">
-                <h5>Tè Verde Giapponese 33cl  </h5>
-                <div class="pro-price"><p>€ 3,00</p></div>
-                <button class="btn-pro-plus">
-                  <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                </button>
-              </li>
-              <li class="list-group-item">
-                <h5>Birra Giapponese 50cl</h5>
-                <div class="pro-price"><p>€ 5,00</p></div>
-                <button class="btn-pro-plus">
-                  <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                </button>
-              </li>
-              <li class="list-group-item">
-                <h5>Acqua 25cl</h5>
-                <div class="pro-price"><p>€ 1,00</p></div>
-                <button class="btn-pro-plus">
-                  <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                </button>
-              </li>
+              <form action="/FastEat/tecnologia-web/Carrello.php" method="post">
+                <li class="list-group-item">
+                  <h5>Coca Cola/Fanta 33cl</h5>
+                  <input name="prodotto" value="40" hidden></input>
+                  <div class="pro-price"><p>€ 2,50</p></div>
+                  <button class="btn-pro-plus" type="submit">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+              </form>
+              <form action="/FastEat/tecnologia-web/Carrello.php" method="post">
+                <li class="list-group-item">
+                  <h5>Tè Verde Giapponese 33cl  </h5>
+                  <input name="prodotto" value="41" hidden></input>
+                  <div class="pro-price"><p>€ 3,00</p></div>
+                  <button class="btn-pro-plus" type="submit">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+              </form>
+              <form action="/FastEat/tecnologia-web/Carrello.php" method="post">
+                <li class="list-group-item">
+                  <h5>Birra Giapponese 50cl</h5>
+                  <input name="prodotto" value="42" hidden></input>
+                  <div class="pro-price"><p>€ 5,00</p></div>
+                  <button class="btn-pro-plus" type="submit">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+              </form>
+              <form action="/FastEat/tecnologia-web/Carrello.php" method="post">
+                <li class="list-group-item">
+                  <h5>Acqua 25cl</h5>
+                  <input name="prodotto" value="43" hidden></input>
+                  <div class="pro-price"><p>€ 1,00</p></div>
+                  <button class="btn-pro-plus" type="submit">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                  </button>
+                </li>
+              </form>
             </ul>
           </section>
+
 
           <footer class=" text-center container-fluid ">
             <div class="row first">

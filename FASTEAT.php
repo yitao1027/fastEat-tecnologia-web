@@ -1,5 +1,7 @@
 <?php
 session_start();
+$_SESSION["prodotto"]=array();
+$_SESSION["numTot"]=0;
 $_SESSION["logged"]="";
 ?>
 <!DOCTYPE html>

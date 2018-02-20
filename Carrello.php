@@ -46,36 +46,45 @@ session_start();
           </div>
           <div class="separator"></div>
 
+          <?php
+          if(isset($_POST["prodotto"])){
+            if(isset($_SESSION["prodotto"]) && array_key_exists($_POST["prodotto"],$_SESSION["prodotto"])){
+              $_SESSION["prodotto"][$_POST["prodotto"]]= $_SESSION["prodotto"][$_POST["prodotto"]]+1;
+              $_SESSION["numTot"]=array_sum($_SESSION["prodotto"]);
+            }else {
+              $_SESSION["prodotto"][$_POST["prodotto"]]="1";
+
+            }
+            $_SESSION["numTot"]=array_sum($_SESSION["prodotto"]);
+            print_r($_SESSION["prodotto"]);
+            header("Location:Menu.php");
+          }
+          ?>
+
+
+
           <section class="Carrello">
             <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Carrello</th>
-        <th>Quantità</th>
-        <th>Totale</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Carrello</th>
+                  <th>Quantità</th>
+                  <th>Totale</th>
+
+                </tr>
+              </thead>
+              <tbody>
+
+                <?php
+                  foreach ($_SESSION["prodotto"] as $key => $value) {
+                  echo "<tr><th></th><td>$key</td><td>$value</td><td></td></tr>";
+                }
+                ?>
+
+
+              </tbody>
+            </table>
           </section>
 
           <footer class=" text-center container-fluid ">
