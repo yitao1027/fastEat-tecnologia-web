@@ -65,9 +65,6 @@ session_start();
                     <button class="btn-pro-plus" type="submit" value="1">
                       <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
                   </button>
-                  <button class="btn-pro-plus" value="2">
-                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                </button>
                 </li>
               </form>
               <form action="/FastEat/tecnologia-web/Carrello.php" method="post">

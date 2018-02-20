@@ -97,7 +97,7 @@ include("db_con.php");
               </tbody>
             </table>
           </section>
-
+    
           <footer class=" text-center container-fluid ">
             <div class="row first">
               <div class="contact col-sm-3">
