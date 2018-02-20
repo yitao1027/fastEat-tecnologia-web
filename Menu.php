@@ -62,9 +62,12 @@ session_start();
                     <h5>Salmone</h5>
                     <input type="text" name="prodotto" value="1" hidden></input>
                     <div class="pro-price"><p>€ 3,00</p></div>
-                    <button class="btn-pro-plus" type="submit">
+                    <button class="btn-pro-plus" type="submit" value="1">
                       <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
                   </button>
+                  <button class="btn-pro-plus" value="2">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                </button>
                 </li>
               </form>
               <form action="/FastEat/tecnologia-web/Carrello.php" method="post">

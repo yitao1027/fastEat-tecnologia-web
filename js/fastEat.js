@@ -57,6 +57,10 @@ $(document).ready(function () {
     }
   });
 
+  var totProdotto;
+  $(".btn-pro-plus").click(function(){
+    console.log($(this).prop("value"));
+})
 
 
 

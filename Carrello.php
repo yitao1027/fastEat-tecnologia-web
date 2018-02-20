@@ -11,7 +11,7 @@ include("db_con.php");
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="css/FastEat.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="css/Carrelo.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="css/Carrello.css" />
 </head>
 
 <body>
@@ -85,7 +85,11 @@ include("db_con.php");
                   if($result->num_rows>0){
                     $row = $result->fetch_assoc();
                     $totale=$value*$row["Prezzo"];
-                    echo "<tr><td><button class='btn-minus-carrello'> <i class='fa fa-minus' aria-hidden='true'></i></button></td><td>".$row["piattoName"]."</td><td>$value</td><td>$totale €</td></tr>";
+                    echo "<tr><td><button class='btn-minus-carrello'> <i class='fa fa-minus' aria-hidden='true'></i></button></td>
+                    <td class='piattoName-tabella-carrello  text-uppercase'>".$row["piattoName"]."</td>
+                    <td class='quantita-tabella-carrello'>$value</td>
+                    <td class='totaleprezzo-tabella-carrello'>".$totale."€</td>
+                    </tr>";
                   }
                 }
                 ?>
