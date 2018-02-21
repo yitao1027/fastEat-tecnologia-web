@@ -14,6 +14,6 @@
     }
     else{
       $_SESSION["logged"] =false;
-      header("location:FastE.php");
+      header("location:FastEat.php");
     }
 ?>

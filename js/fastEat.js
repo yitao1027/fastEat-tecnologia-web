@@ -47,18 +47,24 @@ $(document).ready(function () {
         $("#confmsm").html("errore non corrisponde al password");
         $("#messageConfpsw").css({"display" : "block"});
         $("#register").prop("disabled",true) ;
-        }
-        else{
-          $("#register").prop("disabled",false) ;
-        }
+      }
+      else{
+        $("#register").prop("disabled",false) ;
+      }
     }else{
       $("#confmsm").html("password length min 8 char");
       $("#messageConfpsw").css({"display" : "block"});
     }
   });
 
-
-
-
-
-})
+  var piatto;
+  $(".btn-pro-plus").click(function(){
+    piatto=$(this).attr("value");
+    $.post("Carrello.php",{
+      prodotto:piatto
+    },function(data,status){
+      var $response=$(data);
+      $("#numTot").html($response.filter("#numpiatti").html());
+    });
+  });
+});

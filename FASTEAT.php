@@ -1,8 +1,9 @@
 <?php
 session_start();
+$_SESSION["logged"]="";
 $_SESSION["prodotto"]=array();
 $_SESSION["numTot"]=0;
-$_SESSION["logged"]="";
+$_SESSION["subtotale"]=0;
 ?>
 <!DOCTYPE html>
 <html lang="it">
@@ -33,8 +34,8 @@ $_SESSION["logged"]="";
   <div id="navbar">
     <ul class=" navbar-list text-uppercase nav navbar-right" data-spy="affix" data-offset-top="205">
   <li>
-    <a href="#aboutUs">
-      <i class="fa fa-share-alt fa-2x list-item" aria-hidden="true"></i>About Us</a>
+    <a href="#">
+      <i class="fa fa-home fa-2x  list-item" aria-hidden="true"></i>Home</a>
     </li>
     <li>
       <a href="#Menu">

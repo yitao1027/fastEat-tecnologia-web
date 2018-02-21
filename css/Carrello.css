@@ -3,7 +3,6 @@
   background-color:orangered;
   border-width:thin;
   border-radius:5px;
-
 }
 
 .fa-minus{
@@ -16,10 +15,11 @@
 }
 
 th{
-font-size: 16px;
+font-size: 14px;
 }
 
 td{
+  border-bottom: 1px solid #ddd;
   font-size: 14px;
 }
 
@@ -27,6 +27,23 @@ td{
 color: orangered;
 }
 
-.totaleprezzo-tabella-carrello{
-  font-weight: bold;
+
+.totale{
+  font-size: 14px;
+  border-bottom:  1px solid #ddd;
+}
+
+.list-group-item{
+  padding:8px;
+  border: none;
+}
+
+.list-group-item>p{
+  width: 85%;
+}
+.list-group-item span{
+  width: 10%;
+}
+strong{
+  font-size: 14px;
 }
