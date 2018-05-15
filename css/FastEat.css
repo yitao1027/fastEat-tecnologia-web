@@ -1,0 +1,238 @@
+/* ---Principal item--- */
+
+body {
+    width: 100%;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.container-fluid {
+    padding: 5px;
+}
+
+.navbar.navbar-inverse {
+    background-color: orangered;
+    border: none;
+}
+
+#cover.container-fluid {
+    color: white;
+    padding: 150px 120px 150px 30px;
+    background: url("../img/cover1.jpg") center no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.separator {
+    height: 50px;
+}
+
+
+/*---Logo---*/
+
+.container-logo {
+    position: fixed;
+}
+
+.navbar-brand {
+    padding: 0;
+    height: auto;
+}
+
+.logo {
+    height: 70px;
+    width: auto;
+}
+
+
+/* ---button--- */
+
+.navbar.navbar-inverse .navbar-toggle {
+    margin-top: 10px;
+    border: none;
+}
+
+.navbar.navbar-inverse .navbar-toggle:hover {
+    color: rgb(48, 221, 48);
+    background-color: transparent;
+}
+
+.navbar.navbar-inverse .navbar-toggle:focus {
+    color: rgb(48, 221, 48);
+    background-color: transparent;
+}
+
+.navbar-right.nav {
+    color: white;
+    background-color: rgb(36, 35, 35);
+}
+
+
+/*---Animation modal navbar---*/
+
+#navbar {
+    width: 100%;
+}
+
+.navbar-list {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    width: 50%;
+    z-index: 51;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 80px;
+    right: -50%;
+}
+
+.active {
+    right: 0;
+}
+
+.modal {
+    top: 100px;
+    right: 10%;
+    left: 10%;
+}
+
+
+/*---List---*/
+
+.nav.navbar-right>li {
+    padding: 10px;
+    border: 1px solid white;
+}
+
+.navbar-right.nav>li>a {
+    margin-right: 10px;
+    color: white;
+}
+
+.navbar-right.nav>li>a:hover {
+    color: rgb(48, 221, 48);
+    background-color: transparent;
+}
+
+.navbar-right.nav>li>a:focus {
+    background-color: transparent;
+}
+
+.fa.list-item {
+    margin-right: 10px;
+}
+
+
+/*---text cover---*/
+
+.slogan {
+    margin: 80px 0 0 0;
+    color: white;
+    font-size: 15px;
+}
+
+.btn.text-important {
+    margin-top: 20px;
+    text-align: center;
+    width: 200px;
+    background-color: orangered;
+    border: 2px solid orangered;
+    border-radius: 20px;
+}
+
+.text-important>a {
+    color: white;
+}
+
+.slogan img {
+    height: 20px;
+}
+
+
+/*---Form---*/
+
+.modal {
+    top: 50px;
+    right: 0;
+    left: 0;
+}
+
+.modal-content {
+    margin: 30px 5%;
+    font-size: 14px;
+    color: orangered;
+    /* background:url("../img/logo.jpg") no-repeat center;*/
+}
+
+.modal-header {
+    background-color: orangered;
+    color: white;
+}
+
+.form-control {
+    margin-bottom: 20px;
+}
+
+button.form {
+    margin-right: 10px;
+}
+
+.modal-footer {
+    font-size: 12px;
+    text-align: justify;
+}
+
+.register {
+    float: right;
+}
+
+input[type=text]:focus,
+input[type=password]:focus {
+    background-color: rgba(226, 224, 224, 0.856);
+    outline: none;
+}
+
+
+/*---Footer---*/
+
+footer.container-fluid {
+    padding: 0;
+    color: white;
+    background-color: orangered;
+    font-size: 14px;
+}
+
+.row {
+    margin: 0;
+}
+
+.first>.contact.col-sm-3 {
+    border-top: 1px solid white;
+    padding-top: 20px;
+}
+
+.second>.contact.col-sm-6 {
+    margin: 10px 0 20px 0;
+}
+
+.second i {
+    margin: 0 5px;
+}
+
+.pie {
+    padding: 20px 0;
+    border-top: 1px solid white;
+}
+
+.pie a {
+    color: white;
+}
