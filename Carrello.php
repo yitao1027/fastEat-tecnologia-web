@@ -30,7 +30,7 @@ include("db_con.php");
   <div id="navbar">
     <ul class=" navbar-list text-uppercase nav navbar-right" data-spy="affix" data-offset-top="205">
       <li>
-        <a href="/FastEat.php">
+        <a href="/FastEat/tecnologia-web/FastEat.php">
           <i class="fa fa-home fa-2x  list-item" aria-hidden="true"></i>Home</a>
         </li>
         <li>
@@ -38,7 +38,7 @@ include("db_con.php");
             <i class="fa fa-user-circle fa-2x  list-item" aria-hidden="true"></i><?php echo($_SESSION["username"]);  ?></a>
           </li>
           <li>
-            <a href="#">
+            <a href="/FastEat/tecnologia-web/Menu.php">
               <i class="fa fa-sign-out fa-2x  list-item" aria-hidden="true"></i>Log out</a>
             </li>
           </ul>
@@ -96,7 +96,10 @@ include("db_con.php");
           <ul class="list-group mb-3">
             <li class="list-group-item d-flex">
               <p>subtotale</p>
-              <span><?php $_SESSION["subtotale"]+=$totalepiatto; echo($_SESSION["subtotale"])?>€</span>
+              <span><?php  if(isset($_POST["prodotto"])){
+                $_SESSION["subtotale"]+=$totalepiatto;
+              }
+              echo($_SESSION["subtotale"])?>€</span>
             </li>
             <li class="list-group-item d-flex">
               <p>Costo Consegna</p>

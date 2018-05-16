@@ -1,6 +1,7 @@
 <?php
     session_start();
     include("db_con.php");
+    $_SESSION["logged"]="false";
     $_SESSION["username"]=$conn->real_escape_string($_POST["uname"]);
     $_SESSION["password"]=md5($_POST["psw"]);
 

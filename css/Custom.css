@@ -1,0 +1,25 @@
+
+/*mobile first*/
+
+.navbar{
+ background-color:#3e4444;
+
+}
+.nav-link{
+  color:#deeaee!important;
+}
+.navbar-collapse{
+    justify-content: flex-end;
+}
+
+.img-fluid{
+  width: 100%;
+}
+
+
+h2{
+  font-size: 25px;
+}
+.lead{
+  font-size: 18px;
+}

@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("db_con.php");
-
+$_SESSION["logged"]="";
 
 if(isset($_POST["register"])){
   $username=(isset($_POST["uname"])?clear($_POST["uname"]):false);
