@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+<<<<<<< HEAD
 
   console.log("DOM ready");
 
@@ -68,3 +69,27 @@ $(document).ready(function () {
     });
   });
 });
+=======
+    
+    console.log("DOM ready");
+
+
+    $("[data-toggle=list-menu]").click(function () {
+        $(".navbar-list").toggleClass('active', 1000);
+    });
+
+    $("#navbar-list a").click(function () {
+        $(".navbar-list").toggleClass('active',1000);
+    });
+
+
+    $("#formButton").click(function () {
+        $("#accessForm").modal('toggle');
+    })
+
+    $("#registra").click(function(){
+        $("#accessForm").modal('toggle');
+        $("#registerForm").modal('toggle');
+    })
+})
+>>>>>>> 31f01b983937a01ebe120374e4bec429eb93f0f7
