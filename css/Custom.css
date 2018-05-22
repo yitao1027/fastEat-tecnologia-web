@@ -16,10 +16,18 @@
   width: 100%;
 }
 
-
 h2{
   font-size: 25px;
 }
+
 .lead{
   font-size: 18px;
+}
+
+.contact{
+  margin: 10px 0 ;
+}
+
+.row{
+ margin: 20px 0;
 }
