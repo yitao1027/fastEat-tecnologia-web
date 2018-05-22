@@ -35,62 +35,15 @@
               <a class="nav-link" href="/FastEat/tecnologia-web/menu.php" target="_blank">Menu</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#accessForm" data-toggle="modal">Login</a>
+              <a class="nav-link" href="FastEatLogin.php" >Login</a>
             </li>
           </ul>
         </div>
       </nav>
     </header>
 
-    <!-- cookies modal-->
 
 
-
-
-
-
-
-
-
-
-
-
-
-    <!--modal fade : login form effetto fade-->
-    <div id="accessForm" class="modal fade" role="dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class=" text-uppercase">Login</h3>
-        </div>
-
-        <div class="modal-body">
-          <form action="FastEatLogin.php" method="POST">
-            <label>
-              <b>Username</b>
-            </label>
-            <input class="form-control" type="text" placeholder="Enter Username" name="uname" required>
-            <label>
-              <b>Password</b>
-            </label>
-            <!-- form-control : width 100% backgrounf borderadius etc-->
-            <input class="form-control" type="password" placeholder="Enter Password" name="psw" required>
-            <button class="form" name="login" type="submit">Login</button>
-            <label>
-              <input type="checkbox" checked="checked"> Remember me
-            </label>
-          </div>
-          <div class="modal-footer" style="background-color:#f1f1f1">
-            <span class="psw">Forgot
-              <a href="#">password?</a>
-            </span>
-            <span class="register">
-              <a id="registra" data-toggle="modal">New here?Sign Up</a>
-            </span>
-
-          </div>
-        </form>
-      </div>
-    </div>
 
 
     <div id="registerForm" class="modal fade" role="dialog">
@@ -140,13 +93,10 @@
     <section class="container-fluid" style="padding:0; margin-top:80px;">
       <div class="carousel-inner">
 
-        <img class="img-fluid" src="/FastEat/tecnologia-web/img/cover.jpg">
+        <img class="img-fluid" src="/FastEat/tecnologia-web/img/cover1.jpg">
 
-        <div class="carousel-caption text-center">
-          <h2 class="text-uppercase">L'armonia tra
-            <strong style="color:rgb(48, 221, 48);">fast</strong> e
-            <strong style="color:rgb(48, 221, 48);">Health</strong><br>
-          </h2>
+        <div class="carousel-caption text-left">
+
           <p class="lead font-weight-normal">
             Stanco di solito pranzo ?<br>
             sushi freschi tutti giorni.</p>
@@ -164,15 +114,45 @@
         </div>
       </section>
 
-      <section>
-
+      <section class="textSection">
+        <div class="container-fluid text-center">
+          <h2 class="text-uppercase">L'armonia tra
+            <strong style="color:rgb(48, 221, 48);">fast</strong> e
+            <strong style="color:rgb(48, 221, 48);">Health</strong><br>
+          </h2>
+            <p class="text-uppercase">Per amanti di pesci freschi e della cucina giapponese</p>
+        </div>
       </section>
 
+      <section>
+
+                <div id="Sushiscarousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="img/carousel1.jpg" alt="Menu1">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="img/carousel3.jpg" alt="Menu3">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="img/carousel2.jpg" alt="Menu2">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#Sushiscarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#Sushiscarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+</section>
 
 
-
-
+<section>
       <div class="container-fluid text-center">
+        <h3>Contatti</h3>
         <div class="row">
           <div class="contact col-sm-3">
             <i class="fa fa-phone fa-2x"></i><br>
@@ -180,21 +160,21 @@
           </div>
           <div class="contact col-sm-3">
             <i class="fa fa-map-marker fa-2x"></i><br>
-            <a href="https://goo.gl/maps/FKWqDztU5rL2" target="_blank">Piazza Alessandro Bornaccini, 6
-              <br>47923 Rimini RN</a>
+            <a href="https://goo.gl/maps/mEad6reUpAS2" target="_blank">Via Puglie, 65
+              <br>47521 Cesena FC</a>
             </div>
             <div class="contact col-sm-3">
               <i class="fa fa-envelope fa-2x"></i><br>
-              <a href="mailto:FastEat@gmail.com">FastEat.it</a>
+              <a href="mailto:FastEat@gmail.com">FastEat@gmail.it</a>
             </div>
 
             <div class="contact col-sm-3">
               <div class="row">
                 <div class="contact col-sm-6">
-                  <i class="fab fa-facebook-f fa-2x"></i>
-                  <i class="fab fa-instagram fa-2x"></i>
-                  <i class="fab fa-tripadvisor fa-2x"></i>
-                  <i class="fab fa-twitter fa-2x"></i>
+                    <a><i class="fab fa-facebook-f fa-2x"></i></a>
+                <a><i class="fab fa-instagram fa-2x"></i></a>
+                <a><i class="fab fa-tripadvisor fa-2x"></i></a>
+                <a><i class="fab fa-twitter fa-2x"></i></a>
                 </div>
                 <div class="contact col-sm-6">
                   <img class=" img-responsive" src="img/app.svg" style="float:left;"></img>
@@ -205,34 +185,72 @@
           </div>
         </div>
 
+</section>
 
         <footer class=" text-center container-fluid ">
           <div class="pie">
             <p>@FastEat S.R.L 2018
               <br>Partita Iva:124248912312
               <br>
-              <a data-toggle="modal" data-target="#exampleModalLong">
+              <a data-toggle="modal" data-target="#policyPrivacyModal">
                 <u>termini e condizioni d'uso privacy</u>
               </a>
             </p>
           </div>
 
+
+
+  <!-- Cookie modal controll -->
           <div id="cookiesModal" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content">
+
+            <div class="personal-modal">
               <p>Utilizziamo i cookie per essere sicuri che tu possa avere la migliore esperienza sul nostro sito.</p>
+              <button type="button"  id="OkCookie" class="btn btn-primary">Ok</button>
+              <button type="button" id="detailCookie" class="btn btn-primary" data-toggle="modal" data-target="#CookieDetailModal" >Altre informazioni</button>
             </div>
 
           </div>
         </footer>
 
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+
+        <!-- Modal detail privacy  -->
+        <div class="modal fade" id="CookieDetailModal" tabindex="-1" role="dialog" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">IT policies, disclaimers and notices  privacy policy</h5>
+                <h5 class="modal-title">Cookie policy</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+
+
+                <h4>How we use cookies</h4>
+                <p>  A cookie is a small file which asks permission to be placed on your computer's hard drive. Once you agree, the file is added and the cookie helps analyse web traffic or lets you know when you visit a particular site. Cookies allow web applications to respond to you as an individual. The web application can tailor its operations to your needs, likes and dislikes by gathering and remembering information about your preferences.
+
+                  We use traffic log cookies to identify which pages are being used. This helps us analyse data about webpage traffic and improve our website in order to tailor it to customer needs. We only use this information for statistical analysis purposes and then the data is removed from the system.
+
+                  Overall, cookies help us provide you with a better website by enabling us to monitor which pages you find useful and which you do not. A cookie in no way gives us access to your computer or any information about you, other than the data you choose to share with us.
+
+                  You can choose to accept or decline cookies. Most web browsers automatically accept cookies, but you can usually modify your browser setting to decline cookies if you prefer. This may prevent you from taking full advantage of the website.</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+        <!-- Modal detail privacy  -->
+        <div class="modal fade" id="policyPrivacyModal" tabindex="-1" role="dialog" aria-labelledby="policyPrivacyModal" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">IT policies, disclaimers and notices  privacy policy</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -272,14 +290,6 @@
                         Security
                         We are committed to ensuring that your information is secure. In order to prevent unauthorised access or disclosure, we have put in place suitable physical, electronic and managerial procedures to safeguard and secure the information we collect online.</p>
 
-                        <h4>How we use cookies</h4>
-                        <p>  A cookie is a small file which asks permission to be placed on your computer's hard drive. Once you agree, the file is added and the cookie helps analyse web traffic or lets you know when you visit a particular site. Cookies allow web applications to respond to you as an individual. The web application can tailor its operations to your needs, likes and dislikes by gathering and remembering information about your preferences.
-
-                          We use traffic log cookies to identify which pages are being used. This helps us analyse data about webpage traffic and improve our website in order to tailor it to customer needs. We only use this information for statistical analysis purposes and then the data is removed from the system.
-
-                          Overall, cookies help us provide you with a better website by enabling us to monitor which pages you find useful and which you do not. A cookie in no way gives us access to your computer or any information about you, other than the data you choose to share with us.
-
-                          You can choose to accept or decline cookies. Most web browsers automatically accept cookies, but you can usually modify your browser setting to decline cookies if you prefer. This may prevent you from taking full advantage of the website.</p>
 
                           <h4>  Links to other websites</h4>
                           <p>    Our website may contain links to other websites of interest. However, once you have used these links to leave our site, you should note that we do not have any control over that other website. Therefore, we cannot be responsible for the protection and privacy of any information which you provide whilst visiting such sites and such sites are not governed by this privacy statement. You should exercise caution and look at the privacy statement applicable to the website in question.</p>

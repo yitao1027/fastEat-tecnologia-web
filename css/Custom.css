@@ -36,6 +36,32 @@ h2{
  margin: 20px 0;
 }
 
+
+.carousel-caption{
+  left: 10%;
+  font-weight:bolder;
+}
+
+
+
+Section{
+  padding: 80px 0 0 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #cookiesModal{
   top: auto;
   position: fixed;
@@ -43,8 +69,15 @@ h2{
   width: 100%;
 }
 
-#cookiesModal>.modal-content{
+#cookiesModal>.personal-modal{
 padding: 10px 0;
 color: white;
   background-color: black;
+}
+
+
+
+
+.fab{
+  margin: 0 5px;
 }

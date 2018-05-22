@@ -2,6 +2,13 @@
 
 $(document).ready(function () {
 
-  $("#cookiesModal").css("display","block");
+  $("#cookiesModal").fadeIn();
+  $("#OkCookie").click(function(){
+    $("#cookiesModal").fadeOut();
+})
+
+$("#detailCookie").click(function(){
+  $("#cookiesModal").fadeOut();
+})
 
 });
