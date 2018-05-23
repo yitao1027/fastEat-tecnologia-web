@@ -92,6 +92,8 @@
   </div>
 </br>
   <button type="submit" class="loginBtn btn btn-primary">Sign Up</button>
+  <small id="TermsCondition">By creating an account you agree to our <a data-toggle="modal" data-target="#policyPrivacyModal" style="color:dodgerblue">Terms & Privacy</a>.
+</small>
 </form>
 </div>
 
