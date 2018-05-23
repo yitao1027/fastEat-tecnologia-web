@@ -12,8 +12,10 @@
     justify-content: flex-end;
 }
 
-.img-fluid{
-  width: 100%;
+.underNav{
+  margin-top:82px;
+  border: 1px solid lightGrey;
+  padding: 25px;
 }
 
 h2{
@@ -48,6 +50,11 @@ Section{
   padding: 60px 0 0 0;
 }
 
+
+.app{
+  height:45px;
+  width:140px;
+}
 
 
 

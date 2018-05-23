@@ -2,13 +2,8 @@
   display: none;
 }
 
-
-
-.underNav{
-  margin-top:90px;
-  border: 1px solid lightGrey;
-  border-radius: 10px;
-  padding: 30px;
+#signUpForm{
+  padding:10px 0;
 }
 
 input{
@@ -19,6 +14,11 @@ input{
   width: 100%;
 }
 
+.SignUpBtn{
+  width: 100%;
+  margin: 5px 0;
+}
+
 .loginCaption{
   color:orange;
   font-size: 20px;
@@ -27,5 +27,5 @@ input{
 
 
 section{
-  padding: 40px 20px;
+  padding: 40px 15px;
 }

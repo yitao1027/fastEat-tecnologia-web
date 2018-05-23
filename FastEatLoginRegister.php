@@ -27,7 +27,7 @@
             <a class="nav-link" href="FASTEAT.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Menu.php" target="_blank">Menu</a>
+            <a class="nav-link" href="Menu.php">Menu</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="FastEatLoginRegister.php" >Login</a>
@@ -65,7 +65,7 @@
 </br>
   <button type="submit" class="loginBtn btn btn-primary">Login</button>
 </form>
-  <p>Non hai ancora un account ?  <button type="button" class="btn btn-link" id="signUpForm">Registrati</button></p>
+  <p>Non hai ancora un account ? <button type="button" class="btn btn-link" id="signUpForm">Registrati</button></p>
 </div>
 
 
@@ -90,8 +90,9 @@
     <label for="InputPassword1">Ripeti Password</label>
     <input type="password" class="form-control" id="InputPassword1" placeholder="Password">
   </div>
-</br>
-  <button type="submit" class="loginBtn btn btn-primary">Sign Up</button>
+
+  <button type="submit" class="SignUpBtn btn btn-primary">Sign Up</button>
+
   <small id="TermsCondition">By creating an account you agree to our <a data-toggle="modal" data-target="#policyPrivacyModal" style="color:dodgerblue">Terms & Privacy</a>.
 </small>
 </form>
@@ -131,8 +132,8 @@
               <a><i class="fab fa-twitter fa-2x"></i></a>
                 </div>
                 <div class="contact col-sm-6">
-                  <img class=" img-responsive" src="img/app.svg" style="float:left;"></img>
-                  <img class=" img-responsive" src="img/google.png" style="float:right;height:40px;">
+                  <img class="app img-responsive" src="img/app.svg" ></img>
+                  <img class="app img-responsive" src="img/google.png"></img>
                 </div>
               </div>
             </div>

@@ -26,13 +26,13 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class=" collapse navbar-collapse" id="navbar">
+        <div class="collapse navbar-collapse" id="navbar">
           <ul class="navbar-nav mt-2 mt-lg-0 ">
             <li class="nav-item active">
               <a class="nav-link" href="#Home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/FastEat/tecnologia-web/menu.php" target="_blank">Menu</a>
+              <a class="nav-link" href="Menu.php">Menu</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="FastEatLoginRegister.php" >Login</a>
@@ -46,41 +46,6 @@
 
 
 
-    <div id="registerForm" class="modal fade" role="dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class=" text-uppercase">Register</h3>
-        </div>
-        <div class="modal-body">
-          <form action="FastEatRegister.php" method="POST">
-            <label>
-              <b>Username</b>
-            </label>
-
-            <input class="form-control" type="text" placeholder="Enter Username" id="uname" name="uname" title="inserire username" required>
-            <label>
-              <b>Password</b>
-            </label>
-
-            <div id="messagePsw" style="display:none"> <p id="msm"></p></div>
-            <!-- form-control : width 100% backgrounf borderadius etc-->
-            <input class="form-control" type="password" id="psw"  placeholder="Enter Password" name="psw"required>
-            <label>
-              <b>Confirm Password</b>
-            </label>
-            <div id="messageConfpsw" style="display:none"> <p  id="confmsm" ></p></div>
-            <input class="form-control" id="confpsw" title="inserire min 8 caratterti" type="password" placeholder="Confirm Passsord" name="confpsw" required>
-            <label>
-              <b>Email</b>
-            </label>
-            <input class="form-control" type="text" id="email" placeholder="E-mail" name="email" required>
-            <button class="form" id="register" name="register" type="submit">Create Account</button>
-          </div>
-          <div class="modal-footer" style="background-color:#f1f1f1">
-          </div>
-        </form>
-      </div>
-    </div>
 
     <?php
     if(isset($_SESSION["logged"])){
@@ -90,7 +55,7 @@
 
 
 
-    <section class="container-fluid" style="padding:0; margin-top:80px;">
+    <section class="container-fluid underNav" style="padding:0; margin-top:80px;">
       <div class="carousel-inner">
 
         <img class="img-fluid" src="img/cover1.jpg">
@@ -171,14 +136,14 @@
             <div class="contact col-sm-3">
               <div class="row">
                 <div class="contact col-sm-6">
-                    <a><i class="fab fa-facebook-f fa-2x"></i></a>
+                  <a><i class="fab fa-facebook-f fa-2x"></i></a>
                 <a><i class="fab fa-instagram fa-2x"></i></a>
                 <a><i class="fab fa-tripadvisor fa-2x"></i></a>
                 <a><i class="fab fa-twitter fa-2x"></i></a>
                 </div>
                 <div class="contact col-sm-6">
-                  <img class=" img-responsive" src="img/app.svg" style="float:left;"></img>
-                  <img class=" img-responsive" src="img/google.png" style="float:right;height:40px;">
+                  <img class="app img-responsive" src="img/app.svg" ></img>
+                  <img class="app img-responsive" src="img/google.png" style="height:40px;">
                 </div>
               </div>
             </div>
