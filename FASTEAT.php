@@ -35,7 +35,7 @@
               <a class="nav-link" href="/FastEat/tecnologia-web/menu.php" target="_blank">Menu</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="FastEatLogin.php" >Login</a>
+              <a class="nav-link" href="FastEatLoginRegister.php" >Login</a>
             </li>
           </ul>
         </div>
@@ -93,7 +93,7 @@
     <section class="container-fluid" style="padding:0; margin-top:80px;">
       <div class="carousel-inner">
 
-        <img class="img-fluid" src="/FastEat/tecnologia-web/img/cover1.jpg">
+        <img class="img-fluid" src="img/cover1.jpg">
 
         <div class="carousel-caption text-left">
 
