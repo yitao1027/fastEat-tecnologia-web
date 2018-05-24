@@ -68,6 +68,11 @@
 
             <div class="input-group mb-3">
               <input type="text" value="" class="form-control" placeholder="Inserisci il tuo indirizzo" id="AddressSearch">
+              <div id="infowindow-content">
+                <img src="" width="16" height="16" id="place-icon">
+                <span id="place-name"  class="title"></span><br>
+                <span id="place-address"></span>
+              </div>
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary "  style="background-color:rgb(48, 221, 48);" type="button" ><i class="fas fa-location-arrow" style="color:white;"></i></button>
               </div>
@@ -276,7 +281,9 @@
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
                   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
                   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+                  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvyZ6DB32hcO3vkSpNR4JpAwh6hiRQqVc&libraries=places"></script>
                   <script src="js/fastEat.js"></script>
+                  <script src="js/placeAutoComplete.js"></script>
                   <script src="js/cookiesModalWindow.js"></script>
                 </body>
 
