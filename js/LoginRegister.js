@@ -4,9 +4,18 @@ $(document).ready(function(){
 $("#LogIn").fadeIn("slow");
 
   $("button#signUpForm").click(function(){
-    $("#SignUp").fadeIn();
-    $("#LogIn").fadeOut();
+    $("#LogIn").fadeOut("fast",function(){
+        $("#SignUp").fadeIn("slow");
+    });
   });
+
+  $(".fa-angle-left").click(function(){
+    $("#SignUp").fadeOut("fast",function(){
+       $("#LogIn").fadeIn("slow");
+    });
+  });
+
+
 });
 
 

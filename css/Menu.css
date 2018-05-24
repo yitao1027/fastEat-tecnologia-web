@@ -1,3 +1,38 @@
-.category-item{
-  display: none;
+p{
+  margin: 20px;
+}
+
+
+.menu-caption{
+  font-size: 30px;
+  font-style: italic;
+  margin-bottom: 40px;
+}
+
+.category-caption{
+  font-size: 18px;
+  margin: 0;
+  padding: 15px;
+  color:orange;
+}
+.btn-outline-dark{
+  padding: 2px 6px;
+}
+.list-group-item{
+  padding: 10px 0;
+}
+.category-item .row{
+  margin: 0;
+  padding: 10px 0;
+  border-top: 1px solid rgba(0,0,0,.125);;
+}
+
+.divPlus{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fa-angle-double-down{
+  float: right;
 }

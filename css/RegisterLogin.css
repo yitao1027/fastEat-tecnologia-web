@@ -22,10 +22,15 @@ input{
 .loginCaption{
   color:orange;
   font-size: 20px;
-  padding: 10px;
+  padding: 8px;
 }
 
 
 section{
   padding: 40px 15px;
+}
+
+.fa-angle-left{
+  padding: 5px 0;
+  float: left;
 }

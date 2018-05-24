@@ -50,12 +50,11 @@
   <!--Login form-->
   <div class="form-group">
     <label for="InputEmail1">Email address</label>
-    <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Inserisce email">
   </div>
   <div class="form-group">
     <label for="InputPassword1">Password</label>
-    <input type="password" class="form-control" id="InputPassword1" placeholder="Password">
+    <input type="password" class="form-control" id="InputPassword" placeholder="Password">
     <a href="">Password dimenticata?</a>
   </div>
   <div class="form-check">
@@ -63,7 +62,7 @@
     <label class="form-check-label" for="Check1">Ricordami</label>
   </div>
 </br>
-  <button type="submit" class="loginBtn btn btn-primary">Login</button>
+  <button type="submit" class="loginBtn btn btn-primary">Log In</button>
 </form>
   <p>Non hai ancora un account ? <button type="button" class="btn btn-link" id="signUpForm">Registrati</button></p>
 </div>
@@ -73,27 +72,26 @@
 <!--register Form-->
 <div id="SignUp" class="container-fluid underNav">
   <div class="text-center">
-    <p class="loginCaption">  SIGN UP  </p>
+    <p class="loginCaption"><i class="fas fa-angle-left "></i>  SIGN UP  </p>
       <hr>
   </div>
 <form >
   <div class="form-group">
     <label for="InputEmail1">Email address</label>
-    <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <input type="email" class="form-control" id="signUpEmail1" aria-describedby="emailHelp" placeholder="Inserisce email">
   </div>
   <div class="form-group">
     <label for="InputPassword1">Password</label>
-    <input type="password" class="form-control" id="InputPassword1" placeholder="Password">
+    <input type="password" class="form-control" id="signUpPassword1" placeholder="Password">
   </div>
   <div class="form-group">
-    <label for="InputPassword1">Ripeti Password</label>
-    <input type="password" class="form-control" id="InputPassword1" placeholder="Password">
+    <label for="InputPassword1">Di-nuovo password</label>
+    <input type="password" class="form-control" id="RepertPassword1" placeholder="Di-nuovo Password">
   </div>
 
   <button type="submit" class="SignUpBtn btn btn-primary">Sign Up</button>
 
-  <small id="TermsCondition">By creating an account you agree to our <a data-toggle="modal" data-target="#policyPrivacyModal" style="color:dodgerblue">Terms & Privacy</a>.
+  <small id="TermsCondition">Registrandoti dichiari di aver letto e accetti integralmente le nostre <a data-toggle="modal" data-target="#policyPrivacyModal" style="color:dodgerblue">Terms & Privacy</a>.
 </small>
 </form>
 </div>

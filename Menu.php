@@ -32,7 +32,7 @@ session_start();
             <a class="nav-link" href="FASTEAT.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Menu.php" target="_blank">Menu</a>
+            <a class="nav-link" href="#">Menu</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="FastEatLoginRegister.php" >Login</a>
@@ -48,62 +48,81 @@ session_start();
   <section class="underNav">
 
   <ul class="list-group">
-    <p>Menu</p>
+    <p class="menu-caption text-center">Il nostro Menu</p>
+
     <li class="list-group-item">
-      <p>SiiNigiri (2pz)</P>
-<div class="category-item">
-      <ul class="list-group">
-      <li class="list-group-item">
+      <p class="category-caption" data-toggle="collapse" href="#nigiri" role="button" aria-expanded="false" aria-controls="nigiriControll">SiiNigiri (2pz)<i class="fas fa-angle-double-down"></i></p>
+      <div class="category-item collapse" id="nigiri">
+
+        <div class="row">
+          <div class="col-6">
         <p>Salmone</p>
-        <p>€ 3,00</p>
-        <button class="btn btn-primary "  value="1">
+        <p>€ 3,00</p></div>
+      <div class="col-6 divPlus">
+        <button class="btn btn-outline-dark" value="1">
           <i class="fa fa-plus" aria-hidden="true"></i>
         </button>
-      </li>
+      </div>
+    </div>
 
-    <li class="list-group-item">
+
+    <div class="row">
+    <div class="col-6">
       <p>Tonno</p>
-      <div class="pro-price"><p>€ 4,00</p></div>
-      <button class="btn btn-primary " value="2">
+      <p>€4,00</p></div>
+      <div class="col-6 divPlus"><button class="btn btn-outline-dark " value="2">
         <i class="fa fa-plus  " aria-hidden="true"></i>
       </button>
-  </li>
+    </div>
+  </div>
 
-  <li class="list-group-item">
+
+
+    <div class="row">
+    <div class="col-6">
     <p>Ebi</p>
-    <div class="pro-price"><p>€ 3,00</p></div>
-    <button class="btn btn-primary " value="3">
+    <p>€ 3,00</p></div>
+    <div class="col-6 divPlus"><button class="btn btn-outline-dark " value="3">
       <i class="fa fa-plus  " aria-hidden="true"></i>
     </button>
-  </li>
+  </div>
+</div>
 
 
-<li class="list-group-item">
+
+<div class="row">
+    <div class="col-6">
   <p>Branzino</p>
-  <div class="pro-price"><p>€ 3,00</p></div>
-  <button class="btn btn-primary " value="4">
+  <p>€ 3,00</p></div>
+  <div class="col-6 divPlus"><button class="btn btn-outline-dark " value="4">
     <i class="fa fa-plus  " aria-hidden="true"></i>
   </button>
-</li>
+</div>
+</div>
 
 
-<li class="list-group-item">
+
+<div class="row">
+    <div class="col-6">
   <p>Avocado</p>
-  <div class="pro-price"><p>€ 4,00</p></div>
-  <button class="btn btn-primary " value="5">
+  <p>€ 4,00</p></div>
+  <div class="col-6 divPlus"><button class="btn btn-outline-dark " value="5">
     <i class="fa fa-plus  " aria-hidden="true"></i>
   </button>
-</li>
+</div>
+</div>
+
 </form>
 
-<li class="list-group-item">
+<div class="row">
+    <div class="col-6">
   <p>Sake Aburi</p>
-  <div class="pro-price"><p>€ 5,00</p></div>
-  <button class="btn btn-primary " value="6">
+  <p>€ 5,00</p></div>
+    <div class="col-6 divPlus"><button class="btn btn-outline-dark " value="6">
     <i class="fa fa-plus  " aria-hidden="true"></i>
   </button>
-</li>
-</ul>
+</div>
+</div>
 </div>
 </li>
 
@@ -122,114 +141,140 @@ session_start();
 
 
 
-<li  class="list-group-item">
-<p>PiccoliHoso(6pz)</p>
-<div class="category-item">
-  <ul class="list-group">
+<li  class="list-group-item" >
+  <p  class="category-caption" data-toggle="collapse" href="#hosomaki" role="button" aria-expanded="false" aria-controls="hosomakiControll">PiccoliHoso(6pz)<i class="fas fa-angle-double-down"></i></p>
+<div class="category-item collapse" id="hosomaki">
 
-    <li class="list-group-item">
+
+    <div class="row">
+    <div class="col-6">
       <p>Salmone</p>
-      <div class="pro-price"><p>€ 4,00</p></div>
-      <button class="btn btn-primary " value="10">
+      <p>€ 4,00</p></div>
+      <div class="col-6 divPlus"><button class="btn btn-outline-dark " value="10">
         <i class="fa fa-plus  " aria-hidden="true"></i>
       </button>
-    </li>
-  </form>
+    </div>
+    </div>
 
-  <li class="list-group-item">
+
+  <div class="row">
+    <div class="col-6">
     <p>Tonno</p>
-    <div class="pro-price"><p>€ 5,00</p></div>
-    <button class="btn btn-primary " value="11">
+    <p>€ 5,00</p></div>
+    <div class="col-6 divPlus"><button class="btn btn-outline-dark " value="11">
       <i class="fa fa-plus  " aria-hidden="true"></i>
     </button>
-  </li>
-</form>
+  </div>
+  </div>
 
-<li class="list-group-item">
+
+<div class="row">
+    <div class="col-6">
   <p>Ebi</p>
-  <div class="pro-price"><p>€ 4,00</p></div>
-  <button class="btn btn-primary " value="12">
+  <p>€ 4,00</p></div>
+  <div class="col-6 divPlus"><button class="btn btn-outline-dark " value="12">
     <i class="fa fa-plus  " aria-hidden="true"></i>
   </button>
-</li>
-</form>
+</div>
+</div>
 
-<li class="list-group-item">
+
+<div class="row">
+    <div class="col-6">
   <p>Branzino</p>
-  <div class="pro-price"><p>€ 4,00</p></div>
-  <button class="btn btn-primary " value="13">
+  <p>€ 4,00</p></div>
+  <div class="col-6 divPlus"><button class="btn btn-outline-dark " value="13">
     <i class="fa fa-plus  " aria-hidden="true"></i>
   </button>
-</li>
-</form>
+</div>
+</div>
 
-<li class="list-group-item">
+
+<div class="row">
+    <div class="col-6">
   <p>Avocado</p>
-  <div class="pro-price"><p>€ 5,00</p></div>
-  <button class="btn btn-primary " value="14">
+  <p>€ 5,00</p></div>
+  <div class="col-6 divPlus"><button class="btn btn-outline-dark " value="14">
     <i class="fa fa-plus  " aria-hidden="true"></i>
   </button>
-</li>
-</form>
+</div>
+</div>
 
-<li class="list-group-item">
+
+<div class="row">
+    <div class="col-6">
   <p>Fritto Phila Ichigo</p>
-  <div class="pro-price"><p>€ 8,00</p></div>
-  <button class="btn btn-primary " value="15">
+  <p>€ 8,00</p></div>
+  <div class="col-6 divPlus"><button class="btn btn-outline-dark " value="15">
     <i class="fa fa-plus  " aria-hidden="true"></i>
   </button>
-</li>
-</ul>
+</div>
+</div>
 </div>
 </li>
 
-<li  class="list-group-item">
-  <p>GranUra (8pz)</p>
-    <div class="category-item">
-      <ul class="list-group">
-      <p>Misto pesce (2 tipi a scelta)</p>
-      <div class="pro-price"><p>€ 10,00</p></div>
-      <button class="btn btn-primary " value="20">
+
+
+
+
+<li  class="list-group-item" >
+ <p  class="category-caption" data-toggle="collapse" href="#uramaki" role="button" aria-expanded="false" aria-controls="uramakiControll">GranUra (8pz)<i class="fas fa-angle-double-down"></i></p>
+    <div class="category-item collapse" id="uramaki">
+
+        <div class="row">
+    <div class="col-6">
+      <p>Misto pesce (2 tipi a scelta)<i class="fas fa-angle-double-down"></i></p>
+      <p>€ 10,00</p></div>
+      <div class="col-6 divPlus"><button class="btn btn-outline-dark " value="20">
         <i class="fa fa-plus  " aria-hidden="true"></i>
       </button>
-    </li>
-  </form>
+    </div>
+    </div>
 
-  <li class="list-group-item">
+
+
+  <div class="row">
+    <div class="col-6">
     <p>MaCheFritto</p>
-    <div class="pro-price"><p>€ 10,00</p></div>
-    <button class="btn btn-primary " value="21">
+    <p>€ 10,00</p></div>
+    <div class="col-6 divPlus"><button class="btn btn-outline-dark " value="21">
       <i class="fa fa-plus  " aria-hidden="true"></i>
     </button>
-  </li>
-</form>
+  </div>
+  </div>
 
-<li class="list-group-item">
+
+<div class="row">
+    <div class="col-6">
   <p>SiAlVegetariano</p>
-  <div class="pro-price"><p>€ 10.00</p></div>
-  <button class="btn btn-primary " value="22">
+  <p>€ 10.00</p></div>
+  <div class="col-6 divPlus"><button class="btn btn-outline-dark " value="22">
     <i class="fa fa-plus  " aria-hidden="true"></i>
   </button>
-</li>
-</form>
+</div>
+</div>
 
-<li class="list-group-item">
+
+<div class="row">
+    <div class="col-6">
   <p>PhiladelfiaTime</p>
-  <div class="pro-price"><p>€ 10,00</p></div>
-  <button class="btn btn-primary " value="23">
+  <p>€ 10,00</p></div>
+  <div class="col-6 divPlus"><button class="btn btn-outline-dark " value="23">
     <i class="fa fa-plus  " aria-hidden="true"></i>
   </button>
-</li>
-</form>
+</div>
+</div>
 
-<li class="list-group-item">
+
+<div class="row">
+    <div class="col-6">
   <p>AllCotto</p>
-  <div class="pro-price"><p>€ 10,00</p></div>
-  <button class="btn btn-primary " value="24">
+  <p>€ 10,00</p></div>
+  <div class="col-6 divPlus"><button class="btn btn-outline-dark " value="24">
     <i class="fa fa-plus " aria-hidden="true"></i>
   </button>
-</li>
-</ul>
+</div>
+</div>
 </div>
 </li>
 
@@ -242,94 +287,110 @@ session_start();
 
 
 
-
-
-
 <li  class="list-group-item">
-  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-      TemakiLove(1pz)
-    </a>
-<div class="category-item">
-  <ul class="list-group">
+<p class="category-caption"  data-toggle="collapse" href="#temaki" role="button" aria-expanded="false" aria-controls="temakiController">TemakiLove(1pz)<i class="fas fa-angle-double-down"></i></p>
 
-    <li class="list-group-item">
+<div class="category-item collapse" id="temaki">
+
+
+    <div class="row">
+    <div class="col-6">
       <p>Salmone</p>
-      <div class="pro-price"><p>€ 4,00</p></div>
-      <button class="btn btn-primary " value="30">
+      <p>€ 4,00</p></div>
+      <div class="col-6 divPlus"><button class="btn btn-outline-dark " value="30">
         <i class="fa fa-plus  " aria-hidden="true"></i>
       </button>
-    </li>
-  </form>
+    </div>
+    </div>
 
-  <li class="list-group-item">
+
+  <div class="row">
+    <div class="col-6">
     <p>Tonno</p>
-    <div class="pro-price"><p>€ 5,00</p></div>
-    <button class="btn btn-primary " value="31">
+    <p>€ 5,00</p></div>
+    <div class="col-6 divPlus"><button class="btn btn-outline-dark " value="31">
       <i class="fa fa-plus  " aria-hidden="true"></i>
     </button>
-  </li>
-</form>
+  </div>
+  </div>
 
-<li class="list-group-item">
+
+<div class="row">
+    <div class="col-6">
   <p>Ebi</p>
-  <div class="pro-price"><p>€ 4,00</p></div>
-  <button class="btn btn-primary " value="32">
+  <p>€ 4,00</p></div>
+  <div class="col-6 divPlus"><button class="btn btn-outline-dark " value="32">
     <i class="fa fa-plus  " aria-hidden="true"></i>
   </button>
-</li>
-</form>
+</div>
+</div>
 
-<li class="list-group-item">
+
+<div class="row">
+    <div class="col-6">
   <p>Ebiten</p>
-  <div class="pro-price"><p>€ 5,00</p></div>
-  <button class="btn btn-primary " value="33">
+  <p>€ 5,00</p></div>
+  <div class="col-6 divPlus"><button class="btn btn-outline-dark " value="33">
     <i class="fa fa-plus  " aria-hidden="true"></i>
   </button>
-</li>
-</ul>
+</div>
+</div>
 </div>
 </li>
 
 
-<li  class="list-group-item">
-<p class="caption">Bevande</p>
-<div class="category-item">
-  <ul class="list-group">
 
-    <li class="list-group-item">
+
+
+
+<li  class="list-group-item">
+<p class="category-caption"  data-toggle="collapse" href="#bevande" role="button" aria-expanded="false" aria-controls="bevandeControll">Bevande<i class="fas fa-angle-double-down"></i></p>
+<div class="category-item collapse" id="bevande">
+
+    <div class="row">
+    <div class="col-6">
       <p>Coca Cola/Fanta 33cl</p>
-      <div class="pro-price"><p>€ 2,50</p></div>
-      <button class="btn btn-primary " value="40">
+      <p>€ 2,50</p></div>
+      <div class="col-6 divPlus"><button class="btn btn-outline-dark " value="40">
         <i class="fa fa-plus  " aria-hidden="true"></i>
       </button>
-    </li>
+    </div>
+    </div>
 
 
-  <li class="list-group-item">
+
+  <div class="row">
+    <div class="col-6">
     <p>Tè Verde Giapponese 33cl  </p>
-    <div class="pro-price"><p>€ 3,00</p></div>
-    <button class="btn btn-primary " value="41">
+    <p>€ 3,00</p></div>
+    <div class="col-6 divPlus"><button class="btn btn-outline-dark " value="41">
       <i class="fa fa-plus  " aria-hidden="true"></i>
     </button>
-  </li>
+  </div>
+  </div>
 
-<li class="list-group-item">
+
+<div class="row">
+    <div class="col-6">
   <p>Birra Giapponese 50cl</p>
-  <div class="pro-price"><p>€ 5,00</p></div>
-  <button class="btn btn-primary " value="42">
+  <p>€ 5,00</p></div>
+  <div class="col-6 divPlus"><button class="btn btn-outline-dark " value="42">
     <i class="fa fa-plus  " aria-hidden="true"></i>
   </button>
-</li>
+</div>
+</div>
 
 
-<li class="list-group-item">
+
+<div class="row">
+    <div class="col-6">
   <p>Acqua 25cl</p>
-  <div class="pro-price"><p>€ 1,00</p></div>
-  <button class="btn btn-primary " value="43">
+  <p>€ 1,00</p></div>
+  <div class="col-6 divPlus"><button class="btn btn-outline-dark " value="43">
     <i class="fa fa-plus  " aria-hidden="true"></i>
   </button>
-</li>
-</ul>
+</div>
+</div>
 </div>
 </li>
 </ul>

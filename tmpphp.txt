@@ -54,3 +54,17 @@ if(isset($_POST["register"])){
   function clear($var){
     return trim($var);
   }
+
+
+
+
+
+
+
+
+
+  <?php
+  session_start();
+  include("db_con.php");
+
+  ?>
