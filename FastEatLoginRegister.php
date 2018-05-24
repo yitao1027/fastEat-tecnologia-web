@@ -17,6 +17,9 @@
       <a class="navbar-brand" href="#">
         <img class="img-logo" src="img/logoP.png" alt="logoApplicazione" style="height:55px;">
       </a>
+
+
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -152,6 +155,17 @@
           </div>
 
         </footer>
+
+
+
+
+        <div class="cart-container">
+          <button class="btn btn-secondary"><i class="fas fa-shopping-cart"></i></</button>
+        </div>
+
+
+
+
 
         <div class="modal fade" id="policyPrivacyModal" tabindex="-1" role="dialog" aria-labelledby="policyPrivacyModal" aria-hidden="true">
           <div class="modal-dialog" role="document">

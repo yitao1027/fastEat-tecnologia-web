@@ -12,6 +12,27 @@
     justify-content: flex-end;
 }
 
+
+.cart-container{
+  display: none;
+  position: fixed;
+  left: 20px;
+  bottom:20px;
+  z-index: 500;
+
+}
+.cart-container button{
+  background-color: orange;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 2px 4px -1px lightGrey;
+}
+.fa-shopping-cart{
+  color: white;
+}
+
 .underNav{
   margin-top:82px;
   border: 1px solid lightGrey;
@@ -59,7 +80,7 @@ Section{
 
 #infowindow-content{
         font-weight: bold;
-      
+
 }
 
 

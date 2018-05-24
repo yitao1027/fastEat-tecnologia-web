@@ -37,6 +37,9 @@
 </header>
 
 
+
+
+
 <div class="container-fluid underNav">
         <?php
         if(isset($_POST["prodotto"])){
@@ -160,7 +163,9 @@
           </footer>
 
 
-
+          <div class="cart-container">
+            <button class="btn btn-secondary"><i class="fas fa-shopping-cart"></i></</button>
+          </div>
 
 
             <!-- Modal detail privacy  -->

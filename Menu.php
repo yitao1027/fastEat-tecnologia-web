@@ -22,6 +22,8 @@ session_start();
       <a class="navbar-brand" href="#">
         <img class="img-logo" src="img/logoP.png" alt="logoApplicazione" style="height:55px;">
       </a>
+
+    
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -223,7 +225,7 @@ session_start();
 
         <div class="row">
     <div class="col-6">
-      <p>Misto pesce (2 tipi a scelta)<i class="fas fa-angle-double-down"></i></p>
+      <p>Misto pesce (2 tipi a scelta)</p>
       <p>€ 10,00</p></div>
       <div class="col-6 divPlus"><button class="btn btn-outline-dark " value="20">
         <i class="fa fa-plus  " aria-hidden="true"></i>
@@ -449,6 +451,10 @@ session_start();
 
   </footer>
 
+
+  <div class="cart-container">
+    <button class="btn btn-secondary"><i class="fas fa-shopping-cart"></i></</button>
+  </div>
 
 
 
