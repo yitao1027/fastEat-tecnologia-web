@@ -12,14 +12,79 @@
     justify-content: flex-end;
 }
 
-.img-fluid{
-  width: 100%;
+.underNav{
+  margin-top:82px;
+  border: 1px solid lightGrey;
+  padding: 25px;
 }
-
 
 h2{
   font-size: 25px;
 }
+
 .lead{
   font-size: 18px;
+}
+
+.input-group{
+  background-color: transparent;
+}
+
+.contact{
+  margin: 10px 0 ;
+}
+
+.row{
+ margin: 20px 0;
+}
+
+
+.carousel-caption{
+  left: 10%;
+  font-weight:bolder;
+}
+
+
+
+Section{
+  padding: 60px 0 0 0;
+}
+
+
+.app{
+  height:45px;
+  width:140px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#cookiesModal{
+  top: auto;
+  position: fixed;
+  z-index: 10000;
+  width: 100%;
+}
+
+#cookiesModal>.personal-modal{
+padding: 10px 0;
+color: white;
+  background-color: black;
+}
+
+
+
+
+.fab{
+  margin: 0 5px;
 }

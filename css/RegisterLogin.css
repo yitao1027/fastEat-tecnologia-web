@@ -1,0 +1,31 @@
+#SignUp{
+  display: none;
+}
+
+#signUpForm{
+  padding:10px 0;
+}
+
+input{
+  margin: 5px 0;
+}
+
+.loginBtn{
+  width: 100%;
+}
+
+.SignUpBtn{
+  width: 100%;
+  margin: 5px 0;
+}
+
+.loginCaption{
+  color:orange;
+  font-size: 20px;
+  padding: 10px;
+}
+
+
+section{
+  padding: 40px 15px;
+}

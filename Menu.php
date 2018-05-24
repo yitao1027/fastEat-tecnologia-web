@@ -4,357 +4,462 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
   <meta charset="utf-8" />
   <title>FastEat</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="css/FastEat.css" />
+  <link rel="stylesheet" href="css/Custom.css" type="text/css" />
+  <link rel="stylesheet" href="css/Menu.css" type="text/css" />
 </head>
 
 <body>
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <a  class="navbar-brand" href="#">
-        <img class="logo img-responsive" src="img/logoP.png" alt="logo">
+
+  <header id="Home">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-left  navbar-dark">
+      <a class="navbar-brand" href="#">
+        <img class="img-logo" src="img/logoP.png" alt="logoApplicazione" style="height:55px;">
       </a>
-      <a href="/FastEat/tecnologia-web/Carrello.php" class="menu_carello" >
-        <i class="fa fa-shopping-cart fa-2x list-item" aria-hidden="true"></i><span id="numTot"><?php echo($_SESSION["numTot"]) ?></span>
-      </a>
-      <button type="button" class="navbar-toggle" data-toggle="list-menu" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <i class="fa fa-bars fa-2x"></i>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-    </div>
-  </nav>
-  <div id="navbar">
-    <ul class=" navbar-list text-uppercase nav navbar-right" data-spy="affix" data-offset-top="205">
-      <li>
-        <a href="/FastEat.php">
-          <i class="fa fa-home fa-2x  list-item" aria-hidden="true"></i>Home</a>
-        </li>
-        <li>
-          <a href="/UserProfilo.php" data-toggle="modal">
-            <i class="fa fa-user-circle fa-2x  list-item" aria-hidden="true"></i><?php echo($_SESSION["username"]);?></a>
+
+      <div class=" collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mt-2 mt-lg-0 ">
+          <li class="nav-item active">
+            <a class="nav-link" href="FASTEAT.php">Home</a>
           </li>
-          <li>
-            <a href="#aboutUs">
-              <i class="fa fa-share-alt fa-2x list-item" aria-hidden="true"></i>About Us</a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="fa fa-sign-out fa-2x  list-item" aria-hidden="true"></i>Log out</a>
-              </li>
-            </ul>
-          </div>
-
-
-
-          <div class="separator"></div>
-
-
-          <section class="listPro">
-
-            <h4>SiiNigiri (2pz)<i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></h4>
-            <ul class="list-group listPro-categoria">
-              <li class="list-group-item">
-                <h5>Salmone</h5>
-                <div class="pro-price"><p>€ 3,00</p></div>
-                <button class="btn-pro-plus"  value="1">
-                  <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                </button>
-              </li>
-            </form>
-
-            <li class="list-group-item">
-              <h5>Tonno</h5>
-              <div class="pro-price"><p>€ 4,00</p></div>
-              <button class="btn-pro-plus" value="2">
-                <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-              </button>
-            </form>
+          <li class="nav-item">
+            <a class="nav-link" href="Menu.php" target="_blank">Menu</a>
           </li>
-
-          <li class="list-group-item">
-            <h5>Ebi</h5>
-            <div class="pro-price"><p>€ 3,00</p></div>
-            <button class="btn-pro-plus" value="3">
-              <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-            </button>
+          <li class="nav-item">
+            <a class="nav-link" href="FastEatLoginRegister.php" >Login</a>
           </li>
-        </form>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-        <li class="list-group-item">
-          <h5>Branzino</h5>
-          <div class="pro-price"><p>€ 3,00</p></div>
-          <button class="btn-pro-plus" value="4">
-            <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-          </button>
-        </li>
-      </form>
 
+
+
+  <section class="underNav">
+
+  <ul class="list-group">
+    <p>Menu</p>
+    <li class="list-group-item">
+      <p>SiiNigiri (2pz)</P>
+<div class="category-item">
+      <ul class="list-group">
       <li class="list-group-item">
-        <h5>Avocado</h5>
-        <div class="pro-price"><p>€ 4,00</p></div>
-        <button class="btn-pro-plus" value="5">
-          <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+        <p>Salmone</p>
+        <p>€ 3,00</p>
+        <button class="btn btn-primary "  value="1">
+          <i class="fa fa-plus" aria-hidden="true"></i>
         </button>
       </li>
-    </form>
 
     <li class="list-group-item">
-      <h5>Sake Aburi</h5>
-      <div class="pro-price"><p>€ 5,00</p></div>
-      <button class="btn-pro-plus" value="6">
-        <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-      </button>
-    </li>
-  </form>
-</ul>
-</section>
-
-<section class="listPro">
-  <h4>PiccoliHoso(6pz)<i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></h4>
-  <ul class="list-group listPro-categoria">
-
-    <li class="list-group-item">
-      <h5>Salmone</h5>
+      <p>Tonno</p>
       <div class="pro-price"><p>€ 4,00</p></div>
-      <button class="btn-pro-plus" value="10">
-        <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+      <button class="btn btn-primary " value="2">
+        <i class="fa fa-plus  " aria-hidden="true"></i>
       </button>
-    </li>
-  </form>
-
-  <li class="list-group-item">
-    <h5>Tonno</h5>
-    <div class="pro-price"><p>€ 5,00</p></div>
-    <button class="btn-pro-plus" value="11">
-      <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-    </button>
   </li>
-</form>
-
-<li class="list-group-item">
-  <h5>Ebi</h5>
-  <div class="pro-price"><p>€ 4,00</p></div>
-  <button class="btn-pro-plus" value="12">
-    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-  </button>
-</li>
-</form>
-
-<li class="list-group-item">
-  <h5>Branzino</h5>
-  <div class="pro-price"><p>€ 4,00</p></div>
-  <button class="btn-pro-plus" value="13">
-    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-  </button>
-</li>
-</form>
-
-<li class="list-group-item">
-  <h5>Avocado</h5>
-  <div class="pro-price"><p>€ 5,00</p></div>
-  <button class="btn-pro-plus" value="14">
-    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-  </button>
-</li>
-</form>
-
-<li class="list-group-item">
-  <h5>Fritto Phila Ichigo</h5>
-  <div class="pro-price"><p>€ 8,00</p></div>
-  <button class="btn-pro-plus" value="15">
-    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-  </button>
-</li>
-</form>
-</ul>
-</section>
-
-<section class="listPro">
-  <h4>GranUra (8pz)<i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></h4>
-  <ul class="list-group listPro-categoria">
-
-    <li class="list-group-item">
-      <h5>Misto pesce (2 tipi a scelta)</h5>
-      <div class="pro-price"><p>€ 10,00</p></div>
-      <button class="btn-pro-plus" value="20">
-        <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-      </button>
-    </li>
-  </form>
 
   <li class="list-group-item">
-    <h5>MaCheFritto</h5>
-    <div class="pro-price"><p>€ 10,00</p></div>
-    <button class="btn-pro-plus" value="21">
-      <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-    </button>
-  </li>
-</form>
-
-<li class="list-group-item">
-  <h5>SiAlVegetariano</h5>
-  <div class="pro-price"><p>€ 10.00</p></div>
-  <button class="btn-pro-plus" value="22">
-    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-  </button>
-</li>
-</form>
-
-<li class="list-group-item">
-  <h5>PhiladelfiaTime</h5>
-  <div class="pro-price"><p>€ 10,00</p></div>
-  <button class="btn-pro-plus" value="23">
-    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-  </button>
-</li>
-</form>
-
-<li class="list-group-item">
-  <h5>AllCotto</h5>
-  <div class="pro-price"><p>€ 10,00</p></div>
-  <button class="btn-pro-plus" value="24">
-    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-  </button>
-</li>
-</form>
-</ul>
-</section>
-
-<section class="listPro">
-  <h4 >TemakiLove(1pz)<i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></h4>
-  <ul class="list-group listPro-categoria">
-
-    <li class="list-group-item">
-      <h5>Salmone</h5>
-      <div class="pro-price"><p>€ 4,00</p></div>
-      <button class="btn-pro-plus" value="30">
-        <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-      </button>
-    </li>
-  </form>
-
-  <li class="list-group-item">
-    <h5>Tonno</h5>
-    <div class="pro-price"><p>€ 5,00</p></div>
-    <button class="btn-pro-plus" value="31">
-      <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-    </button>
-  </li>
-</form>
-
-<li class="list-group-item">
-  <h5>Ebi</h5>
-  <div class="pro-price"><p>€ 4,00</p></div>
-  <button class="btn-pro-plus" value="32">
-    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-  </button>
-</li>
-</form>
-
-<li class="list-group-item">
-  <h5>Ebiten</h5>
-  <div class="pro-price"><p>€ 5,00</p></div>
-  <button class="btn-pro-plus" value="33">
-    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-  </button>
-</li>
-</form>
-</ul>
-</section>
-
-<section class="listPro">
-  <h4>Bevande<i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></h4>
-  <ul class="list-group listPro-categoria">
-
-    <li class="list-group-item">
-      <h5>Coca Cola/Fanta 33cl</h5>
-      <div class="pro-price"><p>€ 2,50</p></div>
-      <button class="btn-pro-plus" value="40">
-        <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-      </button>
-    </li>
-  </form>
-
-  <li class="list-group-item">
-    <h5>Tè Verde Giapponese 33cl  </h5>
+    <p>Ebi</p>
     <div class="pro-price"><p>€ 3,00</p></div>
-    <button class="btn-pro-plus" value="41">
-      <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+    <button class="btn btn-primary " value="3">
+      <i class="fa fa-plus  " aria-hidden="true"></i>
+    </button>
+  </li>
+
+
+<li class="list-group-item">
+  <p>Branzino</p>
+  <div class="pro-price"><p>€ 3,00</p></div>
+  <button class="btn btn-primary " value="4">
+    <i class="fa fa-plus  " aria-hidden="true"></i>
+  </button>
+</li>
+
+
+<li class="list-group-item">
+  <p>Avocado</p>
+  <div class="pro-price"><p>€ 4,00</p></div>
+  <button class="btn btn-primary " value="5">
+    <i class="fa fa-plus  " aria-hidden="true"></i>
+  </button>
+</li>
+</form>
+
+<li class="list-group-item">
+  <p>Sake Aburi</p>
+  <div class="pro-price"><p>€ 5,00</p></div>
+  <button class="btn btn-primary " value="6">
+    <i class="fa fa-plus  " aria-hidden="true"></i>
+  </button>
+</li>
+</ul>
+</div>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li  class="list-group-item">
+<p>PiccoliHoso(6pz)</p>
+<div class="category-item">
+  <ul class="list-group">
+
+    <li class="list-group-item">
+      <p>Salmone</p>
+      <div class="pro-price"><p>€ 4,00</p></div>
+      <button class="btn btn-primary " value="10">
+        <i class="fa fa-plus  " aria-hidden="true"></i>
+      </button>
+    </li>
+  </form>
+
+  <li class="list-group-item">
+    <p>Tonno</p>
+    <div class="pro-price"><p>€ 5,00</p></div>
+    <button class="btn btn-primary " value="11">
+      <i class="fa fa-plus  " aria-hidden="true"></i>
     </button>
   </li>
 </form>
 
 <li class="list-group-item">
-  <h5>Birra Giapponese 50cl</h5>
-  <div class="pro-price"><p>€ 5,00</p></div>
-  <button class="btn-pro-plus" value="42">
-    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+  <p>Ebi</p>
+  <div class="pro-price"><p>€ 4,00</p></div>
+  <button class="btn btn-primary " value="12">
+    <i class="fa fa-plus  " aria-hidden="true"></i>
   </button>
 </li>
 </form>
 
 <li class="list-group-item">
-  <h5>Acqua 25cl</h5>
-  <div class="pro-price"><p>€ 1,00</p></div>
-  <button class="btn-pro-plus" value="43">
-    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+  <p>Branzino</p>
+  <div class="pro-price"><p>€ 4,00</p></div>
+  <button class="btn btn-primary " value="13">
+    <i class="fa fa-plus  " aria-hidden="true"></i>
   </button>
 </li>
 </form>
+
+<li class="list-group-item">
+  <p>Avocado</p>
+  <div class="pro-price"><p>€ 5,00</p></div>
+  <button class="btn btn-primary " value="14">
+    <i class="fa fa-plus  " aria-hidden="true"></i>
+  </button>
+</li>
+</form>
+
+<li class="list-group-item">
+  <p>Fritto Phila Ichigo</p>
+  <div class="pro-price"><p>€ 8,00</p></div>
+  <button class="btn btn-primary " value="15">
+    <i class="fa fa-plus  " aria-hidden="true"></i>
+  </button>
+</li>
+</ul>
+</div>
+</li>
+
+<li  class="list-group-item">
+  <p>GranUra (8pz)</p>
+    <div class="category-item">
+      <ul class="list-group">
+      <p>Misto pesce (2 tipi a scelta)</p>
+      <div class="pro-price"><p>€ 10,00</p></div>
+      <button class="btn btn-primary " value="20">
+        <i class="fa fa-plus  " aria-hidden="true"></i>
+      </button>
+    </li>
+  </form>
+
+  <li class="list-group-item">
+    <p>MaCheFritto</p>
+    <div class="pro-price"><p>€ 10,00</p></div>
+    <button class="btn btn-primary " value="21">
+      <i class="fa fa-plus  " aria-hidden="true"></i>
+    </button>
+  </li>
+</form>
+
+<li class="list-group-item">
+  <p>SiAlVegetariano</p>
+  <div class="pro-price"><p>€ 10.00</p></div>
+  <button class="btn btn-primary " value="22">
+    <i class="fa fa-plus  " aria-hidden="true"></i>
+  </button>
+</li>
+</form>
+
+<li class="list-group-item">
+  <p>PhiladelfiaTime</p>
+  <div class="pro-price"><p>€ 10,00</p></div>
+  <button class="btn btn-primary " value="23">
+    <i class="fa fa-plus  " aria-hidden="true"></i>
+  </button>
+</li>
+</form>
+
+<li class="list-group-item">
+  <p>AllCotto</p>
+  <div class="pro-price"><p>€ 10,00</p></div>
+  <button class="btn btn-primary " value="24">
+    <i class="fa fa-plus " aria-hidden="true"></i>
+  </button>
+</li>
+</ul>
+</div>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li  class="list-group-item">
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+      TemakiLove(1pz)
+    </a>
+<div class="category-item">
+  <ul class="list-group">
+
+    <li class="list-group-item">
+      <p>Salmone</p>
+      <div class="pro-price"><p>€ 4,00</p></div>
+      <button class="btn btn-primary " value="30">
+        <i class="fa fa-plus  " aria-hidden="true"></i>
+      </button>
+    </li>
+  </form>
+
+  <li class="list-group-item">
+    <p>Tonno</p>
+    <div class="pro-price"><p>€ 5,00</p></div>
+    <button class="btn btn-primary " value="31">
+      <i class="fa fa-plus  " aria-hidden="true"></i>
+    </button>
+  </li>
+</form>
+
+<li class="list-group-item">
+  <p>Ebi</p>
+  <div class="pro-price"><p>€ 4,00</p></div>
+  <button class="btn btn-primary " value="32">
+    <i class="fa fa-plus  " aria-hidden="true"></i>
+  </button>
+</li>
+</form>
+
+<li class="list-group-item">
+  <p>Ebiten</p>
+  <div class="pro-price"><p>€ 5,00</p></div>
+  <button class="btn btn-primary " value="33">
+    <i class="fa fa-plus  " aria-hidden="true"></i>
+  </button>
+</li>
+</ul>
+</div>
+</li>
+
+
+<li  class="list-group-item">
+<p class="caption">Bevande</p>
+<div class="category-item">
+  <ul class="list-group">
+
+    <li class="list-group-item">
+      <p>Coca Cola/Fanta 33cl</p>
+      <div class="pro-price"><p>€ 2,50</p></div>
+      <button class="btn btn-primary " value="40">
+        <i class="fa fa-plus  " aria-hidden="true"></i>
+      </button>
+    </li>
+
+
+  <li class="list-group-item">
+    <p>Tè Verde Giapponese 33cl  </p>
+    <div class="pro-price"><p>€ 3,00</p></div>
+    <button class="btn btn-primary " value="41">
+      <i class="fa fa-plus  " aria-hidden="true"></i>
+    </button>
+  </li>
+
+<li class="list-group-item">
+  <p>Birra Giapponese 50cl</p>
+  <div class="pro-price"><p>€ 5,00</p></div>
+  <button class="btn btn-primary " value="42">
+    <i class="fa fa-plus  " aria-hidden="true"></i>
+  </button>
+</li>
+
+
+<li class="list-group-item">
+  <p>Acqua 25cl</p>
+  <div class="pro-price"><p>€ 1,00</p></div>
+  <button class="btn btn-primary " value="43">
+    <i class="fa fa-plus  " aria-hidden="true"></i>
+  </button>
+</li>
+</ul>
+</div>
+</li>
 </ul>
 </section>
 
 
-<footer class=" text-center container-fluid ">
-  <div class="row first">
-    <div class="contact col-sm-3">
-      <i class="fa fa-phone fa-2x"></i>
-      <p> 0547 673522</p>
-    </div>
-    <div class="contact col-sm-3">
-      <i class="fa fa-map-marker fa-2x"></i>
-      <p>Viale Trento, 34
-        <br>47042 cesenatico(FC)</p>
-      </div>
-      <div class="contact col-sm-3">
-        <i class="fa fa-envelope fa-2x"></i>
-        <p>okinawaCesenatico.it</p>
-      </div>
 
+<section>
+  <div class="container-fluid text-center">
+    <h3>Contatti</h3>
+    <div class="row">
       <div class="contact col-sm-3">
-        <div class="row second">
-          <div class="contact col-sm-6">
-            <i class="fa fa-facebook-f fa-2x"></i>
-            <i class="fa fa-instagram fa-2x"></i>
-            <i class="fa fa-tripadvisor fa-2x"></i>
-            <i class="fa fa-twitter fa-2x"></i>
-          </div>
-          <div class="contact col-sm-6">
-            <img class=" img-responsive" src="img/app.svg" style="float:left;"></img>
-            <img class=" img-responsive" src="img/google.png" style="float:right;height:40px;">
+        <i class="fa fa-phone fa-2x"></i><br>
+        <a href="tel:0547 673522" target="_blank"> 0547 673522</a>
+      </div>
+      <div class="contact col-sm-3">
+        <i class="fa fa-map-marker fa-2x"></i><br>
+        <a href="https://goo.gl/maps/mEad6reUpAS2" target="_blank">Via Puglie, 65
+          <br>47521 Cesena FC</a>
+        </div>
+        <div class="contact col-sm-3">
+          <i class="fa fa-envelope fa-2x"></i><br>
+          <a href="mailto:FastEat@gmail.com">FastEat@gmail.it</a>
+        </div>
+
+        <div class="contact col-sm-3">
+          <div class="row">
+            <div class="contact col-sm-6">
+              <a><i class="fab fa-facebook-f fa-2x"></i></a>
+              <a><i class="fab fa-instagram fa-2x"></i></a>
+              <a><i class="fab fa-tripadvisor fa-2x"></i></a>
+              <a><i class="fab fa-twitter fa-2x"></i></a>
+            </div>
+            <div class="contact col-sm-6">
+              <img class="app img-responsive" src="img/app.svg" ></img>
+              <img class="app img-responsive" src="img/google.png" style="height:40px;">
+            </div>
           </div>
         </div>
       </div>
-      <div class=" separator"></div>
-      <div class="pie">
-        <p>@FastEat S.R.L 2018
-          <br>Partita Iva:124248912312
-          <br>
-          <a href="file/privacy.pdf">
-            <u>termini e condizioni d'uso privacy</u>
-          </a>
-        </p>
-      </div>
-    </footer>
+    </div>
 
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/fastEat.js"></script>
-  </body>
+  </section>
 
-  </html>
+  <footer class=" text-center container-fluid ">
+    <div class="pie">
+      <p>@FastEat S.R.L 2018
+        <br>Partita Iva:124248912312
+        <br>
+        <a data-toggle="modal" data-target="#policyPrivacyModal">
+          <u>termini e condizioni d'uso privacy</u>
+        </a>
+      </p>
+    </div>
+
+
+  </footer>
+
+
+
+
+
+    <!-- Modal detail privacy  -->
+    <div class="modal fade" id="policyPrivacyModal" tabindex="-1" role="dialog" aria-labelledby="policyPrivacyModal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">IT policies, disclaimers and notices  privacy policy</p>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+
+            <h3>policy privacy</h3>
+            <p> A privacy policy explains how you will respect the privacy of your website users. It says what information you will gather, how you will use it and how you will keep it secure. You will need a privacy policy:
+
+              if you collect personal information
+              to make sure that you comply with data protection legislation in the UK</p>
+              <h4>IMPORTANT: The General Data Protection Regulation (GDPR) will apply in the UK from 25 May 2018. It will replace the 1998 Data Protection Act and introduce new rules on privacy notices, as well as processing and safeguarding personal data. We will be updating this privacy policy template ahead of 25 May to reflect the new rules.</h4>
+
+              <p>
+                Website privacy policy
+                This privacy policy sets out how [business name] uses and protects any information that you give [business name] when you use this website.
+
+                [business name] is committed to ensuring that your privacy is protected. Should we ask you to provide certain information by which you can be identified when using this website, then you can be assured that it will only be used in accordance with this privacy statement.
+
+                [business name] may change this policy from time to time by updating this page. You should check this page from time to time to ensure that you are happy with any changes. This policy is effective from [date].</p>
+
+                <h4>  What we collect</h4>
+                <p>  We may collect the following information:
+
+                  name and job title
+                  contact information including email address
+                  demographic information such as postcode, preferences and interests
+                  other information relevant to customer surveys and/or offers
+                  What we do with the information we gather
+                  We require this information to understand your needs and provide you with a better service, and in particular for the following reasons</p>
+
+                  <h4>Internal record keeping.</h4>
+                  <p>  We may use the information to improve our products and services.
+                    We may periodically send promotional emails about new products, special offers or other information which we think you may find interesting using the email address which you have provided.
+                    From time to time, we may also use your information to contact you for market research purposes. We may contact you by email, phone, fax or mail. We may use the information to customise the website according to your interests.
+                    Security
+                    We are committed to ensuring that your information is secure. In order to prevent unauthorised access or disclosure, we have put in place suitable physical, electronic and managerial procedures to safeguard and secure the information we collect online.</p>
+
+
+                    <h4>  Links to other websites</h4>
+                    <p>    Our website may contain links to other websites of interest. However, once you have used these links to leave our site, you should note that we do not have any control over that other website. Therefore, we cannot be responsible for the protection and privacy of any information which you provide whilst visiting such sites and such sites are not governed by this privacy statement. You should exercise caution and look at the privacy statement applicable to the website in question.</p>
+
+                    <h4>  Controlling your personal information</h4>
+                    <p>    You may choose to restrict the collection or use of your personal information in the following ways
+                    </p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            <script src="js/fastEat.js"></script>
+            <script src="js/cookiesModalWindow.js"></script>
+          </body>
+
+          </html>
