@@ -63,7 +63,7 @@ if(isset($_SESSION["logged"])){
     <div class="carousel-caption text-left">
 
       <p class="lead font-weight-normal">
-        Stanco di solito pranzo ?<br>
+        Stanco del solito pranzo ?<br>
         sushi freschi tutti giorni.</p>
 
         <div class="input-group mb-3">
