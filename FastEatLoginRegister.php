@@ -1,60 +1,7 @@
 <?php
 session_start();
-include("db_con.php");
-
-if(isset($_POST["logIn"])){
-  echo "login";
-  $_SESSION["email"]=$conn->real_escape_string($_POST["email"]);
-  $_SESSION["password"]=md5($_POST["psw"]);
-
-  $query = "SELECT * FROM users WHERE email='".$_SESSION["email"]."' AND password ='".$_SESSION["password"]."'";
-  $result=$conn->query($query);
-  if($result->num_rows>0){
-    $row = $result->fetch_assoc();
-    $_SESSION["logged"] =true;
-    header("location:Menu.php");
-  }else {
-    $_POST["logIn"]=null;
-  }
-}
-
-
-
-if(isset($_POST["signUp"])){
-  if($_SESSION["logged"]==false){
-  $email=(isset($_POST["email"])?clear($_POST["email"]):false);
-  $password=(isset($_POST["psw"])?clear($_POST["psw"]):false);
-  $confirmpass=(isset($_POST["rePsw"])?clear($_POST["confpsw"]):false);
-
-
-  $email=$conn->real_escape_string($email);
-  $password=md5($password);
-  $email=$conn->real_escape_string($email);
-
-
-  $query_registrazione = "INSERT INTO users (email,password) VALUES ('".$email."','".$password."')"; // se la query fallisce mostrami questo errore
-  if ($conn->query($query_registrazione) === TRUE) {
-    $_SESSION["email"]=$email;
-    $_SESSION["password"]=$password;
-    $_SESSION["logIn"]=true;
-    $_SESSION["signUp"]=true;
-    header("Location:FastEat.php");
-  }
-  else {
-    echo "signup";
-    $_SESSION["signUp"]=false;
-  }
-}
-
-}
-function clear($var){
-  return trim($var);
-}
-
 
 ?>
-
-
 <html lang="it">
 
 <head>
@@ -106,7 +53,7 @@ function clear($var){
         <hr>
       </div>
 
-      <form method="post">
+      <form id="LoginForm" method="post" action="server.php">
         <!--Login form-->
         <div class="form-group">
           <label for="InputEmail1">Email address</label>
@@ -124,7 +71,7 @@ function clear($var){
       </br>
       <button type="submit" name="logIn" class="loginBtn btn btn-primary">Log In</button>
     </form>
-    <p>Non hai ancora un account ? <button type="button" class="btn btn-link" id="signUpForm">Registrati</button></p>
+    <p>Non hai ancora un account ? <button type="button" class="btn btn-link" id="TosignUp">Registrati</button></p>
   </div>
 
 
@@ -135,18 +82,18 @@ function clear($var){
       <p class="loginCaption"><i class="fas fa-angle-left "></i>  SIGN UP  </p>
       <hr>
     </div>
-    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" >
+    <form id="signUpForm" method="post" action="server.php" >
       <div class="form-group">
         <label for="InputEmail1">Email address</label>
-        <input type="email" name="email" class="form-control" id="signUpEmail1" aria-describedby="emailHelp" placeholder="Inserisce email">
+        <input type="email" name="email" class="form-control" id="signUpEmail" aria-describedby="emailHelp" placeholder="Inserisce email">
       </div>
       <div class="form-group">
         <label for="InputPassword1">Password</label>
-        <input type="password"  name="psw" class="form-control" id="signUpPassword1" placeholder="Password">
+        <input type="password"  name="psw" class="form-control" id="signUpPassword" placeholder="Password">
       </div>
       <div class="form-group">
         <label for="InputPassword1">Di-nuovo password</label>
-        <input type="password" name="rePsw"class="form-control" id="RepertPassword1" placeholder="Di-nuovo Password">
+        <input type="password" name="rePsw"class="form-control" id="RepertPassword" placeholder="Di-nuovo Password">
       </div>
 
       <button type="submit" name="signUp" class="SignUpBtn btn btn-primary">Sign Up</button>
@@ -155,38 +102,6 @@ function clear($var){
       </small>
     </form>
   </div>
-
-
-<?php
-if(isset($_SESSION["signUp"])){
-
-    echo "ciao";
-if($_SESSION["signUp"]==false)
-{
-
-echo "<div class='modal' tabindex='-1' role='dialog'>
-  <div class='modal-dialog' role='document'>
-    <div class='modal-content'>
-      <div class='modal-header'>
-        <h5 class='modal-title'>Modal title</h5>
-        <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
-          <span aria-hidden='true'>&times;</span>
-        </button>
-      </div>
-      <div class='modal-body'>
-        <p>Modal body text goes here.</p>
-      </div>
-      <div class='modal-footer'>
-        <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
-        <button type='button' class='btn btn-primary'>Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>";
-
-}
-}
-?>
 
 
 
