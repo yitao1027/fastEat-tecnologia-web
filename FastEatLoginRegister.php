@@ -21,28 +21,31 @@ if(isset($_POST["logIn"])){
 
 
 if(isset($_POST["signUp"])){
-  echo "SignUp";
+  if($_SESSION["logged"]==false){
   $email=(isset($_POST["email"])?clear($_POST["email"]):false);
   $password=(isset($_POST["psw"])?clear($_POST["psw"]):false);
   $confirmpass=(isset($_POST["rePsw"])?clear($_POST["confpsw"]):false);
 
-  if(empty($email)||empty($password)||empty($confirmpass)||empty($email))
-  {
-    $err="<p>Campi vuoti</p>";
-  }
+
   $email=$conn->real_escape_string($email);
   $password=md5($password);
   $email=$conn->real_escape_string($email);
+
+
   $query_registrazione = "INSERT INTO users (email,password) VALUES ('".$email."','".$password."')"; // se la query fallisce mostrami questo errore
   if ($conn->query($query_registrazione) === TRUE) {
     $_SESSION["email"]=$email;
     $_SESSION["password"]=$password;
-    $_SESSION["logged"]=true;
+    $_SESSION["logIn"]=true;
+    $_SESSION["signUp"]=true;
     header("Location:FastEat.php");
   }
   else {
-    $_POST["signUp"]=null;
+    echo "signup";
+    $_SESSION["signUp"]=false;
   }
+}
+
 }
 function clear($var){
   return trim($var);
@@ -132,7 +135,7 @@ function clear($var){
       <p class="loginCaption"><i class="fas fa-angle-left "></i>  SIGN UP  </p>
       <hr>
     </div>
-    <form method="post">
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" >
       <div class="form-group">
         <label for="InputEmail1">Email address</label>
         <input type="email" name="email" class="form-control" id="signUpEmail1" aria-describedby="emailHelp" placeholder="Inserisce email">
@@ -152,6 +155,39 @@ function clear($var){
       </small>
     </form>
   </div>
+
+
+<?php
+if(isset($_SESSION["signUp"])){
+
+    echo "ciao";
+if($_SESSION["signUp"]==false)
+{
+
+echo "<div class='modal' tabindex='-1' role='dialog'>
+  <div class='modal-dialog' role='document'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <h5 class='modal-title'>Modal title</h5>
+        <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+          <span aria-hidden='true'>&times;</span>
+        </button>
+      </div>
+      <div class='modal-body'>
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class='modal-footer'>
+        <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
+        <button type='button' class='btn btn-primary'>Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>";
+
+}
+}
+?>
+
 
 
 </section>
