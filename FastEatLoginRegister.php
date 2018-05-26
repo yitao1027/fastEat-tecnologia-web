@@ -46,6 +46,24 @@ session_start();
 
 
 
+
+  <div id="divMsg" class='modal' tabindex='-1' role='dialog'>
+    <div class='modal-dialog' role='document'>
+      <div class='modal-content'>
+        <div class='modal-body'>
+          <p id="responseMsg"></p>
+          <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+            <span aria-hidden='true'>&times;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
   <section>
     <div  id="LogIn" class="container-fluid underNav">
       <div class="text-center">
@@ -53,7 +71,7 @@ session_start();
         <hr>
       </div>
 
-      <form id="LoginForm" method="post" action="server.php">
+      <form id="logInForm" method="post" action="server.php">
         <!--Login form-->
         <div class="form-group">
           <label for="InputEmail1">Email address</label>
@@ -71,7 +89,7 @@ session_start();
       </br>
       <button type="submit" name="logIn" class="loginBtn btn btn-primary">Log In</button>
     </form>
-    <p>Non hai ancora un account ? <button type="button" class="btn btn-link" id="TosignUp">Registrati</button></p>
+    <p>Non hai ancora un account ?<button type="button" class="btn btn-link" id="TosignUp">Registrati</button></p>
   </div>
 
 
