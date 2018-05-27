@@ -1,7 +1,6 @@
 <?php
-
+session_start();
 include("db_con.php");
-
 
 $content = file_get_contents("php://input");
 $obj=json_decode($content,false);
@@ -18,10 +17,13 @@ if($obj->{'POST'}=="signUp"){
 
   if($result===TRUE){
     //http_response_code(200);
-    echo "Registrato,benvenuto";
+    $_SESSION["user"]=$email;
+    $_SESSION["logIn"]=true;
+    echo "Registrazione effettuato. Benvenuto $email";
+
   }else{
     //  http_response_code(404  );
-    echo "Errore Registrazione";
+    echo "Errore Registrazione,utente già registrato";
   }
 }
 
@@ -38,10 +40,11 @@ if($obj->{'POST'}=="logIn"){
   $result=$conn->query($query);
 
   if($result->num_rows>0){
-    $row = $result->fetch_assoc();
-    echo "Log In effettuato , bentornato";
+    $_SESSION["user"]=$email;
+    $_SESSION["logIn"]=true;
+    echo "Log In effettuato . Bentornato $email";
   }else{
-    echo "Errore Log In";
+    echo "Errore Log in";
   }
 }
 

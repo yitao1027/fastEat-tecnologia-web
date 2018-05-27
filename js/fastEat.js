@@ -6,7 +6,16 @@ $(document).ready(function () {
 
   $(document).click(function(){
     if($("#navbar").hasClass('show')){
-    $(".navbar-collapse").collapse("toggle");}
-  })
+      $(".navbar-collapse").collapse("toggle");}
+    })
 
-});
+    $("#cookiesModal").fadeIn();
+    $("#OkCookie").click(function(){
+      $("#cookiesModal").fadeOut();
+    })
+
+    $("#detailCookie").click(function(){
+      $("#cookiesModal").fadeOut();
+    })
+
+  });

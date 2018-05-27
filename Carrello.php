@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <meta charset="utf-8" />
 <title>FastEat</title>
@@ -26,10 +28,19 @@
           <a class="nav-link" href="FASTEAT.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Menu</a>
+          <a class="nav-link" href="Menu.php">Menu</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="FastEatLoginRegister.php" >Login</a>
+          <?php
+          if(isset($_SESSION["logIn"])){
+            if($_SESSION["logIn"]==true)
+            {
+              echo "<a class='nav-link' href='Carrello.php'><i class='fas fa-user'></i>   ".$_SESSION["user"]."</a>";
+            }else{
+              echo "<a class='nav-link' href='FastEatLoginRegister.php'>Login</a>";
+            }
+          }
+          ?>
         </li>
       </ul>
     </div>

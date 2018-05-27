@@ -84,7 +84,9 @@ Section{
 }
 
 
-
+#AddressSearch{
+  border-right: none;
+}
 
 
 

@@ -1,8 +1,5 @@
 <?php
 session_start();
-$_SESSION["prodotto"]=array();
-$_SESSION["numTot"]=0;
-$_SESSION["subtotale"]=0;
 ?>
 <!DOCTYPE html>
 <html lang="it">
@@ -36,7 +33,16 @@ $_SESSION["subtotale"]=0;
             <a class="nav-link" href="Menu.php">Menu</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="FastEatLoginRegister.php" >Login</a>
+            <?php
+            if(isset($_SESSION["logIn"])){
+              if($_SESSION["logIn"]==true)
+              {
+                echo "<a class='nav-link' href='Carrello.php'><i class='fas fa-user'></i>   ".$_SESSION["user"]."</a>";
+              }else{
+                echo "<a class='nav-link' href='FastEatLoginRegister.php'>Login</a>";
+              }
+            }
+            ?>
           </li>
         </ul>
       </div>
@@ -45,13 +51,6 @@ $_SESSION["subtotale"]=0;
 
 
 
-
-
-<?php
-if(isset($_SESSION["logged"])){
-  echo("<p>".$_SESSION["logged"]."</p>");
-}
-?>
 
 
 

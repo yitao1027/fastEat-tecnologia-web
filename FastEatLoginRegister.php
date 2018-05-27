@@ -1,6 +1,11 @@
 <?php
 session_start();
-
+if(isset($_SESSION["logIn"])){
+  if($_SESSION["logIn"]==true)
+  {
+      header("location:Menu.php");
+  }
+}
 ?>
 <html lang="it">
 
@@ -12,6 +17,7 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/Custom.css" type="text/css" />
   <link rel="stylesheet" href="css/RegisterLogin.css" type="text/css" />
+
 </head>
 
 <body>
@@ -36,8 +42,18 @@ session_start();
           <li class="nav-item">
             <a class="nav-link" href="Menu.php">Menu</a>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="FastEatLoginRegister.php" >Login</a>
+            <?php
+            if(isset($_SESSION["logIn"])){
+              if($_SESSION["logIn"]==true)
+              {
+                echo "<a class='nav-link' href='Carrello.php'><i class='fas fa-user'></i>   ".$_SESSION["user"]."</a>";
+              }else{
+                echo "<a class='nav-link' href='FastEatLoginRegister.php'>Login</a>";
+              }
+            }
+            ?>
           </li>
         </ul>
       </div>
@@ -47,14 +63,14 @@ session_start();
 
 
 
-  <div id="divMsg" class='modal' tabindex='-1' role='dialog'>
-    <div class='modal-dialog' role='document'>
+  <div id="divMsg" class='modal fade' tabindex='-1' role='dialog'>
+    <div class='modal-dialog modal-dialog-centered' role='document'>
       <div class='modal-content'>
         <div class='modal-body'>
-          <p id="responseMsg"></p>
           <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
-            <span aria-hidden='true'>&times;</span>
+            <span aria-hidden='true'  >&times;</span>
           </button>
+          <p id="responseMsg"></p>
         </div>
       </div>
     </div>
@@ -71,15 +87,15 @@ session_start();
         <hr>
       </div>
 
-      <form id="logInForm" method="post" action="server.php">
+      <form id="logInForm" method="post" action="server.php" data-toggle="validator">
         <!--Login form-->
         <div class="form-group">
           <label for="InputEmail1">Email address</label>
-          <input type="email" name="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Inserisce email">
+          <input type="email" name="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Inserisce email" required>
         </div>
         <div class="form-group">
           <label for="InputPassword1">Password</label>
-          <input type="password" name="psw" class="form-control" id="InputPassword" placeholder="Password">
+          <input type="password" name="psw" class="form-control" minlength="8" id="InputPassword" placeholder="Password" required>
           <a href="">Password dimenticata?</a>
         </div>
         <div class="form-check">
@@ -100,18 +116,21 @@ session_start();
       <p class="loginCaption"><i class="fas fa-angle-left "></i>  SIGN UP  </p>
       <hr>
     </div>
-    <form id="signUpForm" method="post" action="server.php" >
+    <form id="signUpForm" method="post" action="server.php">
       <div class="form-group">
         <label for="InputEmail1">Email address</label>
-        <input type="email" name="email" class="form-control" id="signUpEmail" aria-describedby="emailHelp" placeholder="Inserisce email">
+        <input type="email" name="email" class="form-control" id="signUpEmail" aria-describedby="emailHelp" placeholder="Inserisce email" required>
       </div>
       <div class="form-group">
         <label for="InputPassword1">Password</label>
-        <input type="password"  name="psw" class="form-control" id="signUpPassword" placeholder="Password">
+        <input type="password"  name="psw" class="form-control" id="signUpPassword" minlength="8" placeholder="Password" required>
       </div>
       <div class="form-group">
         <label for="InputPassword1">Di-nuovo password</label>
-        <input type="password" name="rePsw"class="form-control" id="RepertPassword" placeholder="Di-nuovo Password">
+        <input type="password" name="rePsw" class="form-control" id="RepertPassword" minlength="8" placeholder="Di-nuovo Password" data-pattern-mismatch="controlla password" required>
+        <div class="invalid-feedback">
+          controlla password inseriti
+        </div>
       </div>
 
       <button type="submit" name="signUp" class="SignUpBtn btn btn-primary">Sign Up</button>
