@@ -38,14 +38,13 @@ session_start();
           </li>
           <li class="nav-item">
             <?php
-            if(isset($_SESSION["logIn"])){
-              if($_SESSION["logIn"]==true)
-              {
+            if(isset($_SESSION["logIn"])&&$_SESSION["logIn"]==true){
+
                 echo "<a class='nav-link' href='Carrello.php'><i class='fas fa-user'></i>   ".$_SESSION["user"]."</a>";
               }else{
                 echo "<a class='nav-link' href='FastEatLoginRegister.php'>Login</a>";
               }
-            }
+
             ?>
           </li>
         </ul>

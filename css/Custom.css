@@ -79,7 +79,7 @@ Section{
 
 
 #infowindow-content{
-        font-weight: bold;
+    font-weight: bold;
 
 }
 
@@ -115,4 +115,10 @@ color: white;
 
 .fab{
   margin: 0 5px;
+}
+
+
+#logOutBtn
+{
+  border: 1px solid grey;
 }

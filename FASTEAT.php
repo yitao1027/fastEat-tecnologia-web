@@ -34,14 +34,13 @@ session_start();
           </li>
           <li class="nav-item">
             <?php
-            if(isset($_SESSION["logIn"])){
-              if($_SESSION["logIn"]==true)
-              {
+            if(isset($_SESSION["logIn"])&&$_SESSION["logIn"]==true){
+
                 echo "<a class='nav-link' href='Carrello.php'><i class='fas fa-user'></i>   ".$_SESSION["user"]."</a>";
               }else{
                 echo "<a class='nav-link' href='FastEatLoginRegister.php'>Login</a>";
               }
-            }
+
             ?>
           </li>
         </ul>
@@ -212,66 +211,70 @@ session_start();
       </div>
 
 
-
-      <!-- Modal detail privacy  -->
-      <div class="modal fade" id="policyPrivacyModal" tabindex="-1" role="dialog" aria-labelledby="policyPrivacyModal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">IT policies, disclaimers and notices  privacy policy</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
+      <div class="cart-container">
+        <button class="btn btn-secondary"><i class="fas fa-shopping-cart"></i></</button>
+      </div>
 
 
-              <h3>policy privacy</h3>
-              <p> A privacy policy explains how you will respect the privacy of your website users. It says what information you will gather, how you will use it and how you will keep it secure. You will need a privacy policy:
-
-                if you collect personal information
-                to make sure that you comply with data protection legislation in the UK</p>
-                <h4>IMPORTANT: The General Data Protection Regulation (GDPR) will apply in the UK from 25 May 2018. It will replace the 1998 Data Protection Act and introduce new rules on privacy notices, as well as processing and safeguarding personal data. We will be updating this privacy policy template ahead of 25 May to reflect the new rules.</h4>
-
-                <p>
-                  Website privacy policy
-                  This privacy policy sets out how [business name] uses and protects any information that you give [business name] when you use this website.
-
-                  [business name] is committed to ensuring that your privacy is protected. Should we ask you to provide certain information by which you can be identified when using this website, then you can be assured that it will only be used in accordance with this privacy statement.
-
-                  [business name] may change this policy from time to time by updating this page. You should check this page from time to time to ensure that you are happy with any changes. This policy is effective from [date].</p>
-
-                  <h4>  What we collect</h4>
-                  <p>  We may collect the following information:
-
-                    name and job title
-                    contact information including email address
-                    demographic information such as postcode, preferences and interests
-                    other information relevant to customer surveys and/or offers
-                    What we do with the information we gather
-                    We require this information to understand your needs and provide you with a better service, and in particular for the following reasons</p>
-
-                    <h4>Internal record keeping.</h4>
-                    <p>  We may use the information to improve our products and services.
-                      We may periodically send promotional emails about new products, special offers or other information which we think you may find interesting using the email address which you have provided.
-                      From time to time, we may also use your information to contact you for market research purposes. We may contact you by email, phone, fax or mail. We may use the information to customise the website according to your interests.
-                      Security
-                      We are committed to ensuring that your information is secure. In order to prevent unauthorised access or disclosure, we have put in place suitable physical, electronic and managerial procedures to safeguard and secure the information we collect online.</p>
+        <!-- Modal detail privacy  -->
+        <div class="modal fade" id="policyPrivacyModal" tabindex="-1" role="dialog" aria-labelledby="policyPrivacyModal" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">IT policies, disclaimers and notices  privacy policy</p>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
 
 
-                      <h4>  Links to other websites</h4>
-                      <p>    Our website may contain links to other websites of interest. However, once you have used these links to leave our site, you should note that we do not have any control over that other website. Therefore, we cannot be responsible for the protection and privacy of any information which you provide whilst visiting such sites and such sites are not governed by this privacy statement. You should exercise caution and look at the privacy statement applicable to the website in question.</p>
+                <h3>policy privacy</h3>
+                <p> A privacy policy explains how you will respect the privacy of your website users. It says what information you will gather, how you will use it and how you will keep it secure. You will need a privacy policy:
 
-                      <h4>  Controlling your personal information</h4>
-                      <p>    You may choose to restrict the collection or use of your personal information in the following ways
-                      </p>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  if you collect personal information
+                  to make sure that you comply with data protection legislation in the UK</p>
+                  <h4>IMPORTANT: The General Data Protection Regulation (GDPR) will apply in the UK from 25 May 2018. It will replace the 1998 Data Protection Act and introduce new rules on privacy notices, as well as processing and safeguarding personal data. We will be updating this privacy policy template ahead of 25 May to reflect the new rules.</h4>
+
+                  <p>
+                    Website privacy policy
+                    This privacy policy sets out how [business name] uses and protects any information that you give [business name] when you use this website.
+
+                    [business name] is committed to ensuring that your privacy is protected. Should we ask you to provide certain information by which you can be identified when using this website, then you can be assured that it will only be used in accordance with this privacy statement.
+
+                    [business name] may change this policy from time to time by updating this page. You should check this page from time to time to ensure that you are happy with any changes. This policy is effective from [date].</p>
+
+                    <h4>  What we collect</h4>
+                    <p>  We may collect the following information:
+
+                      name and job title
+                      contact information including email address
+                      demographic information such as postcode, preferences and interests
+                      other information relevant to customer surveys and/or offers
+                      What we do with the information we gather
+                      We require this information to understand your needs and provide you with a better service, and in particular for the following reasons</p>
+
+                      <h4>Internal record keeping.</h4>
+                      <p>  We may use the information to improve our products and services.
+                        We may periodically send promotional emails about new products, special offers or other information which we think you may find interesting using the email address which you have provided.
+                        From time to time, we may also use your information to contact you for market research purposes. We may contact you by email, phone, fax or mail. We may use the information to customise the website according to your interests.
+                        Security
+                        We are committed to ensuring that your information is secure. In order to prevent unauthorised access or disclosure, we have put in place suitable physical, electronic and managerial procedures to safeguard and secure the information we collect online.</p>
+
+
+                        <h4>  Links to other websites</h4>
+                        <p>    Our website may contain links to other websites of interest. However, once you have used these links to leave our site, you should note that we do not have any control over that other website. Therefore, we cannot be responsible for the protection and privacy of any information which you provide whilst visiting such sites and such sites are not governed by this privacy statement. You should exercise caution and look at the privacy statement applicable to the website in question.</p>
+
+                        <h4>  Controlling your personal information</h4>
+                        <p>    You may choose to restrict the collection or use of your personal information in the following ways
+                        </p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
 
 

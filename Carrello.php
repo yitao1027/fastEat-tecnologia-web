@@ -32,14 +32,15 @@ session_start();
         </li>
         <li class="nav-item">
           <?php
-          if(isset($_SESSION["logIn"])){
-            if($_SESSION["logIn"]==true)
-            {
-              echo "<a class='nav-link' href='Carrello.php'><i class='fas fa-user'></i>   ".$_SESSION["user"]."</a>";
+          if(isset($_SESSION["logIn"])&&$_SESSION["logIn"]==true){
+
+              echo "<div class='row' style='margin:0;'><div class='col-8' style='padding:0'><a class='nav-link ' href='Carrello.php'><i class='fas fa-user'></i>   ".$_SESSION["user"]."</a></div>";
+              echo "<div class='col-4'style='padding:0;display:flex; align-items: center;justify-content: flex-end;'><button id='logOutBtn' type='button' class='btn btn-link'><i class='fas fa-sign-out-alt'></i></button></div></div>";
             }else{
               echo "<a class='nav-link' href='FastEatLoginRegister.php'>Login</a>";
             }
-          }
+
+
           ?>
         </li>
       </ul>
@@ -174,6 +175,21 @@ session_start();
           </footer>
 
 
+          <div id="divMsg" class='modal fade' tabindex='-1' role='dialog'>
+            <div class='modal-dialog modal-dialog-centered' role='document'>
+              <div class='modal-content'>
+                <div class='modal-body'>
+                  <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                    <span aria-hidden='true'  >&times;</span>
+                  </button>
+                  <p id="responseMsg"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
           <div class="cart-container">
             <button class="btn btn-secondary"><i class="fas fa-shopping-cart"></i></</button>
           </div>
@@ -246,7 +262,7 @@ session_start();
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
                     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
                     <script src="js/fastEat.js"></script>
-                    <script src="js/cookiesModalWindow.js"></script>
+
                   </body>
 
                   </html>

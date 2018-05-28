@@ -72,12 +72,17 @@ function checkPsw(){
 
       $("#responseMsg").html(data);
       $("#divMsg").modal('toggle');
-      
+
 
     },"text");
 
   });
 
+
+  $("#divMsg").on('hidden.bs.modal', function (e) {
+
+    document.location.href ="Menu.php";
+})
 
 
   /*

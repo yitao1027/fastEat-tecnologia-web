@@ -4,6 +4,11 @@ include("db_con.php");
 
 $content = file_get_contents("php://input");
 $obj=json_decode($content,false);
+if($obj=="logOut"){
+  $_SESSION["user"]=null;
+  $_SESSION["logIn"]=false;
+  echo "Log Out effettuato";
+}else{
 
 if($obj->{'POST'}=="signUp"){
   $email=clear($obj->{'email'});
@@ -47,7 +52,7 @@ if($obj->{'POST'}=="logIn"){
     echo "Errore Log in";
   }
 }
-
+}
 
 function clear($var){
   return trim($var);

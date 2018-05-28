@@ -7,4 +7,9 @@
         $("#listMenu").after(data);
     });
 
+
+    $(".ordine").click(function(){
+
+    });
+
   });
