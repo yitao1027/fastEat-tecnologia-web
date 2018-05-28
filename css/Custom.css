@@ -14,7 +14,6 @@
 
 
 .cart-container{
-  display: none;
   position: fixed;
   left: 20px;
   bottom:20px;
@@ -121,4 +120,5 @@ color: white;
 #logOutBtn
 {
   border: 1px solid grey;
+  color: orange;
 }

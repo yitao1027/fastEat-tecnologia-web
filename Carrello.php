@@ -53,71 +53,6 @@ session_start();
 
 
 <div class="container-fluid underNav">
-        <?php
-        if(isset($_POST["prodotto"])){
-          if(isset($_SESSION["prodotto"]) && array_key_exists($_POST["prodotto"],$_SESSION["prodotto"])){
-            $_SESSION["prodotto"][$_POST["prodotto"]]= $_SESSION["prodotto"][$_POST["prodotto"]]+1;
-            $_SESSION["numTot"]=array_sum($_SESSION["prodotto"]);
-          }else {
-            $_SESSION["prodotto"][$_POST["prodotto"]]="1";
-          }
-          $_SESSION["numTot"]=array_sum($_SESSION["prodotto"]);
-        }
-        ?>
-        <p id="numpiatti" hidden><?php echo($_SESSION["numTot"]) ?></p>
-        <section class="Carrello">
-          <h3>Carrello</h3>
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th><i class="fa fa-shopping-cart fa-2x list-item" aria-hidden="true"></i></th>
-                <th>Prodotto</th>
-                <th>Quantità</th>
-                <th>Totale</th>
-              </tr>
-            </thead>
-            <tbody>
-
-
-              <?php
-              foreach ($_SESSION["prodotto"] as $key => $value) {
-                $query = "SELECT * FROM listaprodotto WHERE PiattoN='".$key."'";
-                $result=$conn->query($query);
-                if($result->num_rows>0){
-                  $row = $result->fetch_assoc();
-                  $totalepiatto=$value*$row["Prezzo"];
-                  echo "<tr><td><button class='btn-minus-carrello'> <i class='fa fa-minus' aria-hidden='true'></i></button></td>
-                  <td class='piattoName-tabella-carrello  text-uppercase'>".$row["piattoName"]."</td>
-                  <td class='quantita-tabella-carrello'>$value</td>
-                  <td class='totaleprezzo-tabella-carrello'>".$totalepiatto."€</td>
-                  </tr>";
-                }
-              }
-              ?>
-
-            </tbody>
-          </table>
-        </section>
-
-        <div class="totale">
-          <ul class="list-group mb-3">
-            <li class="list-group-item d-flex">
-              <p>subtotale</p>
-              <span><?php  if(isset($_POST["prodotto"])){
-                $_SESSION["subtotale"]+=$totalepiatto;
-              }
-              echo($_SESSION["subtotale"])?>€</span>
-            </li>
-            <li class="list-group-item d-flex">
-              <p>Costo Consegna</p>
-              <span><?php $costConsegna=2.5; echo($costConsegna)?>€</span>
-            </li>
-            <li class="list-group-item d-flex">
-              <p>Totale</p>
-              <strong ><?php $totale=$_SESSION["subtotale"]+$costConsegna; echo($totale)?>€</strong>
-            </li>
-          </ul>
-        </div>
 
 </div>
 
@@ -189,10 +124,13 @@ session_start();
           </div>
 
 
-
-          <div class="cart-container">
-            <button class="btn btn-secondary"><i class="fas fa-shopping-cart"></i></</button>
-          </div>
+          <?php
+            if($_SESSION["logIn"]==true){
+              echo "<div class='cart-container'>
+                  <button class='btn btn-secondary'><i class='fas fa-shopping-cart'></i></</button>
+                </div>";
+              }
+          ?>
 
 
             <!-- Modal detail privacy  -->

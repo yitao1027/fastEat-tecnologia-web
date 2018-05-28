@@ -7,7 +7,7 @@ $obj=json_decode($content,false);
 if($obj=="logOut"){
   $_SESSION["user"]=null;
   $_SESSION["logIn"]=false;
-  echo "Log Out effettuato";
+  echo "Log Out effettuato ";
 }else{
 
 if($obj->{'POST'}=="signUp"){

@@ -22,10 +22,10 @@ if ($category->num_rows > 0) {
       while($row = $result->fetch_assoc()) {
         echo "<div class='row'>
         <div class='col-6'>
-        <p>".$row["piattoName"]."</p>
-        <p>€ ".$row["Prezzo"]."</p></div>
+        <p id=".$row["PiattoN"]."name >".$row["piattoName"]."</p>
+        <p id=".$row["PiattoN"]."prezzo >€ ".$row["Prezzo"]."</p></div>
         <div class='col-6 divPlus'>
-        <button class='btn ordine btn-outline-dark'style='color:orange;' value=".$row["PiattoN"].">
+        <button class='btn ordine 'style='color:orange;' value=".$row["PiattoN"].">
         <i class='fa fa-plus' aria-hidden='true'></i>
         </button>
         </div>
