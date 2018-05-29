@@ -3,7 +3,6 @@ session_start();
 include("db_con.php");
 
 
-
 $query ="SELECT DISTINCT (categoria) FROM listaprodotto";
 $category= $conn->query($query);
 

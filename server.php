@@ -6,6 +6,7 @@ $content = file_get_contents("php://input");
 $obj=json_decode($content,false);
 
 
+
 if($obj=="logOut"){
   $_SESSION["user"]=null;
   $_SESSION["logIn"]=false;
@@ -13,15 +14,7 @@ if($obj=="logOut"){
   echo "Log Out effettuato ";
 }else{
 
-if(isset($_GET["ordine"])){
-    echo $_SESSION["ordine"];
-}
-else if($obj->{'POST'}=="listaCarrello"){
-  echo "ok";
-  $_SESSION["ordine"]=$obj;
-
-
-}else if($obj->{'POST'}=="signUp"){
+ if($obj->{'POST'}=="signUp"){
   $email=clear($obj->{'email'});
   $password=clear($obj->{'psw'});
 
