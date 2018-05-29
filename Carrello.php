@@ -42,7 +42,6 @@ session_start();
               echo "<a class='nav-link' href='FastEatLoginRegister.php'>Login</a>";
             }
 
-
           ?>
         </li>
       </ul>
@@ -56,13 +55,21 @@ session_start();
 
 <div class="container-fluid underNav">
 
+  <div class="row">
+    <div class="col">img</div>
+    <div class="w-100"></div>
+    <div class="col">piattoName</div>
+    <div class="col">quantità</div>
+    <div class="col">prezzototale</div>
+  </div>
 
 <?php
     if(isset($_SESSION["ordine"])){
-        echo "<p>merda funziona</p>";
-        print_r($_SESSION["ordine"]);
+      $ordede=$_SESSION["ordine"];
       }
   ?>
+
+
 
 
 

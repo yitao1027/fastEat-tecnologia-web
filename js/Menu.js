@@ -12,9 +12,10 @@ $(document).ready(function () {
 
     $.get("CarrelloServer.php","ordine",function(data){
 
-      if(data!="first"){
+
+      if(JSON.parse(data)!="first"){
         console.log("carica");
-        ordine=data;
+        ordine=JSON.parse(data);
         console.log(ordine);
       }
       });

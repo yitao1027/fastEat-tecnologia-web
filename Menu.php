@@ -14,7 +14,7 @@ session_start();
   <link rel="stylesheet" href="css/Menu.css" type="text/css" />
 </head>
 
-<body onbeforeunload="caricalista();">
+<body>
 
   <header id="Home">
     <nav class="navbar fixed-top navbar-expand-lg navbar-left  navbar-dark">
