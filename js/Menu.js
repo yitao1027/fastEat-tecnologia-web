@@ -3,15 +3,22 @@ $(document).ready(function () {
 
 
 
+
   console.log("DOM ready");
 
   var piatto;
-  var ordine=["listaCarrello"];
+  var ordine=[];
+  ordine[0]={"POST":"listaCarrello"};
+
+  $.get("server.php","ordine",function(data){
+      console.log(data);
+  });
+
 
   $.get("listaProdotto.php",function(data){
+
     $("#listMenu").after(data);
     $(".ordine").click(function(){
-      console.log("ordina prodotto");
       var found=false;
       var name=$("#"+$(this).val()+"name").html();
       var prez=$("#"+$(this).val()+"prezzo").html();
@@ -26,13 +33,16 @@ $(document).ready(function () {
         piatto={"piattoName":name,"quantità":1,"prezzo":prez};
         ordine.push(piatto);
         console.log(ordine);
-      
       }
-
-
+      caricalista();
     });
+
   });
 
+  function caricalista(){
+    $.post("server.php",ordine,function(data){
+    },"text");
+  }
 
 
 });

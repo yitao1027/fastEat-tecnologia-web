@@ -54,6 +54,16 @@ session_start();
 
 <div class="container-fluid underNav">
 
+
+<?php
+    if(isset($_SESSION["ordine"])){
+        echo "<p>merda funziona</p>";
+        print_r($_SESSION["ordine"]);
+      }
+  ?>
+
+
+
 </div>
 
 

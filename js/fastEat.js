@@ -31,8 +31,11 @@ $(document).ready(function () {
     })
 
     $("#divMsg").on('hidden.bs.modal', function (e) {
-
       location.reload();
   })
+
+  $(".cart-container").click(function(){
+      document.location.href ="Carrello.php";
+})
 
   });
