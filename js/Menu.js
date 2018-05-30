@@ -4,20 +4,21 @@ $(document).ready(function () {
 
   var piatto;
   var ordine=[];
-  ordine[0]={"POST":"listaCarrello"};
+  ordine[0]={"POST":"ordine"};
+
+  $.post("CarrelloServer.php",JSON.stringify(ordine),function(data){
+
+    if(data!="first"){
+      console.log("carica");
+      ordine=JSON.parse(data);
+    }
+    ordine[0]={"POST":"listaCarrello"};
+      console.log(ordine);
+  },"text");
 
   $.get("listaProdotto.php",function(data){
 
     $("#listMenu").after(data);
-
-    $.get("CarrelloServer.php","ordine",function(data){
-
-      if(data!="first"){
-        console.log("carica");
-        ordine=data;
-        console.log(ordine);
-      }
-      });
 
       $(".ordine").click(function(){
         var found=false;
@@ -35,18 +36,15 @@ $(document).ready(function () {
           ordine.push(piatto);
           console.log(JSON.stringify(ordine));
         }
-        caricalista();
       });
 
 });
 
 
-
-
-function caricalista(){
+$(window).on("unload", function(event){
   $.post("CarrelloServer.php",JSON.stringify(ordine),function(data){
   },"text");
-}
+});
 
 
 });

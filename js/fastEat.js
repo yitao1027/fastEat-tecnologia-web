@@ -24,7 +24,7 @@ $(document).ready(function () {
 
         $("#responseMsg").html(data);
         $("#divMsg").modal('toggle');
-
+      
 
       },"text");
 

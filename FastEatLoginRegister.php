@@ -202,7 +202,7 @@ if(isset($_SESSION["logIn"])){
 
 
   <?php
-    if($_SESSION["logIn"]==true){
+    if(isset($_SESSION["logIn"]) && $_SESSION["logIn"]==true){
       echo "<div class='cart-container'>
           <button class='btn btn-secondary'><i class='fas fa-shopping-cart'></i></</button>
         </div>";
