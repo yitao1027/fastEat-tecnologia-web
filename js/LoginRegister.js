@@ -64,25 +64,30 @@ function checkPsw(){
       }
   });
 
+  var response;
   $("#logInForm").submit(function(event){
     event.preventDefault();
     var formDataJson=ConvertFormToJSON($("#logInForm"),"logIn");
 
     $.post($("#logInForm").attr('action'),JSON.stringify(formDataJson),function(data){
-
       $("#responseMsg").html(data);
       $("#divMsg").modal('toggle');
-
-
+      if(data!="Errore Log in"){
+        $("#divMsg").on('hidden.bs.modal', function (e) {
+          document.location.href ="Menu.php";
+      });
+    }else {
+      $("#InputPassword").focus();
+    }
     },"text");
+
+
+
+
 
   });
 
 
-  $("#divMsg").on('hidden.bs.modal', function (e) {
-
-    document.location.href ="Menu.php";
-})
 
 
   /*
