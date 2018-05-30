@@ -5,32 +5,27 @@ $(document).ready(function () {
   var piatto;
   var ordine=[];
   ordine[0]={"POST":"ordine"};
-
+  var numPiatto=0;
   $.post("CarrelloServer.php",JSON.stringify(ordine),function(data){
 
     if(data!="first"){
       console.log("carica");
       ordine=JSON.parse(data);
+      numPiatto=ordine[0].totale;
+      updateQuant();
     }
-    ordine[0]={"POST":"listaCarrello"};
-      console.log(ordine);
+    ordine[0].POST="listaCarrello";
+
   },"text");
 
   $.get("listaProdotto.php",function(data){
 
-<<<<<<< HEAD
-
-      if(JSON.parse(data)!="first"){
-        console.log("carica");
-        ordine=JSON.parse(data);
-        console.log(ordine);
-      }
-      });
-=======
     $("#listMenu").after(data);
->>>>>>> 8bd1830957a199a7426e34b615fb1a3033f3e589
 
-      $(".ordine").click(function(){
+    $(".ordine").click(function(){
+
+      if($(".log").html()!="LogIn"){
+        numPiatto++;
         var found=false;
         var name=$("#"+$(this).val()+"name").html();
         var prez=$("#"+$(this).val()+"prezzo").html();
@@ -44,17 +39,29 @@ $(document).ready(function () {
         if(found==false){
           piatto={"piattoName":name,"quantità":1,"prezzo":prez};
           ordine.push(piatto);
-          console.log(JSON.stringify(ordine));
         }
-      });
+        ordine[0].totale=numPiatto;
+        $.post("CarrelloServer.php",JSON.stringify(ordine));
+        updateQuant();
+      }
+    });
 
-});
+  });
+
+  function updateQuant(){
+    if(numPiatto!=0){
+      $(".pop-item").css("display","block");
+      if(numPiatto>9){
+        $(".pop-item").css("padding-left","4px");
+      }
+      $(".pop-item").html(numPiatto);
+    }
+  }
+
+  /*  window.addEventListener('beforeunload', function(event) {
 
 
-$(window).on("unload", function(event){
-  $.post("CarrelloServer.php",JSON.stringify(ordine),function(data){
-  },"text");
-});
-
+}
+});*/
 
 });

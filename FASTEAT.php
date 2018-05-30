@@ -192,13 +192,15 @@ session_start();
       </div>
     </footer>
 
-<?php
-  if($_SESSION["logIn"]==true){
-    echo "<div class='cart-container'>
-        <button class='btn btn-secondary'><i class='fas fa-shopping-cart'></i></</button>
+    <?php
+    if($_SESSION["logIn"]==true){
+      echo "
+      <div class='cart-container'>
+      <div class='pop-item'></div>
+      <button class='btn btn-secondary'><i class='fas fa-shopping-cart'></i></</button>
       </div>";
     }
-?>
+    ?>
 
 
 
@@ -232,11 +234,13 @@ session_start();
       </div>
 
       <?php
-        if($_SESSION["logIn"]==true){
-          echo "<div class='cart-container'>
-              <button class='btn btn-secondary'><i class='fas fa-shopping-cart'></i></</button>
-            </div>";
-          }
+      if($_SESSION["logIn"]==true){
+        echo "
+        <div class='cart-container'>
+        <div class='pop-item'></div>
+        <button class='btn btn-secondary'><i class='fas fa-shopping-cart'></i></</button>
+        </div>";
+      }
       ?>
 
 
@@ -309,6 +313,7 @@ session_start();
               <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
               <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvyZ6DB32hcO3vkSpNR4JpAwh6hiRQqVc&libraries=places"></script>
               <script src="js/fastEat.js"></script>
+              <script src="js/Menu.js"></script>
               <script src="js/placeAutoComplete.js"></script>
 
             </body>

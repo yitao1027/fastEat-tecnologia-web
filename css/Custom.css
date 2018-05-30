@@ -2,14 +2,33 @@
 /*mobile first*/
 
 .navbar{
- background-color:#3e4444;
+  background-color:#3e4444;
 
 }
 .nav-link{
   color:#deeaee!important;
 }
 .navbar-collapse{
-    justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+
+
+.pop-item{
+  display: none;
+  position: fixed;
+  left: 50px;
+  bottom:50px;
+  z-index: 1500;
+  color: white;
+  width: 28px;
+  height:28px;
+  background-color: red;
+  border-radius: 50%;
+  border: none;
+  padding-left: 8px;
+  box-shadow: 0 2px 4px -1px lightGrey;
+
 }
 
 
@@ -55,7 +74,7 @@ h2{
 }
 
 .row{
- margin: 20px 0;
+  margin: 20px 0;
 }
 
 
@@ -78,7 +97,7 @@ Section{
 
 
 #infowindow-content{
-    font-weight: bold;
+  font-weight: bold;
 
 }
 
@@ -91,24 +110,24 @@ Section{
 
 
 
-
-
-
-
-
 #cookiesModal{
   top: auto;
   position: fixed;
-  z-index: 10000;
   width: 100%;
 }
 
 #cookiesModal>.personal-modal{
-padding: 10px 0;
-color: white;
+  padding: 10px 0;
+  color: white;
   background-color: black;
 }
 
+
+.caption{
+  font-size: 30px;
+  font-style: italic;
+  margin-bottom: 40px;
+}
 
 
 

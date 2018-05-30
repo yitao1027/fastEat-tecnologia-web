@@ -24,7 +24,6 @@ $(document).ready(function () {
 
         $("#responseMsg").html(data);
         $("#divMsg").modal('toggle');
-      
 
       },"text");
 
@@ -35,7 +34,7 @@ $(document).ready(function () {
   })
 
   $(".cart-container").click(function(){
-      document.location.href ="Carrello.php";
+       location.assign("Carrello.php");
 })
 
   });

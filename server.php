@@ -8,10 +8,10 @@ $obj=json_decode($content,false);
 
 
 if($obj=="logOut"){
-  $_SESSION["user"]=null;
-  $_SESSION["logIn"]=false;
-  $_SESSION["ordine"]=null;
-  echo "Log Out effettuato ";
+  session_unset();
+  session_destroy();
+  $_SESSION=null;
+  echo "Log Out effettuato";
 }else{
 
  if($obj->{'POST'}=="signUp"){

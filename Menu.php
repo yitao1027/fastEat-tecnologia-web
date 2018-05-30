@@ -39,11 +39,11 @@ session_start();
             <?php
             if(isset($_SESSION["logIn"])&&$_SESSION["logIn"]==true){
 
-                echo "<div class='row' style='margin:0;'><div class='col-8' style='padding:0'><a class='nav-link ' href='Carrello.php'><i class='fas fa-user'></i>   ".$_SESSION["user"]."</a></div>";
-                echo "<div class='col-4'style='padding:0;display:flex; align-items: center;justify-content: flex-end;'><button id='logOutBtn' type='button' class='btn btn-link'><i class='fas fa-sign-out-alt'></i></button></div></div>";
-              }else{
-                echo "<a class='nav-link' href='FastEatLoginRegister.php'>Login</a>";
-              }
+              echo "<div class='row' style='margin:0;'><div class='col-8' style='padding:0'><a class='log nav-link' href='Carrello.php'><i class='fas fa-user'></i>   ".$_SESSION["user"]."</a></div>";
+              echo "<div class='col-4'style='padding:0;display:flex; align-items: center;justify-content: flex-end;'><button id='logOutBtn' type='button' class='btn btn-link'><i class='fas fa-sign-out-alt'></i></button></div></div>";
+            }else{
+              echo "<a class='log nav-link' href='FastEatLoginRegister.php'>Login</a>";
+            }
 
 
             ?>
@@ -81,7 +81,7 @@ session_start();
   <section class="underNav">
 
     <ul class="list-group">
-      <p class="menu-caption text-center" id="listMenu">Il nostro Menu</p>
+      <p class="caption text-center" id="listMenu">Il nostro Menu</p>
 
     </ul>
   </section>
@@ -141,11 +141,13 @@ session_start();
 
 
     <?php
-      if($_SESSION["logIn"]==true){
-        echo "<div class='cart-container'>
-            <button class='btn btn-secondary'><i class='fas fa-shopping-cart'></i></</button>
-          </div>";
-        }
+    if($_SESSION["logIn"]==true){
+      echo "
+      <div class='cart-container'>
+      <div class='pop-item'></div>
+      <button class='btn btn-secondary'><i class='fas fa-shopping-cart'></i></</button>
+      </div>";
+    }
     ?>
 
 
