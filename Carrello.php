@@ -58,21 +58,26 @@ session_start();
 
     <?php
 
-    if(isset($_SESSION["ordine"])){
-      $order=$_SESSION["ordine"];
+    if(isset($_SESSION["ordine"]) && count($_SESSION["ordine"])>1){
+
+      $order=array_slice($_SESSION["ordine"], 1, count($_SESSION["ordine"]));;
 
       $subtotale=0;
-      for($x=1;$x<count($order);$x++){
-        $piatto=$order[$x]->{'piattoName'};
-        $quantita=$order[$x]->{'quantità'};
-        $prezzo=$order[$x]->{'prezzo'};
+
+      foreach($order as $item) {
+      //($x=1;$x<count($order);$x++){
+
+        $piatto=$item->{'piattoName'};
+        $quantita=$item->{'quantità'};
+        $prezzo=$item->{'prezzo'};
+
 
         $totalePiatto=str_replace("€", "", $prezzo)*$quantita;
         $esempioImg="salmone nigiri";
         echo"<div class='row'>
         <div class='col'>
         <img class='img-fluid' src='img/".$esempioImg.".jpg' alt=".$piatto.">
-        <small><button class='btn btn-link'>rimuovi</button></small>
+        <small><button class='btn btn-link rimuovi' value='".$piatto."'>rimuovi</button></small>
         </div>
         <div class='col'>
         <p>".$piatto."</p>
@@ -98,8 +103,13 @@ session_start();
       </div>";
 
 
+    }else {
+      echo  "<p style='font-size:30px;'>VUOTO</p>";
     }
     ?>
+    </div>
+
+    <div>
     </div>
 
 
@@ -227,7 +237,7 @@ session_start();
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
         </div>
-        </div>
+      </div>
         </div>
 
 

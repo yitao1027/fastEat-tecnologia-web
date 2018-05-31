@@ -193,12 +193,14 @@ session_start();
     </footer>
 
     <?php
-    if($_SESSION["logIn"]==true){
+    if(isset($_SESSION["logIn"])){
+      if($_SESSION["logIn"]==true){
       echo "
       <div class='cart-container'>
       <div class='pop-item'></div>
       <button class='btn btn-secondary'><i class='fas fa-shopping-cart'></i></</button>
       </div>";
+    }
     }
     ?>
 

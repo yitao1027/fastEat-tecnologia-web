@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-
   console.log("DOM ready");
   $("#cookiesModal").fadeIn();
 
@@ -36,5 +35,15 @@ $(document).ready(function () {
   $(".cart-container").click(function(){
        location.assign("Carrello.php");
 })
+
+$(".rimuovi").click(function(){
+    var request=[{"POST":"rimuovi"}];
+    request.push({"piattoName": $(this).attr("value")});
+     $.post("CarrelloServer.php",JSON.stringify(request),function(data){
+  location.reload();
+     },"text");
+
+})
+
 
   });

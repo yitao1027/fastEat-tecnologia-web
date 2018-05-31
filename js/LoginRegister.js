@@ -72,7 +72,7 @@ function checkPsw(){
     $.post($("#logInForm").attr('action'),JSON.stringify(formDataJson),function(data){
       $("#responseMsg").html(data);
       $("#divMsg").modal('toggle');
-      if(data!="Errore Log in"){
+      if(data=="Log In effettuato"){
         $("#divMsg").on('hidden.bs.modal', function (e) {
           document.location.href ="Menu.php";
       });

@@ -20,7 +20,7 @@ if($obj=="logOut"){
 
 
   $email=$conn->real_escape_string($email);
-  $password=md5($password);
+  $password=hash('sha256',($password));
 
   $result = $conn->query("INSERT INTO users (email,password) VALUES ('".$email."','".$password."')");
 
@@ -39,25 +39,56 @@ if($obj=="logOut"){
   $email=clear($obj->{'email'});
   $password=clear($obj->{'psw'});
 
-
   $email=$conn->real_escape_string($email);
-  $password=md5($password);
+  $random_salt = hash('sha256', uniqid(mt_rand(1, mt_getrandmax()), true));
+  $password=hash('sha256',($password));;
 
-  $query = "SELECT * FROM users WHERE email='".$email."' AND password ='".$password."'";
+  $query = "SELECT * FROM users WHERE email='".$email."'LIMIT 1";
   $result=$conn->query($query);
 
   if($result->num_rows>0){
-    $_SESSION["user"]=$email;
-    $_SESSION["logIn"]=true;
-    echo "Log In effettuato . Bentornato $email";
+    $row= $result->fetch_assoc();
+    if(checkbrute($email,$conn) == true) {
+          echo "Errore utente disabilitato! tentativi superati";
+         } else
+         {
+         if($row["password"] == $password) {
+           $_SESSION["user"]=$email;
+           $_SESSION["logIn"]=true;
+           echo "Log In effettuato";
+         }else {
+           $now = time();
+
+           $conn->query("INSERT INTO tentativiLogin (user, timer) VALUES ('".$email."', '".$now."')");
+          echo "Errore password errato";
+         }
+       }
+
   }else{
-    echo "Errore Log in";
+    echo "Errore Utente non esiste";
   }
 }
 }
 
 function clear($var){
   return trim($var);
+}
+
+
+function checkbrute($user, $mysqli) {
+
+   // Recupero il timestamp
+   $now = time();
+   // Vengono analizzati tutti i tentativi di login a partire dalle ultime due ore.
+   $valid_attempts = $now - (2 * 60 * 60);
+   if ($stmt = $mysqli->query("SELECT timer FROM tentativiLogin WHERE user = '$user' AND timer > '$valid_attempts'")) {
+
+      if($stmt->num_rows > 5) {
+           return true;
+      } else {
+         return false;
+      }
+   }
 }
 
 
