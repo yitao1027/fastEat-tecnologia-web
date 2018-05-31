@@ -141,3 +141,16 @@ Section{
   border: 1px solid grey;
   color: orange;
 }
+
+
+.costoConsegna{
+  display: none;
+}
+
+#btn-pagamento{
+  width: 100%;
+}
+
+.FormOrdine{
+  margin: 20px 0;
+}
