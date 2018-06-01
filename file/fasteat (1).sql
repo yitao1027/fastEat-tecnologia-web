@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Giu 01, 2018 alle 01:31
--- Versione del server: 10.1.30-MariaDB
--- Versione PHP: 7.2.1
+-- Creato il: Giu 01, 2018 alle 13:56
+-- Versione del server: 10.1.25-MariaDB
+-- Versione PHP: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `fasteat`
 --
+CREATE DATABASE IF NOT EXISTS `fasteat` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `fasteat`;
 
 -- --------------------------------------------------------
 
@@ -28,6 +30,7 @@ SET time_zone = "+00:00";
 -- Struttura della tabella `listaprodotto`
 --
 
+DROP TABLE IF EXISTS `listaprodotto`;
 CREATE TABLE `listaprodotto` (
   `PiattoN` text NOT NULL,
   `piattoName` text NOT NULL,
@@ -40,7 +43,7 @@ CREATE TABLE `listaprodotto` (
 --
 
 INSERT INTO `listaprodotto` (`PiattoN`, `piattoName`, `categoria`, `Prezzo`) VALUES
-('1', 'salmone nigiri', 'Nigiri', 3),
+('1', 'nigiri salmone', 'Nigiri', 3),
 ('11', 'Hosomaki Furai', 'Hosomaki', 5),
 ('12', 'Hosomaki Salmon', 'Hosomaki', 4),
 ('2', 'tonno nigiri', 'Nigiri', 4),
@@ -57,9 +60,10 @@ INSERT INTO `listaprodotto` (`PiattoN`, `piattoName`, `categoria`, `Prezzo`) VAL
 -- Struttura della tabella `tentativilogin`
 --
 
+DROP TABLE IF EXISTS `tentativilogin`;
 CREATE TABLE `tentativilogin` (
-  `user` text NOT NULL,
-  `timer` varchar(256) NOT NULL
+  `user` varchar(64) NOT NULL,
+  `timer` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -68,17 +72,18 @@ CREATE TABLE `tentativilogin` (
 -- Struttura della tabella `users`
 --
 
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
-  `email` varchar(64) NOT NULL,
-  `password` varchar(256) NOT NULL
+  `password` text,
+  `email` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dump dei dati per la tabella `users`
 --
 
-INSERT INTO `users` (`email`, `password`) VALUES
-('123prova@gmail.com', '51f9e0e7544f0908a8499fd09354530031f5612b2c36bd1638394082000bd575');
+INSERT INTO `users` (`password`, `email`) VALUES
+('1e05a02d9cce7926a5aa1c34183c96f5d333a93f461504055f8d22007d50e864', 'zhu.yt1027@gmail.com');
 
 --
 -- Indici per le tabelle scaricate
@@ -100,8 +105,7 @@ ALTER TABLE `tentativilogin`
 -- Indici per le tabelle `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`email`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD PRIMARY KEY (`email`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
