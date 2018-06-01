@@ -119,13 +119,13 @@ session_start();
       </select>
     </div>
 
-      <div class="FormOrdine" id="FormConsegna" >
-        <form action="checkOut.php" method="POST" >
+      <div class="FormOrdine" >
+        <form action="checkOut.php" id="FormConsegna"  method="POST" >
           <input type="hidden" name="tipo" value="Consegna"/>
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputDate">Data</label>
-            <input name="data" type="date" class="form-control" id="inputData" placeholder="GG/MM">
+            <input name="Data" type="date" class="form-control" id="inputData" placeholder="GG/MM">
           </div>
           <div class="form-group col-md-6">
             <label for="inputOra">Ora</label>
@@ -146,35 +146,38 @@ session_start();
             <input  name="Indirizzo"  type="text" class="form-control" id="inputAddress" placeholder="Via roma 1">
           </div>
         </div>
+        </form>
       </div>
 
-      <div class="FormOrdine" id="FormRitiro">
-    <form action="checkOut.php" method="POST" >
+      <div class="FormOrdine" >
+    <form action="checkOut.php" id="FormRitiro" method="POST" >
       <input type="hidden" name="tipo" value="Ritiro"/>
           <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputDate">Data</label>
-            <input name="data" type="date" class="form-control" id="inputData" placeholder="GG/MM">
+            <input name="Data" type="date" class="form-control" id="inputData" placeholder="GG/MM">
           </div>
           <div class="form-group col-md-6">
             <label for="inputOra">Ora</label>
-            <input name="ora" type="time" min="11:00" max="23:00" class="form-control" id="inputOra" placeholder="HH:MM">
+            <input name="Ora" type="time" min="11:00" max="23:00" class="form-control" id="inputOra" placeholder="HH:MM">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-4">
             <label for="inputName">Nome</label>
-            <input  name="nome" type="text" class="form-control" id="inputNome" placeholder="Nome">
+            <input  name="Nome" type="text" class="form-control" id="inputNome" placeholder="Nome">
           </div>
           <div class="form-group col-md-4">
             <label for="inputCell">Cellulare</label>
-            <input  name="cellulare" type="tel" class="form-control" id="inputCellulare" placeholder="+039">
+            <input  name="Cellulare" type="tel" class="form-control" id="inputCellulare" placeholder="+039">
           </div>
         </div>
+        </form>
       </div>
       <hr>
-      <div class="FormOrdine" id="FormPay">
 
+      <div class="FormOrdine">
+        <form  id="FormPay">
         <div class="form-row">
           <div class="form-group col">
             <h3>Payment</h3>
@@ -215,6 +218,7 @@ session_start();
             <label for="cvv">CVV</label>
             <input class="form-control" type="text" id="cvv" name="cvv" placeholder="352">
           </div>
+            </form>
         </div>
         <div class="row ">
           <div class="col-md-4">
@@ -223,7 +227,7 @@ session_start();
         </div>
 
       </div>
-    </form>
+
   </div>
 
   <section>

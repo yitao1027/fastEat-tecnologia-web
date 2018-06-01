@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Giu 01, 2018 alle 13:56
+-- Creato il: Giu 01, 2018 alle 16:23
 -- Versione del server: 10.1.25-MariaDB
 -- Versione PHP: 7.1.7
 
@@ -57,6 +57,20 @@ INSERT INTO `listaprodotto` (`PiattoN`, `piattoName`, `categoria`, `Prezzo`) VAL
 -- --------------------------------------------------------
 
 --
+-- Struttura della tabella `ordine`
+--
+
+DROP TABLE IF EXISTS `ordine`;
+CREATE TABLE `ordine` (
+  `email` varchar(64) NOT NULL,
+  `data` date NOT NULL,
+  `ora` time NOT NULL,
+  `ordine` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Struttura della tabella `tentativilogin`
 --
 
@@ -94,6 +108,12 @@ INSERT INTO `users` (`password`, `email`) VALUES
 --
 ALTER TABLE `listaprodotto`
   ADD PRIMARY KEY (`PiattoN`(8));
+
+--
+-- Indici per le tabelle `ordine`
+--
+ALTER TABLE `ordine`
+  ADD KEY `id` (`email`,`data`,`ora`,`ordine`);
 
 --
 -- Indici per le tabelle `tentativilogin`

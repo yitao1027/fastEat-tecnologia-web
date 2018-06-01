@@ -45,7 +45,7 @@ $(document).ready(function () {
 
     })
 
-
+      $("#FormRitiro").css("display","none");
 
 
 
@@ -63,6 +63,16 @@ $(document).ready(function () {
         });
 
       }
+    });
+
+    $("#btn-pagamento").click(function(){
+      if($("select").val()=="TipoConsegna"){
+            $("#FormConsegna").submit();
+      }else {
+            $("#FormRitiro").submit();
+      }
+      //$("#FormPay").submit();
+
     });
 
   });

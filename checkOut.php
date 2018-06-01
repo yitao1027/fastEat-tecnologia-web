@@ -11,16 +11,20 @@ require 'PHPMailer/src/SMTP.php';
 
 
 if(isset($_SESSION["ordine"])){
-  if($_POST["tipo"]=="Consegna")
-    $dettailOrdine=('".$_POST["tipo"]."".$_POST["data"]."');
-    //$dettailOrdine="$_POST["tipo"] '/t'  $_POST["data"]  $_POST["ora"]  "/n"  "user:"  $_SESSION["user"]  "/n"  $_POST["cellulare"]  "/n"  $_POST["indirizzo"]  "/n"  $_SESSION["ordine"];
-  else {
-      $dettailOrdine=" '.$_POST['tipo'].'"
-    //$dettailOrdine="$_POST["tipo"]  "/t"  $_POST["data"]  $_POST["ora"]  "/n"  "user:"  $_SESSION["user"]  "/n"  $_POST["cellulare"]  "/n"  $_SESSION["ordine"];
+
+
+  $order=$_SESSION["ordine"];
+
+  if($_POST["tipo"]=="Consegna"){
+
+    $dettailOrdine=$_POST["tipo"]."\nuser:".$_SESSION["user"]."\ncell:".$_POST["Cellulare"]."\nAddress:".$_POST["Indirizzo"];
+      array_push($order,$dettailOrdine);
+}  else {
+    $dettailOrdine=$_POST["tipo"]."\nuser:".$_SESSION["user"]."\ncell:".$_POST["Cellulare"];
     }
-    echo $dettailOrdine;
-    /*
-  if( $result = $conn->query("INSERT INTO ordine (email,ordine) VALUES ('".$email."','".$dettailOrdine."')")
+  echo($dettailOrdine);
+
+  if( $result = $conn->query("INSERT INTO ordine (email,data,ora,ordine) VALUES ('".$_SESSION["user"]."','".$_POST["Data"]."','".$_POST["Ora"]."','".$dettailOrdine."')")){
   $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
   try {
       //Server settings
@@ -40,7 +44,7 @@ if(isset($_SESSION["ordine"])){
       //Content
       $mail->isHTML(true);                                  // Set email format to HTML
       $mail->Subject = "Avviso Ordine";
-      $mail->Body    = "Ti è arrivato un ordine per"  $_POST["data"]  $_POST["ora"];
+      $mail->Body    = "Ti è arrivato un ordine per".$_POST["Data"].$_POST["Ora"];
 
       $mail->send();
       echo 'Message has been sent';
@@ -48,8 +52,9 @@ if(isset($_SESSION["ordine"])){
       $_SESSION["logIn"]=true;
   } catch (Exception $e) {
       echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
-  }*/
+  }
 
+}
 }
 
 
