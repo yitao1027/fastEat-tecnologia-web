@@ -1,6 +1,14 @@
 <?php
 session_start();
 include("db_con.php");
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+
+
 
 $content = file_get_contents("php://input");
 $obj=json_decode($content,false);
@@ -22,31 +30,43 @@ if($obj=="logOut"){
     $email=$conn->real_escape_string($email);
     $password=hash('sha256',($password));
 
-    $result = $conn->query("INSERT INTO users (email,password) VALUES ('".$email."','".$password."')");
-
-    if($result===TRUE){
 
 
-      $_SESSION["user"]=$email;
-      $_SESSION["logIn"]=true;
-      $nome_mittente = "FASTEAT";
-      $mail_mittente = "FASTEAT@libero.it";
-      $mail_destinatario = "zhu.yt1027@gmail.com";
-      $mail_oggetto = "Registrazione FASTEAT";
-      $mail_corpo = "Grazie per essere diventato il nostro cliente\nSaluto\nFastEat";
+    if( $result = $conn->query("INSERT INTO users (email,password) VALUES ('".$email."','".$password."')")){
 
-      $mail_headers = "From: " .  $nome_mittente . " <" .  $mail_mittente . ">\r\n";
-      $mail_headers .= "Reply-To: " .  $mail_mittente . "\r\n";
-      $mail_headers .= "X-Mailer: PHP/" . phpversion();
+      $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+      try {
+          //Server settings
+          $mail->SMTPDebug = 2;                                 // Enable verbose debug output
+          $mail->isSMTP();                                      // Set mailer to use SMTP
+          $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+          $mail->SMTPAuth = true;                               // Enable SMTP authentication
+          $mail->Username = 'zhu.yt1027@gmail.com';                 // SMTP username
+          $mail->Password = 'zyt.1027';                           // SMTP password
+          $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+          $mail->Port = 587;                                    // TCP port to connect to
 
-      if (mail($mail_destinatario, $mail_oggetto, $mail_corpo, $mail_headers)){
-        echo "Registrazione effettuato. Benvenuto $email";
-}
-        else
-        echo "Errore. Nessun messaggio inviato.";
+          //Recipients
+          $mail->setFrom('zhu.yt1027@gmail.com', 'Mailer');
+          $mail->addAddress($email, 'user');     // Add a recipient
+          $mail->addReplyTo('info@example.com', 'Information');
+
+
+          //Content
+          $mail->isHTML(true);                                  // Set email format to HTML
+          $mail->Subject = 'Registrazione';
+          $mail->Body    = 'Benvenuto nel mondo di FastEat';
+
+          $mail->send();
+          echo 'Message has been sent';
+          $_SESSION["user"]=$email;
+          $_SESSION["logIn"]=true;
+      } catch (Exception $e) {
+          echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+      }
 
       }else{
-        //  http_response_code(404  );
+
         echo "Errore Registrazione,utente già registrato";
       }
     }else if($obj->{'POST'}=="logIn"){

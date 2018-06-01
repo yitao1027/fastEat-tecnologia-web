@@ -119,53 +119,56 @@ session_start();
       </select>
     </div>
 
-    <form>
-      <div class="FormOrdine" id="FormConsegna">
+      <div class="FormOrdine" id="FormConsegna" >
+        <form action="checkOut.php" method="POST" >
+          <input type="hidden" name="tipo" value="Consegna"/>
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputDate">Data</label>
-            <input type="date" class="form-control" id="inputData" placeholder="GG/MM">
+            <input name="data" type="date" class="form-control" id="inputData" placeholder="GG/MM">
           </div>
           <div class="form-group col-md-6">
             <label for="inputOra">Ora</label>
-            <input type="time" min="11:00" max="23:00" class="form-control" id="inputOra" placeholder="HH:MM">
+            <input name="Ora" type="time" min="11:00" max="23:00" class="form-control" id="inputOra" placeholder="HH:MM">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-4">
             <label for="inputName">Nome</label>
-            <input type="text" class="form-control" id="inputNome" placeholder="Nome">
+            <input name="Nome" type="text" class="form-control" id="inputNome" placeholder="Nome">
           </div>
           <div class="form-group col-md-4">
             <label for="inputCell">Cellulare</label>
-            <input type="tel" class="form-control" id="inputCellulare" placeholder="+039">
+            <input  name="Cellulare" type="tel" class="form-control" id="inputCellulare" placeholder="+039">
           </div>
           <div class="form-group col-md-4">
             <label for="inputIndirizzo">Indirizzo</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Via roma 1">
+            <input  name="Indirizzo"  type="text" class="form-control" id="inputAddress" placeholder="Via roma 1">
           </div>
         </div>
       </div>
 
       <div class="FormOrdine" id="FormRitiro">
-        <div class="form-row">
+    <form action="checkOut.php" method="POST" >
+      <input type="hidden" name="tipo" value="Ritiro"/>
+          <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputDate">Data</label>
-            <input type="date" class="form-control" id="inputData" placeholder="GG/MM">
+            <input name="data" type="date" class="form-control" id="inputData" placeholder="GG/MM">
           </div>
           <div class="form-group col-md-6">
             <label for="inputOra">Ora</label>
-            <input type="time" min="11:00" max="23:00" class="form-control" id="inputOra" placeholder="HH:MM">
+            <input name="ora" type="time" min="11:00" max="23:00" class="form-control" id="inputOra" placeholder="HH:MM">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-4">
             <label for="inputName">Nome</label>
-            <input type="text" class="form-control" id="inputNome" placeholder="Nome">
+            <input  name="nome" type="text" class="form-control" id="inputNome" placeholder="Nome">
           </div>
           <div class="form-group col-md-4">
             <label for="inputCell">Cellulare</label>
-            <input type="tel" class="form-control" id="inputCellulare" placeholder="+039">
+            <input  name="cellulare" type="tel" class="form-control" id="inputCellulare" placeholder="+039">
           </div>
         </div>
       </div>
