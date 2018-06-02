@@ -81,14 +81,6 @@ session_start();
         Stanco del solito pranzo ?<br>
         sushi freschi tutti giorni.</p>
 
-        <div class="input-group mb-3">
-          <input type="text" value="" class="form-control" placeholder="Inserisci il tuo indirizzo" id="AddressSearch">
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary "  style="background-color:rgb(48, 221, 48);" type="button" ><i class="fas fa-location-arrow" style="color:white;"></i></button>
-          </div>
-        </div>
-
-
       </div>
 
     </div>
@@ -234,17 +226,6 @@ session_start();
           </div>
         </div>
       </div>
-
-      <?php
-      if($_SESSION["logIn"]==true){
-        echo "
-        <div class='cart-container'>
-        <div class='pop-item'></div>
-        <button class='btn btn-secondary'><i class='fas fa-shopping-cart'></i></</button>
-        </div>";
-      }
-      ?>
-
 
 
         <!-- Modal detail privacy  -->

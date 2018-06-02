@@ -45,7 +45,7 @@ $(document).ready(function () {
 
     })
 
-      $("#FormRitiro").css("display","none");
+    $("#FormRitiro").css("display","none");
 
 
 
@@ -67,10 +67,14 @@ $(document).ready(function () {
 
     $("#btn-pagamento").click(function(){
       if($("select").val()=="TipoConsegna"){
-            $("#FormConsegna").submit();
+        var require=$("#FormConsegna").serialize();
       }else {
-            $("#FormRitiro").submit();
+        var require=$("#FormRitiro").serialize();
       }
+      $.post("checkOut.php",require,function(data){
+        alert(data);
+        location.reload();
+      },"text")
       //$("#FormPay").submit();
 
     });

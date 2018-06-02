@@ -154,3 +154,21 @@ Section{
 .FormOrdine{
   margin: 20px 0;
 }
+
+
+
+body,html{
+  height: 100%;
+}
+
+.panel-admin{
+  height: 100%;
+}
+
+.icon-admin{
+  margin-top:50px;
+}
+
+#DbProdotti,#OrdiniAttivi{
+  margin: 10px;
+}

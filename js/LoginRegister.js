@@ -17,13 +17,13 @@ $(document).ready(function(){
 
 
 
-function checkPsw(){
-  if($("#signUpPassword").val()!=$("#RepertPassword").val()){
+  function checkPsw(){
+    if($("#signUpPassword").val()!=$("#RepertPassword").val()){
       return false;
-  }else {
-    return true;
+    }else {
+      return true;
+    }
   }
-}
 
 
 
@@ -46,8 +46,8 @@ function checkPsw(){
 
 
   $("#signUpForm").submit(function(event){
-      event.preventDefault();
-      if(checkPsw()){
+    event.preventDefault();
+    if(checkPsw()){
       var formDataJson=ConvertFormToJSON($("#signUpForm"),"signUp");
       console.log(formDataJson);
       $.post($("#signUpForm").attr('action'),JSON.stringify(formDataJson),function(data){
@@ -56,12 +56,12 @@ function checkPsw(){
         $("#divMsg").modal('toggle');
 
       },"text");
-        $(".invalid-feedback").css("display","none");
-      }else {
-        $(".invalid-feedback").css("display","inline");
-        $("#RepertPassword").focus();
+      $(".invalid-feedback").css("display","none");
+    }else {
+      $(".invalid-feedback").css("display","inline");
+      $("#RepertPassword").focus();
 
-      }
+    }
   });
 
   var response;
@@ -75,63 +75,20 @@ function checkPsw(){
       if(data=="Log In effettuato"){
         $("#divMsg").on('hidden.bs.modal', function (e) {
           document.location.href ="Menu.php";
-      });
-    }else {
-      $("#InputPassword").focus();
-    }
-    },"text");
+        });
+      }else if(data=="Administratore.Benvenuto !"){
+        $("#divMsg").on('hidden.bs.modal', function (e) {
+          document.location.href ="Administratore.php";
+        });}
+        else {
+          $("#InputPassword").focus();
+        }
+      },"text");
 
 
 
 
 
-  });
-
-
-
-
-  /*
-  $.ajax({
-  type:'POST',
-  url:$("#signUpForm").attr('action'),
-  data: JSON.stringify(formDataJson),
-  contentType: "application/json; charset=utf-8",
-  dataType: "json",
-  success:function(response){
-  $("#SignUp").append(response)
-},
-failure:function(response){
-$("#SignUp").append(response)
-}
-});
-});
-
-$("#signUpForm").validate({
-rules:
-{
-email:{
-required:true
-},
-signUpPassword:{
-required:true,
-minlength:8
-},
-RepertPassword:{
-required:true,
-minlength:8
-}
-},
-messages:
-{
-signUpPassword:{
-minlength:"Inserisci una password di almeno 8 caratteri!"
-},
-RepertPassword:{
-minlength:"Inserisci una password di almeno 8 caratteri!"
-}
-}
-});
-*/
-
+    });
 
 });

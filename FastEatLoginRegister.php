@@ -1,11 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION["logIn"])){
-  if($_SESSION["logIn"]==true)
-  {
-      header("location:Menu.php");
-  }
-}
+
 ?>
 <html lang="it">
 
