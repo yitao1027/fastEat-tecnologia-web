@@ -12,7 +12,7 @@ include("db_con.php");
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/Custom.css" type="text/css" />
-<link rel="stylesheet" href="css/Menu.css" type="text/css" />
+  <link rel="stylesheet" href="css/Menu.css" type="text/css" />
 </head>
 
 <body>
@@ -56,55 +56,86 @@ include("db_con.php");
 
 
 
-      <section class="underNav">
-
-        <ul class="list-group">
-          <p class="caption text-center" id="listMenu">Il Menu</p>
-          <?php
+  <section class="underNav">
 
 
-          $query ="SELECT DISTINCT (categoria) FROM listaprodotto";
-          $category= $conn->query($query);
+    <p class="caption text-center" id="listMenu">Il Menu</p>
+    <hr>
+    <div class="FormProdotto" >
+      <form action="AdminServer.php"  method="POST" >
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputPiatto">Piatto Nome</label>
+            <input name="piatto" type="text" class="form-control" id="inputPiattoName"  required>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputCategoria">Categoria</label>
+            <input name="categoria" type="text"  class="form-control" id="inputCategoria" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="inputName">Prezzo</label>
+            <input  name="prezzo" type="number" class="form-control" id="inputPrezzo"required>
+          </div>
+          <div class="form-group col-md-4">
+            <button type="submit" id="btn-addProdotto" class="btn btn-primary">Aggiungi</button>
+          </div>
+        </div>
+      </form>
+    </div>
 
-          if ($category->num_rows > 0) {
-            while($cat = $category->fetch_assoc()) {
 
-              $query = "SELECT * FROM listaprodotto WHERE categoria='".$cat["categoria"]."'";
-              $result = $conn->query($query);
 
-              echo "<li class='list-group-item'>
-                  <p class='category-caption' data-toggle='collapse' href='#".$cat["categoria"]."' role='button' aria-expanded='false' aria-controls='".$cat["categoria"]."Controll'>".$cat["categoria"]."
-                  <i class='fas fa-angle-double-down'></i></p>
-                  <div class='category-item collapse' id='".$cat["categoria"]."'>";
+    <ul class="list-group">
 
-              if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                  echo "<div class='row'>
-                  <div class='col-8'>
-                  <p id=".$row["PiattoN"]."name >".$row["piattoName"]."</p>
-                  <p id=".$row["PiattoN"]."prezzo >€ ".$row["Prezzo"]."</p></div>
-                  <div class='col-4 divIcon'>
-                  <button class='btn modifica 'style='color:orange;' value=".$row["PiattoN"].">
-                  <i class='fas fa-wrench'></i>
-                  </button>
-                  </div>
-                  </div>";
-                }
-              }
-              echo "</li>";
+
+
+      <?php
+
+
+      $query ="SELECT DISTINCT (categoria) FROM listaprodotto";
+      $category= $conn->query($query);
+
+      if ($category->num_rows > 0) {
+        while($cat = $category->fetch_assoc()) {
+
+          $query = "SELECT * FROM listaprodotto WHERE categoria='".$cat["categoria"]."'";
+          $result = $conn->query($query);
+
+          echo "<li class='list-group-item'>
+          <p class='category-caption' data-toggle='collapse' href='#".$cat["categoria"]."' role='button' aria-expanded='false' aria-controls='".$cat["categoria"]."Controll'>".$cat["categoria"]."
+          <i class='fas fa-angle-double-down'></i></p>
+          <div class='category-item collapse' id='".$cat["categoria"]."'>";
+
+          if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+              echo "<div class='row'>
+              <div class='col-8'>
+              <p id=".$row["PiattoN"]."name >".$row["piattoName"]."</p>
+              <p id=".$row["PiattoN"]."prezzo >€ ".$row["Prezzo"]."</p></div>
+              <div class='col-4 divIcon'>
+              <button class='btn modifica 'style='color:orange;' value=".$row["PiattoN"].">
+              <i class='fas fa-wrench'></i>
+              </button>
+              </div>
+              </div>";
             }
           }
+          echo "</li>";
+        }
+      }
 
-          ?>
-        </ul>
-      </section>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvyZ6DB32hcO3vkSpNR4JpAwh6hiRQqVc&libraries=places"></script>
-      <script src="js/fastEat.js"></script>
-      <script src="js/admin.js"></script>
+      ?>
+    </ul>
+  </section>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvyZ6DB32hcO3vkSpNR4JpAwh6hiRQqVc&libraries=places"></script>
+  <script src="js/fastEat.js"></script>
+  <script src="js/admin.js"></script>
 
-    </body>
+</body>
 
-    </html>
+</html>
