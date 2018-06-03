@@ -96,7 +96,7 @@ if($obj=="logOut"){
               $_SESSION["admin"]=true;
               $_SESSION["user"]=$email;
               $_SESSION["logIn"]=true;
-              echo "Administratore.Benvenuto !";
+              echo "Administratore.Benvenuto!";
             }else{
               $_SESSION["user"]=$email;
               $_SESSION["logIn"]=true;

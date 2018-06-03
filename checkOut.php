@@ -22,19 +22,18 @@ if(isset($_SESSION["ordine"])){
     $prezzo=$item->{'prezzo'};
     $totalePiatto=str_replace("€", "", $prezzo)*$quantita;
     $subtotale+=$totalePiatto;
-    $dettail=$piatto.". porzione: ".$quantita.". totale piatto: €".$totalePiatto."\n".$tmp;
+    $dettail="<p>".$piatto."&emsp; porzione: ".$quantita."&emsp; totale piatto: €".$totalePiatto."</p>".$tmp;
     $tmp=$dettail;
   }
-  $dettail=$dettail."\ntotale:  €".$subtotale;
+  $dettail=$dettail."<p>totale:  €".$subtotale."</p>";
 
   if($_POST["tipo"]=="Consegna"){
-    $dettailOrdine=$_POST["tipo"]."\nuser:".$_SESSION["user"]."\ncell:".$_POST["Cellulare"]."\nAddress:".$_POST["Indirizzo"]."\n".$dettail;
+    $info=$_POST["tipo"]."<br>user:".$_SESSION["user"]."<br>cell:".$_POST["Cellulare"]."<br>Address:".$_POST["Indirizzo"]."<br>";
   }  else {
-    $dettailOrdine=$_POST["tipo"]."\nuser:".$_SESSION["user"]."\ncell:".$_POST["Cellulare"]."\n".$dettail;
+    $info=$_POST["tipo"]."<br>user:".$_SESSION["user"]."<br>cell:".$_POST["Cellulare"]."<br>";
   }
 
-
-  if( $result = $conn->query("INSERT INTO ordine (email,data,ora,ordine) VALUES ('".$_SESSION["user"]."','".$_POST["Data"]."','".$_POST["Ora"]."','".$dettailOrdine."')")){
+  if( $result = $conn->query("INSERT INTO ordine (email,data,ora,info,ordine) VALUES ('".$_SESSION["user"]."','".$_POST["Data"]."','".$_POST["Ora"]."','".$info."','".$dettail."')")){
 
     /*email ordine
     $mail = new PHPMailer(true);                              // Passing `true` enables exceptions

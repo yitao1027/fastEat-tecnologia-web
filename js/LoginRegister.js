@@ -76,7 +76,7 @@ $(document).ready(function(){
         $("#divMsg").on('hidden.bs.modal', function (e) {
           document.location.href ="Menu.php";
         });
-      }else if(data=="Administratore.Benvenuto !"){
+      }else if(data=="Administratore.Benvenuto!"){
         $("#divMsg").on('hidden.bs.modal', function (e) {
           document.location.href ="Administratore.php";
         });}

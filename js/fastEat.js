@@ -23,14 +23,15 @@ $(document).ready(function () {
 
         $("#responseMsg").html(data);
         $("#divMsg").modal('toggle');
+        $("#divMsg").on('hidden.bs.modal', function (e) {
+          location.href="FASTEAT.php";
+        })
 
       },"text");
 
     })
 
-    $("#divMsg").on('hidden.bs.modal', function (e) {
-      location.reload();
-    })
+
 
     $(".cart-container").click(function(){
       location.assign("Carrello.php");
@@ -52,13 +53,13 @@ $(document).ready(function () {
     $("select").on("change",function(){
       if((this.value)=="TipoConsegna"){
 
-        $("#FormRitiro").fadeOut("slow",function(){
+        $("#FormRitiro").fadeOut("fast",function(){
           $("#FormConsegna").fadeIn();
         });
 
 
       }else{
-        $("#FormConsegna").fadeOut("slow",function(){
+        $("#FormConsegna").fadeOut("fast",function(){
           $("#FormRitiro").fadeIn();
         });
 
@@ -73,7 +74,7 @@ $(document).ready(function () {
       }
       $.post("checkOut.php",require,function(data){
         alert(data);
-        location.reload();
+        location.href="FASTEAT.php";
       },"text")
       //$("#FormPay").submit();
 

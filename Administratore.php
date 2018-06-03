@@ -29,6 +29,12 @@ session_start();
           <li class="nav-item active">
             <a class="nav-link" href="#Home">Home</a>
           </li>
+          <li class="nav-item active">
+            <a class="nav-link"   href="DBProdotti.php" >Database Prodotti</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Ordini.php">Ordini Attivi</a>
+          </li>
           <li class="nav-item">
             <?php
             if(isset($_SESSION["logIn"])&&$_SESSION["logIn"]==true){
@@ -70,7 +76,7 @@ session_start();
       <img class="img-fluid" src="img/admin.png">
     </div>
     <div class="row text-center ">
-      <div class="col"><a id='DbProdotti'  href="Prodotti.php" type='button' class='btn btn-primary'>Data Base Prodotti</a></div>
+      <div class="col"><a id='DbProdotti'  href="DBProdotti.php" type='button' class='btn btn-primary'>Data Base Prodotti</a></div>
       <div class="col"><a id='OrdiniAttivi'  href="Ordini.php" type='button' class='btn btn-primary'>Ordini Attivi</a></div>
     </div>
 
@@ -88,6 +94,7 @@ session_start();
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvyZ6DB32hcO3vkSpNR4JpAwh6hiRQqVc&libraries=places"></script>
   <script src="js/fastEat.js"></script>
+  <script src="js/admin.js"></script>
 
 </body>
 
