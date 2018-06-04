@@ -7,9 +7,8 @@ $(document).ready(function () {
 
   var day = ("0" + now.getDate()).slice(-2);
   var month = ("0" + (now.getMonth() + 1)).slice(-2);
-
-  var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
-    $('#ConsegnaData').val(today);
+  var today = now.getFullYear()+"-"+(month)+"-"+(day);
+  $('#ConsegnaData').val(today);
 
   $(document).click(function(){
     if($("#navbar").hasClass('show')){
@@ -81,29 +80,27 @@ $(document).ready(function () {
     $("#btn-pagamento").click(function(){
 
       var validDate=false;
-      var data;
-      var ora;
+
       if($("select").val()=="TipoConsegna"){
-        data=$("#ConsegnaData").val();
-      //  ora=$("#ConsegnaOra").val();
-        console.log(Date.parse(data));
-        console.log(Date.now()+432000);
-          console.log(Date.now());
-        if((Date.parse(data))>Date.now() && (Date.parse(data)<Date.now()+432000) ){
+        var data=new Date($("#ConsegnaData").val()+" "+$("#ConsegnaOra").val());
+
+        if((Date.parse(data))>Date.now() && (Date.parse(data)<Date.now()+432000000) ){
         var require=$("#FormConsegna").serialize();
+        validDate=true;
       }else{
-        alert("errore data");
+        alert("Data consegna errore");
         $("#ConsegnaDate").focus();
       }
       }else {
-        data=$("#RitiroData").val();
-      //  ora=$("#ConsegnaOra").val();
+        var data=new Date($("#RitiroData").val()+" "+$("#RitiroOra").val());
+
 
         if((Date.parse(data))>Date.now()  && (Date.parse(data)<Date.now()+259200)){
         var require=$("#FormRitiro").serialize();
+          validDate=true;
       }
       else{
-        alert("errore data");
+        alert("Data consegna errore");
         $("#ConsegnaDate").focus();
       }
       }

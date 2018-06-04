@@ -29,9 +29,6 @@ include("db_con.php");
       <div class="collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav mt-2 mt-lg-0 ">
           <li class="nav-item active">
-            <a class="nav-link" href="#Home">Home</a>
-          </li>
-          <li class="nav-item active">
             <a class="nav-link"   href="DBProdotti.php" >Database Prodotti</a>
           </li>
           <li class="nav-item">
@@ -56,21 +53,24 @@ include("db_con.php");
 
 
 
-  <section class="underNav">
+  <section class="underNav container-fluid">
 
 
     <p class="caption text-center" id="listMenu">Il Menu</p>
-    <hr>
-    <div class="FormProdotto" >
-      <form action="AdminServer.php"  method="POST" >
+    <section>
+      <form  id="FormProdotto" method="POST" >
         <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputPiatto">Piatto Nome</label>
-            <input name="piatto" type="text" class="form-control" id="inputPiattoName"  required>
+          <div class="form-group col-md-4">
+            <label for="inputName">ID</label>
+            <input  name="piattoId" type="number" class="form-control" required>
           </div>
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-4">
+            <label for="inputPiatto">Piatto Nome</label>
+            <input name="piattoName" type="text" class="form-control"  required>
+          </div>
+          <div class="form-group col-md-4">
             <label for="inputCategoria">Categoria</label>
-            <input name="categoria" type="text"  class="form-control" id="inputCategoria" required>
+            <input name="categoria" type="text"  class="form-control" required>
           </div>
         </div>
         <div class="form-row">
@@ -83,9 +83,11 @@ include("db_con.php");
           </div>
         </div>
       </form>
-    </div>
+    </section>
 
+<hr>
 
+<section>
 
     <ul class="list-group">
 
@@ -94,26 +96,30 @@ include("db_con.php");
       <?php
 
 
-      $query ="SELECT DISTINCT (categoria) FROM listaprodotto";
+      $query ="SELECT DISTINCT (Categoria) FROM listaprodotto";
       $category= $conn->query($query);
 
       if ($category->num_rows > 0) {
         while($cat = $category->fetch_assoc()) {
 
-          $query = "SELECT * FROM listaprodotto WHERE categoria='".$cat["categoria"]."'";
+          $query = "SELECT * FROM listaprodotto WHERE categoria='".$cat["Categoria"]."'";
           $result = $conn->query($query);
 
           echo "<li class='list-group-item'>
-          <p class='category-caption' data-toggle='collapse' href='#".$cat["categoria"]."' role='button' aria-expanded='false' aria-controls='".$cat["categoria"]."Controll'>".$cat["categoria"]."
+          <p class='category-caption' data-toggle='collapse' href='#".$cat["Categoria"]."' role='button' aria-expanded='false' aria-controls='".$cat["Categoria"]."Controll'>".$cat["Categoria"]."
           <i class='fas fa-angle-double-down'></i></p>
-          <div class='category-item collapse' id='".$cat["categoria"]."'>";
+          <div class='category-item collapse' id='".$cat["Categoria"]."'>";
 
           if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
               echo "<div class='row'>
               <div class='col-8'>
-              <p id=".$row["PiattoN"]."name >".$row["piattoName"]."</p>
-              <p id=".$row["PiattoN"]."prezzo >€ ".$row["Prezzo"]."</p></div>
+              <p id=".$row["PiattoN"]."ID style='color:red; font-weight:bolder; font-size:20px; ' > ".$row["PiattoN"]."</p>
+              <p id=".$row["PiattoN"]."name > ".$row["PiattoName"]."</p>
+              <p id=".$row["PiattoN"]."prezzo > € ".$row["Prezzo"]."</p>
+              <button class='btn btn-danger rimuoviDb' value='".$row["PiattoN"]."'>rimuovi</button>
+              </div>
+
               <div class='col-4 divIcon'>
               <button class='btn modifica 'style='color:orange;' value=".$row["PiattoN"].">
               <i class='fas fa-wrench'></i>
@@ -129,6 +135,7 @@ include("db_con.php");
       ?>
     </ul>
   </section>
+</section>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

@@ -25,6 +25,12 @@ include("db_con.php")
 
       <div class=" collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav mt-2 mt-lg-0 ">
+          <li class="nav-item ">
+            <a class="nav-link"   href="DBProdotti.php" >Database Prodotti</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="Ordini.php">Ordini Attivi</a>
+          </li>
           <li class="nav-item">
             <?php
             if(isset($_SESSION["logIn"])&&$_SESSION["logIn"]==true){
