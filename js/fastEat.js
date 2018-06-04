@@ -3,6 +3,14 @@ $(document).ready(function () {
   console.log("DOM ready");
   $("#cookiesModal").fadeIn();
 
+  var now = new Date();
+
+  var day = ("0" + now.getDate()).slice(-2);
+  var month = ("0" + (now.getMonth() + 1)).slice(-2);
+
+  var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+    $('#ConsegnaData').val(today);
+
   $(document).click(function(){
     if($("#navbar").hasClass('show')){
       $(".navbar-collapse").collapse("toggle");}
@@ -55,29 +63,57 @@ $(document).ready(function () {
 
         $("#FormRitiro").fadeOut("fast",function(){
           $("#FormConsegna").fadeIn();
+          $('#ConsegnaData').val(today);
+
         });
 
 
       }else{
         $("#FormConsegna").fadeOut("fast",function(){
           $("#FormRitiro").fadeIn();
+          $('#RitiroData').val(today);
+
         });
 
       }
     });
 
     $("#btn-pagamento").click(function(){
+
+      var validDate=false;
+      var data;
+      var ora;
       if($("select").val()=="TipoConsegna"){
+        data=$("#ConsegnaData").val();
+      //  ora=$("#ConsegnaOra").val();
+        console.log(Date.parse(data));
+        console.log(Date.now()+432000);
+          console.log(Date.now());
+        if((Date.parse(data))>Date.now() && (Date.parse(data)<Date.now()+432000) ){
         var require=$("#FormConsegna").serialize();
+      }else{
+        alert("errore data");
+        $("#ConsegnaDate").focus();
+      }
       }else {
+        data=$("#RitiroData").val();
+      //  ora=$("#ConsegnaOra").val();
+
+        if((Date.parse(data))>Date.now()  && (Date.parse(data)<Date.now()+259200)){
         var require=$("#FormRitiro").serialize();
       }
+      else{
+        alert("errore data");
+        $("#ConsegnaDate").focus();
+      }
+      }
+      if(validDate){
       $.post("checkOut.php",require,function(data){
         alert(data);
         location.href="FASTEAT.php";
-      },"text")
+      },"text");
       //$("#FormPay").submit();
-
+}
     });
 
   });

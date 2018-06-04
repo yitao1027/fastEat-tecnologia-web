@@ -22,8 +22,8 @@ if ($category->num_rows > 0) {
         <div class='col-8'>
         <p id=".$row["PiattoN"]."name >".$row["piattoName"]."</p>
         <p id=".$row["PiattoN"]."prezzo >€ ".$row["Prezzo"]."</p></div>
-        <div class='col-4 divPlus'>
-        <button class='btn ordine 'style='color:orange;' value=".$row["PiattoN"].">
+        <div class='col-4 divIcon '>
+        <button class='btn   ordini'style='color:orange;' value=".$row["PiattoN"].">
         <i class='fa fa-plus' aria-hidden='true'></i>
         </button>
         </div>

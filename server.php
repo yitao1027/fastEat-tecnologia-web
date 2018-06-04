@@ -34,7 +34,7 @@ if($obj=="logOut"){
 
 
     if( $result = $conn->query("INSERT INTO users (email,password) VALUES ('".$email."','".$password."')")){
-
+/*
       $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
       try {
         //Server settings
@@ -59,12 +59,12 @@ if($obj=="logOut"){
         $mail->Body    = 'Benvenuto nel mondo di FastEat';
 
         $mail->send();
-        echo 'Registrazione avvenuto con successo.Benvenuto '.$email;
+        echo 'Registrazione avvenuto con successo.Benvenuto '.$email;*/
         $_SESSION["user"]=$email;
         $_SESSION["logIn"]=true;
-      } catch (Exception $e) {
+    /*  } catch (Exception $e) {
         echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
-      }
+      }*/
 
     }else{
       echo "Errore Registrazione,utente già registrato";

@@ -22,7 +22,7 @@ if(isset($_SESSION["ordine"])){
     $prezzo=$item->{'prezzo'};
     $totalePiatto=str_replace("€", "", $prezzo)*$quantita;
     $subtotale+=$totalePiatto;
-    $dettail="<p>".$piatto."&emsp; porzione: ".$quantita."&emsp; totale piatto: €".$totalePiatto."</p>".$tmp;
+    $dettail="<p>".$piatto."&emsp; porzione: ".$quantita."&emsp; totale piatto: € ".$totalePiatto."</p>".$tmp;
     $tmp=$dettail;
   }
   $dettail=$dettail."<p>totale:  €".$subtotale."</p>";

@@ -22,7 +22,7 @@ $(document).ready(function () {
 
     $("#listMenu").after(data);
 
-    $(".ordine").click(function(){
+    $(".ordini").click(function(){
 
       if($(".log").html()!="LogIn"){
         numPiatto++;

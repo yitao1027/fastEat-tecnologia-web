@@ -60,7 +60,8 @@ include("db_con.php")
           <p>".$row["data"]."</p>
           <p>".$row["ora"]."</p>
           <p style='color:orange;'>".$row["info"]."</p>
-          <div style='color:black;'>".$row["ordine"]."</div></div>
+          <div style='color:black;'>".$row["ordine"]."</div>
+          </div>
           <div class='col-sm-4'>
           <button class='btn avviso 'style='color:orange;' value=".$row["email"].">
           <i class='far fa-envelope'>Pronto</i>

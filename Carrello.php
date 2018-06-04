@@ -125,25 +125,25 @@ session_start();
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputDate">Data</label>
-            <input name="Data" type="date" class="form-control" id="inputData" placeholder="GG/MM" required>
+            <input name="Data" type="date" class="form-control" id="ConsegnaData"  placeholder="GG/MM" required>
           </div>
           <div class="form-group col-md-6">
             <label for="inputOra">Ora</label>
-            <input name="Ora" type="time" min="11:00" max="23:00" class="form-control" id="inputOra" placeholder="HH:MM" required>
+            <input name="Ora" type="time" min="11:00" max="23:00" class="form-control" id="ConsegnaOra" placeholder="HH:MM" required>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-4">
             <label for="inputName">Nome</label>
-            <input name="Nome" type="text" class="form-control" id="inputNome" placeholder="Nome" required>
+            <input name="Nome" type="text" class="form-control" id="ConsegnaNome" placeholder="Nome" required>
           </div>
           <div class="form-group col-md-4">
             <label for="inputCell">Cellulare</label>
-            <input  name="Cellulare" type="tel" class="form-control" id="inputCellulare" placeholder="+039" required>
+            <input  name="Cellulare" type="tel" class="form-control" id="ConsegnaCellulare" placeholder="+039" required>
           </div>
           <div class="form-group col-md-4">
             <label for="inputIndirizzo">Indirizzo</label>
-            <input  name="Indirizzo"  type="text" class="form-control" id="inputAddress" placeholder="Via roma 1" required>
+            <input  name="Indirizzo"  type="text" class="form-control" id="ConsegnaAddress" placeholder="Via roma 1" required>
           </div>
         </div>
         </form>
@@ -155,21 +155,21 @@ session_start();
           <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputDate">Data</label>
-            <input name="Data" type="date" class="form-control" id="inputData" placeholder="GG/MM" required>
+            <input name="Data" type="date" class="form-control" id="RitiroData" placeholder="GG/MM" required>
           </div>
           <div class="form-group col-md-6">
             <label for="inputOra">Ora</label>
-            <input name="Ora" type="time" min="11:00" max="23:00" class="form-control" id="inputOra" placeholder="HH:MM" required>
+            <input name="Ora" type="time" min="11:00" max="23:00" class="form-control" id="ConsegnaOra" placeholder="HH:MM" required>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-4">
             <label for="inputName">Nome</label>
-            <input  name="Nome" type="text" class="form-control" id="inputNome" placeholder="Nome" required>
+            <input  name="Nome" type="text" class="form-control" id="ConsegnaNome" placeholder="Nome" required>
           </div>
           <div class="form-group col-md-4">
             <label for="inputCell">Cellulare</label>
-            <input  name="Cellulare" type="tel" class="form-control" id="inputCellulare" placeholder="+039" required>
+            <input  name="Cellulare" type="tel" class="form-control" id="ConsegnaCellulare" placeholder="+039" required>
           </div>
         </div>
         </form>
