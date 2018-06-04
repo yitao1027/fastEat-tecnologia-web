@@ -25,10 +25,10 @@ include("db_con.php")
 
       <div class=" collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav mt-2 mt-lg-0 ">
-          <li class="nav-item ">
+          <li class="nav-item">
             <a class="nav-link"   href="DBProdotti.php" >Database Prodotti</a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item  active">
             <a class="nav-link" href="Ordini.php">Ordini Attivi</a>
           </li>
           <li class="nav-item">
@@ -52,7 +52,7 @@ include("db_con.php")
 
   <div class="container-fluid underNav">
 
-    <p class="caption text-center">Ordini:</p>
+    <p class="caption text-center">Ordini Attivi</p>
 
     <?php
 
@@ -61,27 +61,29 @@ include("db_con.php")
     if($result= $conn->query($query)){
       if($result->num_rows>0){
         while($row= $result->fetch_assoc()){
-          echo("<hr><div class='row'>
-          <div class='col-sm-8' style='color:red'>
-          <p>".$row["data"]."</p>
-          <p>".$row["ora"]."</p>
-          <p style='color:orange;'>".$row["info"]."</p>
+          echo("<div class='row' style='border:1px solid black'>
+          <div class='col-sm-8'>
+          <p style='color:red;'>".$row["data"]."</p>
+          <hr>
+          <p style='color:red;'>".$row["ora"]."</p>
+          <hr>
+          <p>".$row["info"]."</p><hr>
           <div style='color:black;'>".$row["ordine"]."</div>
+          <p>totale: € ".$row["totale"]."</p><hr>
           </div>
+
           <div class='col-sm-4'>
-          <button class='btn avviso 'style='color:orange;' value=".$row["email"].">
+
+          <p><button class='btn ordine 'style='color:orange;' value=".$row["email"].">
           <i class='far fa-envelope'>Pronto</i>
-          </button>
+          </button></p>
           </div>
           </div>");
         }
       }
     }
 
-
-
     ?>
-    <hr>
 
   </div>
 
@@ -110,7 +112,6 @@ include("db_con.php")
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="js/fastEat.js"></script>
-  <script src="js/admin.js"></script>
 
 </body>
 

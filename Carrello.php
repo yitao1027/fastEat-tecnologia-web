@@ -88,7 +88,7 @@ session_start();
         <hr>";
         $subtotale+=$totalePiatto;
       }
-      $totale=$subtotale;
+      $totale=$subtotale+3;
       echo "<div class='row'>
       <div class='col'>
       <p>subtotale </p>
@@ -96,8 +96,8 @@ session_start();
       <p style='font-weight:bold;'>totale</p>
       </div>
       <div class='col' style='text-align: right;''>
-      <p>€ ".$subtotale."</p>
-      <p id='costoConsegna'>€ 0</p>
+      <p id='subtotale'>€ ".$subtotale."</p>
+      <p id='costoConsegna'>€ 3</p>
       <p id='totaleCosto' style='font-weight:bold;'>€ ".$totale."</p>
       </div>
       </div><hr>";
@@ -159,17 +159,17 @@ session_start();
           </div>
           <div class="form-group col-md-6">
             <label for="inputOra">Ora</label>
-            <input name="Ora" type="time" min="11:00" max="23:00" class="form-control" id="ConsegnaOra" placeholder="HH:MM" required>
+            <input name="Ora" type="time" min="11:00" max="23:00" class="form-control" id="RitiroOra" placeholder="HH:MM" required>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-4">
             <label for="inputName">Nome</label>
-            <input  name="Nome" type="text" class="form-control" id="ConsegnaNome" placeholder="Nome" required>
+            <input  name="Nome" type="text" class="form-control" id="RitiroNome" placeholder="Nome" required>
           </div>
           <div class="form-group col-md-4">
             <label for="inputCell">Cellulare</label>
-            <input  name="Cellulare" type="tel" class="form-control" id="ConsegnaCellulare" placeholder="+039" required>
+            <input  name="Cellulare" type="tel" class="form-control" id="RitiroCellulare" placeholder="+039" required>
           </div>
         </div>
         </form>

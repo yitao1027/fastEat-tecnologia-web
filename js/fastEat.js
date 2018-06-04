@@ -59,7 +59,11 @@ $(document).ready(function () {
 
     $("select").on("change",function(){
       if((this.value)=="TipoConsegna"){
+        $("#costoConsegna").html("€ 3");
+        var total=$("#totaleCosto").html().replace("€","");
+        total=parseInt(total)+3;
 
+        $("#totaleCosto").html("€ "+total);
         $("#FormRitiro").fadeOut("fast",function(){
           $("#FormConsegna").fadeIn();
           $('#ConsegnaData').val(today);
@@ -68,6 +72,8 @@ $(document).ready(function () {
 
 
       }else{
+        $("#costoConsegna").html("€ 0");
+        $("#totaleCosto").html(  $("#subtotale").html());
         $("#FormConsegna").fadeOut("fast",function(){
           $("#FormRitiro").fadeIn();
           $('#RitiroData').val(today);
@@ -93,11 +99,9 @@ $(document).ready(function () {
       }
       }else {
         var data=new Date($("#RitiroData").val()+" "+$("#RitiroOra").val());
-
-
-        if((Date.parse(data))>Date.now()  && (Date.parse(data)<Date.now()+259200)){
+        if((Date.parse(data))>Date.now()  && (Date.parse(data)<Date.now()+432000000)){
         var require=$("#FormRitiro").serialize();
-          validDate=true;
+        validDate=true;
       }
       else{
         alert("Data consegna errore");

@@ -74,68 +74,71 @@ include("db_con.php");
           </div>
         </div>
         <div class="form-row">
-          <div class="form-group col-md-4">
+          <div class="form-group col-md-6">
             <label for="inputName">Prezzo</label>
             <input  name="prezzo" type="number" class="form-control" id="inputPrezzo"required>
           </div>
-          <div class="form-group col-md-4">
-            <button type="submit" id="btn-addProdotto" class="btn btn-primary">Aggiungi</button>
+          <div class="col-md-6" style="display: flex;justify-content: center;align-items: center;">
+            <button type="submit" id="btn-addProdotto" class="btn btn-primary ">Aggiungi</button>
           </div>
         </div>
       </form>
     </section>
 
-<hr>
+    <hr>
 
-<section>
+    <section>
 
-    <ul class="list-group">
-
-
-
-      <?php
+      <ul class="list-group">
 
 
-      $query ="SELECT DISTINCT (Categoria) FROM listaprodotto";
-      $category= $conn->query($query);
 
-      if ($category->num_rows > 0) {
-        while($cat = $category->fetch_assoc()) {
+        <?php
 
-          $query = "SELECT * FROM listaprodotto WHERE categoria='".$cat["Categoria"]."'";
-          $result = $conn->query($query);
 
-          echo "<li class='list-group-item'>
-          <p class='category-caption' data-toggle='collapse' href='#".$cat["Categoria"]."' role='button' aria-expanded='false' aria-controls='".$cat["Categoria"]."Controll'>".$cat["Categoria"]."
-          <i class='fas fa-angle-double-down'></i></p>
-          <div class='category-item collapse' id='".$cat["Categoria"]."'>";
+        $query ="SELECT DISTINCT (Categoria) FROM listaprodotto";
+        $category= $conn->query($query);
 
-          if ($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-              echo "<div class='row'>
-              <div class='col-8'>
-              <p id=".$row["PiattoN"]."ID style='color:red; font-weight:bolder; font-size:20px; ' > ".$row["PiattoN"]."</p>
-              <p id=".$row["PiattoN"]."name > ".$row["PiattoName"]."</p>
-              <p id=".$row["PiattoN"]."prezzo > € ".$row["Prezzo"]."</p>
-              <button class='btn btn-danger rimuoviDb' value='".$row["PiattoN"]."'>rimuovi</button>
-              </div>
+        if ($category->num_rows > 0) {
+          while($cat = $category->fetch_assoc()) {
 
-              <div class='col-4 divIcon'>
-              <button class='btn modifica 'style='color:orange;' value=".$row["PiattoN"].">
-              <i class='fas fa-wrench'></i>
-              </button>
-              </div>
-              </div>";
+            $query = "SELECT * FROM listaprodotto WHERE categoria='".$cat["Categoria"]."'";
+            $result = $conn->query($query);
+
+            echo "<li class='list-group-item'>
+            <p class='category-caption' data-toggle='collapse' href='#".$cat["Categoria"]."' role='button' aria-expanded='false' aria-controls='".$cat["Categoria"]."Controll'>".$cat["Categoria"]."
+            <i class='fas fa-angle-double-down'></i></p>
+            <div class='category-item collapse' id='".$cat["Categoria"]."'>";
+
+            if ($result->num_rows > 0) {
+              while($row = $result->fetch_assoc()) {
+                echo "<div class='row'>
+                <div class='col-8'>
+                <div id=".$row["PiattoN"]."ID style='padding:10px; margin:10px;color:red; font-weight:bolder; font-size:20px; ' > ".$row["PiattoN"]."</div>
+                <div id=".$row["PiattoN"]."name style='padding:10px;margin:10px;'> ".$row["PiattoName"]."</div>
+                <div id=".$row["PiattoN"]."categoria style='padding:10px;margin:10px;'>".$row["Categoria"]."</div>
+                <div id=".$row["PiattoN"]."prezzo style='padding:10px;margin:10px;'>€".$row["Prezzo"]."</div>
+                <button  style='margin:10px;' class='btn btn-danger rimuoviDb' value='".$row["PiattoN"]."'>rimuovi</button>
+                </div>
+
+                <div class='col-4 divIcon'>
+                <button id=".$row["PiattoN"]."modifica class='btn modifica 'style='color:orange;' value=".$row["PiattoN"].">
+                <i class='fas fa-wrench'></i>
+                </button>
+                <button id=".$row["PiattoN"]."upload class='btn upload'style='color:orange;' value=".$row["PiattoN"].">
+                <i class='fas fa-upload'></i>
+                </button>
+                </div>
+                </div>";
+              }
             }
           }
-          echo "</li>";
         }
-      }
 
-      ?>
-    </ul>
+        ?>
+      </ul>
+    </section>
   </section>
-</section>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

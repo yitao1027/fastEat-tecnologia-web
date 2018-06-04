@@ -25,7 +25,6 @@ if(isset($_SESSION["ordine"])){
     $dettail="<p>".$piatto."&emsp; porzione: ".$quantita."&emsp; totale piatto: € ".$totalePiatto."</p>".$tmp;
     $tmp=$dettail;
   }
-  $dettail=$dettail."<p>totale:  €".$subtotale."</p>";
 
   if($_POST["tipo"]=="Consegna"){
     $info=$_POST["tipo"]."<br>user:".$_SESSION["user"]."<br>cell:".$_POST["Cellulare"]."<br>Address:".$_POST["Indirizzo"]."<br>";
@@ -33,7 +32,7 @@ if(isset($_SESSION["ordine"])){
     $info=$_POST["tipo"]."<br>user:".$_SESSION["user"]."<br>cell:".$_POST["Cellulare"]."<br>";
   }
 
-  if( $result = $conn->query("INSERT INTO ordine (email,data,ora,info,ordine) VALUES ('".$_SESSION["user"]."','".$_POST["Data"]."','".$_POST["Ora"]."','".$info."','".$dettail."')")){
+  if( $result = $conn->query("INSERT INTO ordine (email,data,ora,info,ordine,totale) VALUES ('".$_SESSION["user"]."','".$_POST["Data"]."','".$_POST["Ora"]."','".$info."','".$dettail."','".$subtotale."')")){
 
     /*email ordine
     $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
