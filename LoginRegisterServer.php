@@ -62,7 +62,7 @@ if($obj=="logOut"){
         echo 'Registrazione avvenuto con successo.Benvenuto '.$email;
         $_SESSION["user"]=$email;
         $_SESSION["logIn"]=true;
-  *  } catch (Exception $e) {
+    } catch (Exception $e) {
         echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
       }
 

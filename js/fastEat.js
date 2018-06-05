@@ -84,31 +84,40 @@ $(document).ready(function () {
       }
     });
 
-  
+
 
     $("#btn-pagamento").click(function(){
 
       var validDate=false;
 
       if($("select").val()=="TipoConsegna"){
-        var data=new Date($("#ConsegnaData").val()+" "+$("#ConsegnaOra").val());
+        var form=$("#FormConsegna");
+        form.validate();
+        if(form.valid()){
+          var data=new Date($("#ConsegnaData").val()+" "+$("#ConsegnaOra").val());
 
-        if((Date.parse(data))>Date.now() && (Date.parse(data)<Date.now()+432000000) ){
-          var require=$("#FormConsegna").serialize();
-          validDate=true;
-        }else{
-          alert("Data consegna errore");
-          $("#ConsegnaDate").focus();
+          if((Date.parse(data))>Date.now() && (Date.parse(data)<Date.now()+432000000) ){
+            var require=$("#FormConsegna").serialize();
+            validDate=true;
+          }else{
+            alert("Data consegna errore");
+            $("#ConsegnaDate").focus();
+          }
         }
+
       }else {
-        var data=new Date($("#RitiroData").val()+" "+$("#RitiroOra").val());
-        if((Date.parse(data))>Date.now()  && (Date.parse(data)<Date.now()+432000000)){
-          var require=$("#FormRitiro").serialize();
-          validDate=true;
-        }
-        else{
-          alert("Data consegna errore");
-          $("#ConsegnaDate").focus();
+        var form=$("#FormRitiro");
+        form.validate();
+        if(form.valid()){
+          var data=new Date($("#RitiroData").val()+" "+$("#RitiroOra").val());
+          if((Date.parse(data))>Date.now()  && (Date.parse(data)<Date.now()+432000000)){
+            var require=$("#FormRitiro").serialize();
+            validDate=true;
+          }
+          else{
+            alert("Data consegna errore");
+            $("#ConsegnaDate").focus();
+          }
         }
       }
       if(validDate){
@@ -116,7 +125,7 @@ $(document).ready(function () {
           alert(data);
           location.href="FASTEAT.php";
         },"text");
-        //$("#FormPay").submit();
+        $("#FormPay").submit();
       }
     });
 

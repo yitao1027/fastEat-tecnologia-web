@@ -5,6 +5,9 @@
   background-color:#3e4444;
 
 }
+.col-8{
+  padding:0;
+}
 .nav-link{
   color:#deeaee!important;
 }
@@ -53,7 +56,6 @@
 
 .underNav{
   margin-top:82px;
-  border: 1px solid lightGrey;
   padding: 25px;
 }
 
@@ -175,17 +177,47 @@ body,html{
 
 
 @media screen and (min-width: 768px) {
-    section{
-      padding:50px 0;
-    }
-    .img-fluid{
-        width: 100%;
-    }
 
-    .carousel-caption{
-      bottom: 45%;
-    }
-    .lead{
-    font-size: 30px;
+
+  body,nav{
+    width: 80%;
+    overflow: auto;
+    margin: auto;
+  }
+#cookiesModal{
+  overflow: auto;
+  margin: auto;
+  width: 80%;
 }
- }
+  .fa-user{
+display: none;
+}
+.textSection{
+  margin: 50px;
+}
+  nav li{
+    margin: 0 30px;
+  }
+  section{
+    padding:50px 0;
+  }
+  .img-fluid{
+    width: 100%;
+  }
+
+  .carousel-caption{
+    bottom: 45%;
+  }
+  .lead{
+    font-size: 30px;
+  }
+
+  .col-md-4.pagamento{
+  padding: 0;
+}
+
+}
+
+@media screen and (min-width: 1200px) {
+
+}
