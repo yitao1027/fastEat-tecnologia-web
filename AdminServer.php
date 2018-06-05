@@ -11,7 +11,7 @@ require 'PHPMailer/src/SMTP.php';
 
 $content = file_get_contents("php://input");
 
-/*$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 try {
 //Server settings
 $mail->SMTPDebug = 0;                                 // Enable verbose debug output
@@ -38,5 +38,5 @@ echo 'ok';
 
 } catch (Exception $e) {
 echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
-}*/
+}
  ?>

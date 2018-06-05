@@ -1,12 +1,4 @@
 <?php
-session_start();
-
-if(isset($_GET["cookie"])){
-  setcookie("enable_cookie", "ok", time() + 3600, '/');
-  echo"ok";
-}
-
-
 
 $DB_host = 'localhost';
 $DB_user = 'ohyt';

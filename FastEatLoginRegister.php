@@ -94,10 +94,6 @@ session_start();
           <input type="password" name="psw" class="form-control" minlength="8" id="InputPassword" placeholder="Password" required>
           <a href="">Password dimenticata?</a>
         </div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="Check1">
-          <label class="form-check-label" for="Check1">Ricordami</label>
-        </div>
       </br>
       <button type="submit" name="logIn" class="loginBtn btn btn-primary">Log In</button>
     </form>
@@ -148,39 +144,33 @@ session_start();
   <div class="container-fluid text-center">
     <h3>Contatti</h3>
     <div class="row">
-      <div class="contact col-sm-3">
+      <div class="contact col-sm-2">
         <i class="fa fa-phone fa-2x"></i><br>
         <a href="tel:0547 673522" target="_blank"> 0547 673522</a>
       </div>
-      <div class="contact col-sm-3">
+      <div class="contact col-sm-2">
         <i class="fa fa-map-marker fa-2x"></i><br>
         <a href="https://goo.gl/maps/mEad6reUpAS2" target="_blank">Via Puglie, 65
           <br>47521 Cesena FC</a>
         </div>
-        <div class="contact col-sm-3">
+        <div class="contact col-sm-2">
           <i class="fa fa-envelope fa-2x"></i><br>
           <a href="mailto:FastEat@gmail.com">FastEat@gmail.it</a>
         </div>
 
         <div class="contact col-sm-3">
-          <div class="row">
-            <div class="contact col-sm-6">
               <a><i class="fab fa-facebook-f fa-2x"></i></a>
               <a><i class="fab fa-instagram fa-2x"></i></a>
               <a><i class="fab fa-tripadvisor fa-2x"></i></a>
               <a><i class="fab fa-twitter fa-2x"></i></a>
             </div>
-            <div class="contact col-sm-6">
+            <div class="contact col-sm-3">
               <img class="app img-responsive" src="img/app.svg" ></img>
-              <img class="app img-responsive" src="img/google.png"></img>
+              <img class="app img-responsive" src="img/google.png" style="height:40px;">
             </div>
           </div>
         </div>
-      </div>
-    </div>
-
   </section>
-
   <footer class=" text-center container-fluid ">
     <div class="pie">
       <p>@FastEat S.R.L 2018

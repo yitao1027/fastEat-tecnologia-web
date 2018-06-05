@@ -17,7 +17,7 @@ $(document).ready(function () {
 
 
     $("#OkCookie").click(function(){
-      $.get("db_con.php?cookie=ok");
+      $.get("FASTEAT.php?cookie=ok");
       $("#cookiesModal").fadeOut();
     });
 
@@ -83,6 +83,8 @@ $(document).ready(function () {
 
       }
     });
+
+  
 
     $("#btn-pagamento").click(function(){
 
