@@ -42,11 +42,11 @@ session_start();
             <?php
             if(isset($_SESSION["logIn"])&&$_SESSION["logIn"]==true){
 
-                echo "<div class='row' style='margin:0;'><div class='col-8' style='padding:0'><a class='nav-link ' href='Carrello.php'><i class='fas fa-user'></i>   ".$_SESSION["user"]."</a></div>";
-                echo "<div class='col-4'style='padding:0;display:flex; align-items: center;justify-content: flex-end;'><button id='logOutBtn' type='button' class='btn btn-link'><i class='fas fa-sign-out-alt'></i></button></div></div>";
-              }else{
-                echo "<a class='nav-link' href='FastEatLoginRegister.php'>Login</a>";
-              }
+              echo "<div class='row' style='margin:0;'><div class='col-8' style='padding:0'><a class='nav-link ' href='Carrello.php'><i class='fas fa-user'></i>   ".$_SESSION["user"]."</a></div>";
+              echo "<div class='col-4'style='padding:0;display:flex; align-items: center;justify-content: flex-end;'><button id='logOutBtn' type='button' class='btn btn-link'><i class='fas fa-sign-out-alt'></i></button></div></div>";
+            }else{
+              echo "<a class='nav-link' href='FastEatLoginRegister.php'>Login</a>";
+            }
 
 
             ?>
@@ -197,11 +197,11 @@ session_start();
 
 
   <?php
-    if(isset($_SESSION["logIn"]) && $_SESSION["logIn"]==true){
-      echo "<div class='cart-container'>
-          <button class='btn btn-secondary'><i class='fas fa-shopping-cart'></i></</button>
-        </div>";
-      }
+  if(isset($_SESSION["logIn"]) && $_SESSION["logIn"]==true){
+    echo "<div class='cart-container'>
+    <button class='btn btn-secondary'><i class='fas fa-shopping-cart'></i></</button>
+    </div>";
+  }
   ?>
 
 
@@ -272,5 +272,6 @@ session_start();
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="js/fastEat.js"></script>
+        <script src="js/sha512.js"></script>
         <script src="js/LoginRegister.js"></script>
         </html>
