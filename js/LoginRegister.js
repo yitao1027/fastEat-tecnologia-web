@@ -68,7 +68,6 @@ $(document).ready(function(){
   $("#logInForm").submit(function(event){
     event.preventDefault();
     var formDataJson=ConvertFormToJSON($("#logInForm"),"logIn");
-    console.log(formDataJson);
     $.post($("#logInForm").attr('action'),JSON.stringify(formDataJson),function(data){
       $("#responseMsg").html(data);
       $("#divMsg").modal('toggle');

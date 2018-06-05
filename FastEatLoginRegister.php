@@ -83,7 +83,7 @@ session_start();
         <hr>
       </div>
 
-      <form id="logInForm" method="post" action="server.php" data-toggle="validator">
+      <form id="logInForm" method="post" action="LoginRegisterServer.php" data-toggle="validator">
         <!--Login form-->
         <div class="form-group">
           <label for="InputEmail1">Email address</label>
@@ -112,7 +112,7 @@ session_start();
       <p class="loginCaption"><i class="fas fa-angle-left "></i>  SIGN UP  </p>
       <hr>
     </div>
-    <form id="signUpForm" method="post" action="server.php">
+    <form id="signUpForm" method="post" action="LoginRegisterServer.php">
       <div class="form-group">
         <label for="InputEmail1">Email address</label>
         <input type="email" name="email" class="form-control" id="signUpEmail" aria-describedby="emailHelp" placeholder="Inserisce email" required>

@@ -18,7 +18,7 @@ $(document).ready(function () {
 
   },"text");
 
-  $.get("listaProdotto.php",function(data){
+  $.get("listaprodottoServer.php",function(data){
 
     $("#listMenu").after(data);
 

@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="it">
@@ -169,19 +170,23 @@ session_start();
           </a>
         </p>
       </div>
+<!-- Cookie modal controll -->
+<?php
 
-
-
-      <!-- Cookie modal controll -->
-      <div id="cookiesModal" class="modal">
-
-        <div class="personal-modal">
-          <p>Utilizziamo i cookie per essere sicuri che tu possa avere la migliore esperienza sul nostro sito.</p>
-          <button type="button"  id="OkCookie" class="btn btn-primary">Ok</button>
-          <button type="button" id="detailCookie" class="btn btn-primary" data-toggle="modal" data-target="#CookieDetailModal" >Altre informazioni</button>
-        </div>
-
+if(!isset($_COOKIE["enable_cookie"])) {
+    echo "<div id='cookiesModal' class='modal'>
+      <div class='personal-modal'>
+        <p>Utilizziamo i cookie per essere sicuri che tu possa avere la migliore esperienza sul nostro sito.</p>
+        <button type='button'  id='OkCookie' class='btn btn-primary'>Ok</button>
+        <button type='button' id='detailCookie' class='btn btn-primary' data-toggle='modal' data-target='#CookieDetailModal'>Altre informazioni</button>
       </div>
+    </div>";
+}
+
+
+
+ ?>
+
     </footer>
 
     <?php

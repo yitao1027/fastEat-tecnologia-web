@@ -120,7 +120,7 @@ session_start();
     </div>
 
       <div class="FormOrdine" >
-        <form action="checkOut.php" id="FormConsegna"  method="POST" >
+        <form action="checkOutServer.php" id="FormConsegna"  method="POST" >
           <input type="hidden" name="tipo" value="Consegna"/>
         <div class="form-row">
           <div class="form-group col-md-6">
@@ -150,7 +150,7 @@ session_start();
       </div>
 
       <div class="FormOrdine" >
-    <form action="checkOut.php" id="FormRitiro" method="POST" >
+    <form action="checkOutServer.php" id="FormRitiro" method="POST" >
       <input type="hidden" name="tipo" value="Ritiro"/>
           <div class="form-row">
           <div class="form-group col-md-6">

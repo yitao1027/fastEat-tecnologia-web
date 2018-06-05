@@ -16,7 +16,7 @@ $(document).ready(function () {
 
 
   $("#btn-addProdotto").click(function(){
-    $.post("listaprodotto.php",$("#FormProdotto").serialize(),function(data){
+    $.post("listaprodottoServer.php",$("#FormProdotto").serialize(),function(data){
       if(data=="ok"){
         alert("piatto aggiunto al database");
         location.reload();

@@ -17,6 +17,7 @@ $(document).ready(function () {
 
 
     $("#OkCookie").click(function(){
+      $.get("db_con.php?cookie=ok");
       $("#cookiesModal").fadeOut();
     });
 
@@ -26,7 +27,7 @@ $(document).ready(function () {
 
 
     $("#logOutBtn").click(function(){
-      $.post("server.php",JSON.stringify("logOut"),function(data){
+      $.post("LoginRegisterserver.php",JSON.stringify("logOut"),function(data){
 
         $("#responseMsg").html(data);
         $("#divMsg").modal('toggle');
@@ -91,30 +92,30 @@ $(document).ready(function () {
         var data=new Date($("#ConsegnaData").val()+" "+$("#ConsegnaOra").val());
 
         if((Date.parse(data))>Date.now() && (Date.parse(data)<Date.now()+432000000) ){
-        var require=$("#FormConsegna").serialize();
-        validDate=true;
-      }else{
-        alert("Data consegna errore");
-        $("#ConsegnaDate").focus();
-      }
+          var require=$("#FormConsegna").serialize();
+          validDate=true;
+        }else{
+          alert("Data consegna errore");
+          $("#ConsegnaDate").focus();
+        }
       }else {
         var data=new Date($("#RitiroData").val()+" "+$("#RitiroOra").val());
         if((Date.parse(data))>Date.now()  && (Date.parse(data)<Date.now()+432000000)){
-        var require=$("#FormRitiro").serialize();
-        validDate=true;
-      }
-      else{
-        alert("Data consegna errore");
-        $("#ConsegnaDate").focus();
-      }
+          var require=$("#FormRitiro").serialize();
+          validDate=true;
+        }
+        else{
+          alert("Data consegna errore");
+          $("#ConsegnaDate").focus();
+        }
       }
       if(validDate){
-      $.post("checkOut.php",require,function(data){
-        alert(data);
-        location.href="FASTEAT.php";
-      },"text");
-      //$("#FormPay").submit();
-}
+        $.post("checkOutServer.php",require,function(data){
+          alert(data);
+          location.href="FASTEAT.php";
+        },"text");
+        //$("#FormPay").submit();
+      }
     });
 
   });
