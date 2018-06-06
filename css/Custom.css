@@ -222,9 +222,26 @@ display: none;
     margin: auto;
     max-width: 50%;
   }
+  .icon-admin img{
+  max-width: 80%;
+  }
+  .col-sm-4.ordine{
+    align-items: center;
+    justify-content: center;
+  display: flex;
+  }
 }
 
 @media screen and (min-width: 1200px) {
+
+  .col-sm.ordine{
+    align-items: center;
+    justify-content: center;
+  }
+  .icon-admin img{
+  max-width: 60%;
+  }
+
   .row.piatto{
     width: 50%;
   }

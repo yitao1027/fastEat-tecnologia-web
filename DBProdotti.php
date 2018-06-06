@@ -74,11 +74,12 @@
             </div>
           </div>
           <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-4">
               <label for="inputPrezzo">Prezzo</label>
               <input  name="prezzo" type="number" class="form-control" id="inputPrezzo"required>
             </div>
-            <div class="col-md-6" style="display: flex;justify-content: center;align-items: center;">
+<div class="form-group col-md-4"></div>
+            <div class="col-md-4" style="display: flex;justify-content: center;align-items: center; margin-top:12px;">
               <button type="submit" id="btn-addProdotto" class="btn btn-primary ">Aggiungi</button>
             </div>
           </div>

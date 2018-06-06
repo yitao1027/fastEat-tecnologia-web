@@ -72,10 +72,10 @@ include("db_con.php")
           <p>totale: € ".$row["totale"]."</p><hr>
           </div>
 
-          <div class='col-sm-4'>
+          <div class='col-sm-4 ordine'>
 
           <p><button class='btn ordine 'style='color:orange;' value=".$row["email"].">
-          <i class='far fa-envelope'>Pronto</i>
+          <i class='far fa-envelope'> Pronto</i>
           </button></p>
           </div>
           </div>");
