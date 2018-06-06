@@ -2,6 +2,7 @@
 session_start();
 
 ?>
+<!DOCTYPE html>
 <html lang="it">
 
 <head>
@@ -86,11 +87,11 @@ session_start();
       <form id="logInForm" method="post" action="LoginRegisterServer.php" data-toggle="validator">
         <!--Login form-->
         <div class="form-group">
-          <label for="InputEmail1">Email address</label>
-          <input type="email" name="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Inserisce email" required>
+          <label for="InputEmail">Email address</label>
+          <input type="email" name="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Inserisce email" required>
         </div>
         <div class="form-group">
-          <label for="InputPassword1">Password</label>
+          <label for="InputPassword">Password</label>
           <input type="password" name="psw" class="form-control" minlength="8" id="InputPassword" placeholder="Password" required>
           <a href="">Password dimenticata?</a>
         </div>
@@ -110,15 +111,15 @@ session_start();
     </div>
     <form id="signUpForm" method="post" action="LoginRegisterServer.php">
       <div class="form-group">
-        <label for="InputEmail1">Email address</label>
+        <label for="signUpEmail">Email address</label>
         <input type="email" name="email" class="form-control" id="signUpEmail" aria-describedby="emailHelp" placeholder="Inserisce email" required>
       </div>
       <div class="form-group">
-        <label for="InputPassword1">Password</label>
+        <label for="signUpPassword">Password</label>
         <input type="password"  name="psw" class="form-control" id="signUpPassword" minlength="8" placeholder="Password" required>
       </div>
       <div class="form-group">
-        <label for="InputPassword1">Di-nuovo password</label>
+        <label for="RepertPassword">Di-nuovo password</label>
         <input type="password" name="rePsw" class="form-control" id="RepertPassword" minlength="8" placeholder="Di-nuovo Password" data-pattern-mismatch="controlla password" required>
         <div class="invalid-feedback">
           controlla password inseriti
@@ -165,8 +166,8 @@ session_start();
               <a><i class="fab fa-twitter fa-2x"></i></a>
             </div>
             <div class="contact col-sm-3">
-              <img class="app img-responsive" src="img/app.svg" ></img>
-              <img class="app img-responsive" src="img/google.png" style="height:40px;">
+              <img class="app img-responsive" src="img/app.svg" alt="applestoreImg" ></img>
+              <img class="app img-responsive" src="img/google.png" style="height:40px;" alt="playstoreImg">
             </div>
           </div>
         </div>
@@ -202,7 +203,7 @@ session_start();
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">IT policies, disclaimers and notices  privacy policy</h5>
+          <h3 class="modal-title">IT policies, disclaimers and notices  privacy policy</h3>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -210,7 +211,7 @@ session_start();
         <div class="modal-body">
 
 
-          <h3>policy privacy</h3>
+          <h4>policy privacy</h4>
           <p> A privacy policy explains how you will respect the privacy of your website users. It says what information you will gather, how you will use it and how you will keep it secure. You will need a privacy policy:
 
             if you collect personal information

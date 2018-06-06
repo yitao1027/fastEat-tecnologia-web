@@ -63,9 +63,9 @@ include("db_con.php")
         while($row= $result->fetch_assoc()){
           echo("<div class='row' style='border:1px solid black'>
           <div class='col-sm-8'>
-          <p style='color:red;'>".$row["data"]."</p>
+          <p style='color:#B30000;'>".$row["data"]."</p>
           <hr>
-          <p style='color:red;'>".$row["ora"]."</p>
+          <p style='color:#B30000;'>".$row["ora"]."</p>
           <hr>
           <p>".$row["info"]."</p><hr>
           <div style='color:black;'>".$row["ordine"]."</div>

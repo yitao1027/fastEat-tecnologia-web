@@ -113,8 +113,8 @@
                   <a><i class="fab fa-twitter fa-2x"></i></a>
                 </div>
                 <div class="contact col-sm-3">
-                  <img class="app img-responsive" src="img/app.svg" ></img>
-                  <img class="app img-responsive" src="img/google.png" style="height:40px;">
+                  <img class="app img-responsive" src="img/app.svg" alt="applestoreImg" ></img>
+                  <img class="app img-responsive" src="img/google.png" style="height:40px;" alt="playstoreImg">
                 </div>
               </div>
             </div>
@@ -157,7 +157,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">IT policies, disclaimers and notices  privacy policy</p>
+              <h3 class="modal-title">IT policies, disclaimers and notices  privacy policy</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>

@@ -72,7 +72,7 @@ session_start();
   <section class="container-fluid underNav panel-admin">
 
     <div class="text-center icon-admin">
-      <img class="img-fluid" src="img/admin.png">
+      <img class="img-fluid" src="img/admin.png" alt="admin user icon">
     </div>
     <div class="row text-center ">
       <div class="col"><a id='DbProdotti'  href="DBProdotti.php" type='button' class='btn btn-primary'>Data Base Prodotti</a></div>

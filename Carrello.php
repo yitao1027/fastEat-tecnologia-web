@@ -111,6 +111,7 @@ session_start();
     ?>
 
     <div class="btn-group" role="group" aria-label="ordine ">
+      <label for="tipoOrdine">Tipo Ordine:</label>
       <select class="btn btn-primary" id="tipoOrdine">
         <option value="TipoConsegna">
           Consegna a Domicilio
@@ -126,25 +127,25 @@ session_start();
         <input type="hidden" name="tipo" value="Consegna"/>
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="inputDate">Data</label>
+            <label for="ConsegnaData">Data</label>
             <input name="Data" type="date" class="form-control" id="ConsegnaData"  placeholder="GG/MM" required>
           </div>
           <div class="form-group col-md-6">
-            <label for="inputOra">Ora</label>
+            <label for="ConsegnaOra">Ora</label>
             <input name="Ora" type="time" min="11:00" max="23:00" class="form-control" id="ConsegnaOra" placeholder="HH:MM"required>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-4">
-            <label for="inputName">Nome</label>
-            <input name="Nome"type="text" class="form-control" id="ConsegnaNome" placeholder="Nome"required >
+            <label for="ConsegnaNome">Nome</label>
+            <input name="Nome" type="text" pattern="[A-Za-z]{42}" class="form-control" id="ConsegnaNome" placeholder="Nome" required >
           </div>
           <div class="form-group col-md-4">
-            <label for="inputCell">Cellulare</label>
+            <label for="ConsegnaCellulare">Cellulare</label>
             <input  name="Cellulare" type="tel" class="form-control" id="ConsegnaCellulare" placeholder="+039" required>
           </div>
           <div class="form-group col-md-4">
-            <label for="inputIndirizzo">Indirizzo</label>
+            <label for="ConsegnaAddress">Indirizzo</label>
             <input  name="Indirizzo"  type="text" class="form-control" id="ConsegnaAddress" placeholder="Via roma 1" required>
           </div>
 
@@ -163,21 +164,21 @@ session_start();
         <input type="hidden" name="tipo" value="Ritiro"/>
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="inputDate">Data</label>
+            <label for="RitiroData">Data</label>
             <input name="Data" type="date" class="form-control" id="RitiroData" placeholder="GG/MM" required>
           </div>
           <div class="form-group col-md-6">
-            <label for="inputOra">Ora</label>
+            <label for="RitiroOra">Ora</label>
             <input name="Ora" type="time" min="11:00" max="23:00" class="form-control" id="RitiroOra" placeholder="HH:MM" required>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-4">
-            <label for="inputName">Nome</label>
-            <input  name="Nome" type="text" class="form-control" id="RitiroNome" placeholder="Nome" required>
+            <label for="RitiroNome">Nome</label>
+            <input  name="Nome" pattern="[A-Za-z]{42}" type="text" class="form-control" id="RitiroNome" placeholder="Nome" required>
           </div>
           <div class="form-group col-md-4">
-            <label for="inputCell">Cellulare</label>
+            <label for="RitiroCellulare">Cellulare</label>
             <input  name="Cellulare" type="tel" class="form-control" id="RitiroCellulare" placeholder="+039" required>
           </div>
 
@@ -265,8 +266,8 @@ session_start();
             <a><i class="fab fa-twitter fa-2x"></i></a>
           </div>
           <div class="contact col-sm-3">
-            <img class="app img-responsive" src="img/app.svg" ></img>
-            <img class="app img-responsive" src="img/google.png" style="height:40px;">
+            <img class="app img-responsive" src="img/app.svg" alt="applestoreImg" ></img>
+            <img class="app img-responsive" src="img/google.png" style="height:40px;" alt="playstoreImg">
           </div>
         </div>
       </div>
@@ -307,7 +308,7 @@ session_start();
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">IT policies, disclaimers and notices  privacy policy</p>
+            <p class="modal-title">IT policies, disclaimers and notices  privacy policy</p>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>

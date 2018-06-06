@@ -32,7 +32,7 @@ if(isset($_GET["cookie"])){
       <div class="collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav mt-2 mt-lg-0 ">
           <li class="nav-item active">
-            <a class="nav-link" href="#Home">Home</a>
+            <a class="nav-link" href="#">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="Menu.php">Menu</a>
@@ -78,7 +78,7 @@ if(isset($_GET["cookie"])){
   <section class="container-fluid underNav" style="padding:0; margin-top:80px;">
     <div class="carousel-inner">
 
-      <img class="img-fluid" src="img/cover1.jpg">
+      <img class="img-fluid" src="img/cover1.jpg" alt="coverimg sushi">
 
       <div class="carousel-caption text-left">
 
@@ -93,10 +93,10 @@ if(isset($_GET["cookie"])){
 
     <section class="textSection">
       <div class="container-fluid text-center">
-        <h2 class="text-uppercase">L'armonia tra
-          <strong style="color:rgb(48, 221, 48);">fast</strong> e
-          <strong style="color:rgb(48, 221, 48);">Health</strong><br>
-        </h2>
+        <h3 class="text-uppercase">L'armonia tra
+          <strong style="color#226501;">fast</strong> e
+          <strong style="color:#226501;">Health</strong><br>
+        </h3>
         <p class="text-uppercase">Per amanti di pesci freschi e della cucina giapponese</p>
       </div>
     </section>
@@ -152,8 +152,8 @@ if(isset($_GET["cookie"])){
                   <a><i class="fab fa-twitter fa-2x"></i></a>
                 </div>
                 <div class="contact col-sm-3">
-                  <img class="app img-responsive" src="img/app.svg" ></img>
-                  <img class="app img-responsive" src="img/google.png" style="height:40px;">
+                  <img class="app img-responsive" src="img/app.svg" alt="applestoreImg" ></img>
+                  <img class="app img-responsive" src="img/google.png" style="height:40px;" alt="playstoreImg">
                 </div>
               </div>
             </div>
@@ -207,7 +207,7 @@ if(isset($_GET["cookie"])){
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Cookie policy</h5>
+              <h3 class="modal-title">Cookie policy</h3>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -237,7 +237,7 @@ if(isset($_GET["cookie"])){
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title">IT policies, disclaimers and notices  privacy policy</p>
+                <p class="modal-title">IT policies, disclaimers and notices  privacy policy</p>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -250,7 +250,7 @@ if(isset($_GET["cookie"])){
 
                     if you collect personal information
                     to make sure that you comply with data protection legislation in the UK</p>
-                    <h4>IMPORTANT: The General Data Protection Regulation (GDPR) will apply in the UK from 25 May 2018. It will replace the 1998 Data Protection Act and introduce new rules on privacy notices, as well as processing and safeguarding personal data. We will be updating this privacy policy template ahead of 25 May to reflect the new rules.</h4>
+                    <p>IMPORTANT: The General Data Protection Regulation (GDPR) will apply in the UK from 25 May 2018. It will replace the 1998 Data Protection Act and introduce new rules on privacy notices, as well as processing and safeguarding personal data. We will be updating this privacy policy template ahead of 25 May to reflect the new rules.</p>
 
                     <p>
                       Website privacy policy
