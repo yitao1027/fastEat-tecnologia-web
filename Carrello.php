@@ -76,7 +76,7 @@ session_start();
 
         $totalePiatto=str_replace("€", "", $prezzo)*$quantita;
         $esempioImg="salmone nigiri";
-        echo"<div class='row'>
+        echo"<div class='row piatto'>
         <div class='col'>
         <img class='img-fluid' src='img/".$esempioImg.".jpg' alt=".$piatto.">
         <small><button class='btn btn-link rimuovi' value='".$piatto."'>rimuovi</button></small>
@@ -111,8 +111,9 @@ session_start();
     ?>
 
     <div class="btn-group" role="group" aria-label="ordine ">
-      <label for="tipoOrdine">Tipo Ordine:</label>
-      <select class="btn btn-primary" id="tipoOrdine">
+      <div class="form-group">
+      <label for="tipoOrdine">Tipo Ordine : </label>
+      <select class="btn btn-primary form-control" id="tipoOrdine">
         <option value="TipoConsegna">
           Consegna a Domicilio
         </option>
@@ -120,6 +121,7 @@ session_start();
           Ritiro a Ristorante
         </option>
       </select>
+    </div>
     </div>
 
     <div class="FormOrdine" >
@@ -196,7 +198,7 @@ session_start();
         </div>
         <div class="form-row">
           <div class="form-group col">
-            <label  for="fname">Accepted Cards</label>
+            <label  for="fname">Carta accettati</label>
             <div class="icon">
               <i class="fab fa-cc-visa fa-2x" style="color:navy;"></i>
               <i class="fab fa-cc-amex  fa-2x" style="color:blue;"></i>
@@ -208,21 +210,21 @@ session_start();
         </div>
         <div class="form-row">
           <div class=" form-group col-md-6">
-            <label for="cname">Name</label>
+            <label for="cname">Nome</label>
             <input class="form-control" type="text" id="cname" name="cardname" placeholder="Name">
           </div>
           <div class="form-group col-md-6">
-            <label for="ccnum">Credit card number</label>
+            <label for="ccnum">Numero Carta</label>
             <input class="form-control" type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-4">
-            <label for="expmonth">Exp Month</label>
+            <label for="expmonth">Scadenza Mese</label>
             <input class="form-control" type="text" id="expmonth" name="expmonth" placeholder="Settembre">
           </div>
           <div class="form-group col-md-4">
-            <label for="expyear">Exp Year</label>
+            <label for="expyear">Scadenza Anno</label>
             <input class="form-control" type="text" id="expyear" name="expyear" placeholder="2018">
           </div>
           <div class="form-group col-md-4">

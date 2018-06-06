@@ -35,7 +35,7 @@ if($obj=="logOut"){
 
     if( $result = $conn->query("INSERT INTO users (email,password) VALUES ('".$email."','".$password."')")){
 
-      $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+    /*  $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
       try {
         //Server settings
         $mail->SMTPDebug = 0;                                 // Enable verbose debug output
@@ -65,7 +65,7 @@ if($obj=="logOut"){
     } catch (Exception $e) {
         echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
       }
-
+*/
     }else{
       echo "Errore Registrazione,utente già registrato";
     }

@@ -215,9 +215,22 @@ display: none;
   .col-md-4.pagamento{
   padding: 0;
 }
-
+  .row.piatto{
+    width: 70%;
+  }
+  .icon-admin{
+    margin: auto;
+    max-width: 50%;
+  }
 }
 
 @media screen and (min-width: 1200px) {
+  .row.piatto{
+    width: 50%;
+  }
+  .icon-admin{
+      margin: auto;
+    max-width: 40%;
+  }
 
 }
