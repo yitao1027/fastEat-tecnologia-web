@@ -94,7 +94,7 @@
         <div class="row">
           <div class="contact col-sm-2">
             <i class="fa fa-phone fa-2x"></i><br>
-            <a href="tel:0547 673522" target="_blank"> 0547 673522</a>
+            <a href="tel:0547673522" target="_blank"> 0547 673522</a>
           </div>
           <div class="contact col-sm-2">
             <i class="fa fa-map-marker fa-2x"></i><br>
@@ -113,7 +113,7 @@
                   <a><i class="fab fa-twitter fa-2x"></i></a>
                 </div>
                 <div class="contact col-sm-3">
-                  <img class="app img-responsive" src="img/app.svg" alt="applestoreImg" ></img>
+                  <img class="app img-responsive" src="img/app.svg" alt="applestoreImg" >
                   <img class="app img-responsive" src="img/google.png" style="height:40px;" alt="playstoreImg">
                 </div>
               </div>
@@ -142,7 +142,9 @@
           echo "
           <div class='cart-container'>
           <div class='pop-item'></div>
-          <button class='btn btn-secondary'><i class='fas fa-shopping-cart'></i></</button>
+          <button class='btn btn-secondary'>
+          <i class='fas fa-shopping-cart'></i>
+          </button>
           </div>";
         }
       }

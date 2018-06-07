@@ -31,7 +31,7 @@ session_start();
       </button>
 
       <div class=" collapse navbar-collapse" id="navbar">
-        <ul class="navbar-nav mt-2 mt-lg-0 ">
+        <ul class="navbar-nav mt-2 mt-lg-0">
           <li class="nav-item active">
             <a class="nav-link" href="FASTEAT.php">Home</a>
           </li>
@@ -44,7 +44,7 @@ session_start();
             if(isset($_SESSION["logIn"])&&$_SESSION["logIn"]==true){
 
               echo "<div class='row' style='margin:0;'><div class='col-8' style='padding:0'><a class='nav-link ' href='Carrello.php'><i class='fas fa-user'></i>   ".$_SESSION["user"]."</a></div>";
-              echo "<div class='col-4'style='padding:0;display:flex; align-items: center;justify-content: flex-end;'><button id='logOutBtn' type='button' class='btn btn-link'><i class='fas fa-sign-out-alt'></i></button></div></div>";
+              echo "<div class='col-4' style='padding:0;display:flex; align-items: center;justify-content: flex-end;'><button id='logOutBtn' type='button' class='btn btn-link'><i class='fas fa-sign-out-alt'></i></button></div>";
             }else{
               echo "<a class='nav-link' href='FastEatLoginRegister.php'>Login</a>";
             }
@@ -88,14 +88,14 @@ session_start();
         <!--Login form-->
         <div class="form-group">
           <label for="InputEmail">Email address</label>
-          <input type="email" name="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Inserisce email" required>
+          <input type="email" name="email" class="form-control" id="InputEmail"  placeholder="Inserisce email" required>
         </div>
         <div class="form-group">
           <label for="InputPassword">Password</label>
           <input type="password" name="psw" class="form-control" minlength="8" id="InputPassword" placeholder="Password" required>
           <a href="">Password dimenticata?</a>
         </div>
-      </br>
+      <br>
       <button type="submit" name="logIn" class="loginBtn btn btn-primary">Log In</button>
     </form>
     <p>Non hai ancora un account ?<button type="button" class="btn btn-link" id="TosignUp">Registrati</button></p>
@@ -112,7 +112,7 @@ session_start();
     <form id="signUpForm" method="post" action="LoginRegisterServer.php">
       <div class="form-group">
         <label for="signUpEmail">Email address</label>
-        <input type="email" name="email" class="form-control" id="signUpEmail" aria-describedby="emailHelp" placeholder="Inserisce email" required>
+        <input type="email" name="email" class="form-control" id="signUpEmail"  placeholder="Inserisce email" required>
       </div>
       <div class="form-group">
         <label for="signUpPassword">Password</label>
@@ -147,7 +147,7 @@ session_start();
     <div class="row">
       <div class="contact col-sm-2">
         <i class="fa fa-phone fa-2x"></i><br>
-        <a href="tel:0547 673522" target="_blank"> 0547 673522</a>
+        <a href="tel:0547673522" target="_blank"> 0547 673522</a>
       </div>
       <div class="contact col-sm-2">
         <i class="fa fa-map-marker fa-2x"></i><br>
@@ -166,7 +166,7 @@ session_start();
               <a><i class="fab fa-twitter fa-2x"></i></a>
             </div>
             <div class="contact col-sm-3">
-              <img class="app img-responsive" src="img/app.svg" alt="applestoreImg" ></img>
+              <img class="app img-responsive" src="img/app.svg" alt="applestoreImg" >
               <img class="app img-responsive" src="img/google.png" style="height:40px;" alt="playstoreImg">
             </div>
           </div>
@@ -190,7 +190,7 @@ session_start();
   <?php
   if(isset($_SESSION["logIn"]) && $_SESSION["logIn"]==true){
     echo "<div class='cart-container'>
-    <button class='btn btn-secondary'><i class='fas fa-shopping-cart'></i></</button>
+    <button class='btn btn-secondary'><i class='fas fa-shopping-cart'></i></button>
     </div>";
   }
   ?>
@@ -259,7 +259,8 @@ session_start();
           </div>
 
         </body>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" > </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="js/fastEat.js"></script>

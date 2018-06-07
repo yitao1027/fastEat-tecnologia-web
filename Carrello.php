@@ -26,7 +26,7 @@ session_start();
       </button>
 
       <div class=" collapse navbar-collapse" id="navbar">
-        <ul class="navbar-nav mt-2 mt-lg-0 ">
+        <ul class="navbar-nav mt-2 mt-lg-0" >
           <li class="nav-item active">
             <a class="nav-link" href="FASTEAT.php">Home</a>
           </li>
@@ -38,7 +38,7 @@ session_start();
             if(isset($_SESSION["logIn"])&&$_SESSION["logIn"]==true){
 
               echo "<div class='row' style='margin:0;'><div class='col-8' style='padding:0'><a class='nav-link ' href='Carrello.php'><i class='fas fa-user'></i>   ".$_SESSION["user"]."</a></div>";
-              echo "<div class='col-4'style='padding:0;display:flex; align-items: center;justify-content: flex-end;'><button id='logOutBtn' type='button' class='btn btn-link'><i class='fas fa-sign-out-alt'></i></button></div></div>";
+              echo "<div class='col-4' style='padding:0;display:flex; align-items: center;justify-content: flex-end;'><button id='logOutBtn' type='button' class='btn btn-link'><i class='fas fa-sign-out-alt'></i></button></div>";
             }else{
               echo "<a class='nav-link' href='FastEatLoginRegister.php'>Login</a>";
             }
@@ -97,7 +97,7 @@ session_start();
       <p>costo consegna </p>
       <p style='font-weight:bold;'>totale</p>
       </div>
-      <div class='col' style='text-align: right;''>
+      <div class='col' style='text-align: right;'>
       <p id='subtotale'>€ ".$subtotale."</p>
       <p id='costoConsegna'>€ 3</p>
       <p id='totaleCosto' style='font-weight:bold;'>€ ".$totale."</p>
@@ -130,11 +130,11 @@ session_start();
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="ConsegnaData">Data</label>
-            <input name="Data" type="date" class="form-control" id="ConsegnaData"  placeholder="GG/MM" required>
+            <input name="Data" type="date" class="form-control" id="ConsegnaData"  required>
           </div>
           <div class="form-group col-md-6">
             <label for="ConsegnaOra">Ora</label>
-            <input name="Ora" type="time" min="11:00" max="23:00" class="form-control" id="ConsegnaOra" placeholder="HH:MM"required>
+            <input name="Ora" type="time" min="11:00" max="23:00" class="form-control" id="ConsegnaOra"  required>
           </div>
         </div>
         <div class="form-row">
@@ -167,11 +167,11 @@ session_start();
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="RitiroData">Data</label>
-            <input name="Data" type="date" class="form-control" id="RitiroData" placeholder="GG/MM" required>
+            <input name="Data" type="date" class="form-control" id="RitiroData" required>
           </div>
           <div class="form-group col-md-6">
             <label for="RitiroOra">Ora</label>
-            <input name="Ora" type="time" min="11:00" max="23:00" class="form-control" id="RitiroOra" placeholder="HH:MM" required>
+            <input name="Ora" type="time" min="11:00" max="23:00" class="form-control" id="RitiroOra" required>
           </div>
         </div>
         <div class="form-row">
@@ -198,7 +198,7 @@ session_start();
         </div>
         <div class="form-row">
           <div class="form-group col">
-            <label  for="fname">Carta accettati</label>
+            <label>Carta accettati</label>
             <div class="icon">
               <i class="fab fa-cc-visa fa-2x" style="color:navy;"></i>
               <i class="fab fa-cc-amex  fa-2x" style="color:blue;"></i>
@@ -231,8 +231,9 @@ session_start();
             <label for="cvv">CVV</label>
             <input class="form-control" type="text" id="cvv" name="cvv" placeholder="352">
           </div>
-        </form>
+
       </div>
+      </form>
       <div class="row ">
         <div class="col-md-4 pagamento">
           <button type="submit" id="btn-pagamento" class="btn btn-primary">Procedi</button>
@@ -249,7 +250,7 @@ session_start();
       <div class="row">
         <div class="contact col-sm-2">
           <i class="fa fa-phone fa-2x"></i><br>
-          <a href="tel:0547 673522" target="_blank"> 0547 673522</a>
+          <a href="tel:0547673522" target="_blank"> 0547 673522</a>
         </div>
         <div class="contact col-sm-2">
           <i class="fa fa-map-marker fa-2x"></i><br>
@@ -268,7 +269,7 @@ session_start();
             <a><i class="fab fa-twitter fa-2x"></i></a>
           </div>
           <div class="contact col-sm-3">
-            <img class="app img-responsive" src="img/app.svg" alt="applestoreImg" ></img>
+            <img class="app img-responsive" src="img/app.svg" alt="applestoreImg" >
             <img class="app img-responsive" src="img/google.png" style="height:40px;" alt="playstoreImg">
           </div>
         </div>
@@ -372,7 +373,7 @@ session_start();
               <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
               <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
               <script src="js/fastEat.js"></script>
-              <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"type="text/javascript"></script>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 
             </body>
 
