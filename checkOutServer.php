@@ -34,47 +34,46 @@ if(isset($_SESSION["ordine"])){
 
   if( $result = $conn->query("INSERT INTO ordine (email,data,ora,info,ordine,totale) VALUES ('".$_SESSION["user"]."','".$_POST["Data"]."','".$_POST["Ora"]."','".$info."','".$dettail."','".$subtotale."')")){
 
-    /*email ordine
+    /*email ordine*/
     $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
     try {
-    //Server settings
-    $mail->SMTPDebug = 0;                                 // Enable verbose debug output
-    $mail->isSMTP();                                      // Set mailer to use SMTP
-    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'zhu.yt1027@gmail.com';                 // SMTP username
-    $mail->Password = 'zyt.1027';                           // SMTP password
-    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-    $mail->Port = 587;                                    // TCP port to connect to
+      //Server settings
+      $mail->SMTPDebug = 0;                                 // Enable verbose debug output
+      $mail->isSMTP();                                      // Set mailer to use SMTP
+      $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+      $mail->SMTPAuth = true;                               // Enable SMTP authentication
+      $mail->Username = 'zhu.yt1027@gmail.com';                 // SMTP username
+      $mail->Password = 'zyt.1027';                           // SMTP password
+      $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+      $mail->Port = 587;                                    // TCP port to connect to
 
-    //Recipients
-    $mail->setFrom('zhu.yt1027@gmail.com', 'Mailer');
-    $mail->addAddress("837846356@qq.com", 'FASTEAT');     // Add a recipient
-    $mail->addAddress("userEmail@.com", '$_SESSION['user']');
-    //Content
-    $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = "Avviso Ordine";
-    $mail->Body    = "<p>Ti è arrivato un ordine di ".$_POST["tipo"]." per ".$_POST["Data"]." ".$_POST["Ora"]."</p><br>".$dettailOrdine;
+      //Recipients
+      $mail->setFrom('zhu.yt1027@gmail.com', 'Mailer');
+      $mail->addAddress("837846356@qq.com", 'FASTEAT');     // Add a recipient
+      //  $mail->addAddress("userEmai@.com", '$_SESSION['user']');
+      //Content
+      $mail->isHTML(true);                                  // Set email format to HTML
+      $mail->Subject = "Avviso Ordine";
+      $mail->Body    = "<p>Ti è arrivato un ordine di ".$_POST["tipo"]." per ".$_POST["Data"]." ".$_POST["Ora"]."</p><br>".$dettail;
 
-    $mail->send();
-    echo 'Message has been sent';
+      $mail->send();
+      $_SESSION["ordine"]=null;
+      echo("pagamento effettuato, grazie per averci scelto");
 
-  } catch (Exception $e) {
-  echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
-}*/
-//codice per Payment//
-/*
-//
-//
-//
-*/
-$_SESSION["ordine"]=null;
-  echo("pagamento effettuato, grazie per averci scelto");
-}else{
-  echo("errore controllare i dati inseriti");
+    } catch (Exception $e) {
+      echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+    }
+    //codice per Payment//
+    /*
+    //
+    //
+    //
+    */
 
+  }else{
+    echo("errore controllare i dati inseriti");
 
-}
+  }
 }
 
 

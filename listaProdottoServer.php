@@ -5,20 +5,28 @@ $content = file_get_contents("php://input");
 $obj=json_decode($content,false);
 
 
-if(isset($_POST["piattoName"])){
-  $query ="SELECT Categoria FROM listaprodotto WHERE Categoria='".$_POST["categoria"]."'";
+if(isset($_POST["piattoId"])){
+  $query ="SELECT PiattoN FROM listaprodotto WHERE PiattoN='".$_POST["piattoId"]."'";
   $res=$conn->query($query);
   if($res->num_rows>0){
-    $result = $conn->query("INSERT INTO listaprodotto (PiattoN,PiattoName,Categoria,Prezzo) VALUES ('".$_POST["piattoId"]."','".$_POST["piattoName"]."','".$_POST["categoria"]."','".$_POST["prezzo"]."')");
-    if($result){
-      echo "ok";
-    }
-  }else{
-    $result = $conn->query("INSERT INTO listaprodotto (PiattoN,PiattoName,Categoria,Prezzo) VALUES ('".$_POST["piattoId"]."','".$_POST["piattoName"]."','".$_POST["categoria"]."','".$_POST["prezzo"]."')");
-    if($result){
-      echo "ok new categoria";
+    echo "errore esiste";
+  }else {
+    $query ="SELECT Categoria FROM listaprodotto WHERE Categoria='".$_POST["categoria"]."'";
+    $res=$conn->query($query);
+    if($res->num_rows>0){
+      $result = $conn->query("INSERT INTO listaprodotto (PiattoN,PiattoName,Categoria,Prezzo) VALUES ('".$_POST["piattoId"]."','".$_POST["piattoName"]."','".$_POST["categoria"]."','".$_POST["prezzo"]."')");
+      if($result){
+        echo "ok";
+      }
+    }else{
+      $result = $conn->query("INSERT INTO listaprodotto (PiattoN,PiattoName,Categoria,Prezzo) VALUES ('".$_POST["piattoId"]."','".$_POST["piattoName"]."','".$_POST["categoria"]."','".$_POST["prezzo"]."')");
+      if($result){
+        echo "ok new categoria";
+      }
     }
   }
+
+
 }else if(isset($obj->{'POST'}) && $obj->{'POST'}=="elimina"){
   $query ="DELETE FROM `listaprodotto` WHERE `PiattoN`=".$obj->{'ID'};
   $result=$conn->query($query);
@@ -29,16 +37,20 @@ if(isset($_POST["piattoName"])){
   }
 
 }else if(isset($obj->{'POST'}) && $obj->{'POST'}=="upload"){
-
-  $prezzo=str_replace("€", "", $obj->{'prezzo'});
-  $query ="UPDATE `listaprodotto` SET `PiattoN`='".$obj->{'piattoId'}."',`PiattoName`='".$obj->{'piattoName'}."',`Categoria`='".$obj->{'categoria'}."',`Prezzo`='".$prezzo."' WHERE `PiattoN`='".$obj->{'piattoId'}."'";
-  $result=$conn->query($query);
-  if($result){
-    echo "ok";
-  }else {
-    echo "errore";
+  $query ="SELECT PiattoN FROM listaprodotto WHERE PiattoN='".$obj->{'piattoId'}."'";
+  $res=$conn->query($query);
+  if($res->num_rows>0){
+    echo "errore id";
+  }else{
+    $prezzo=str_replace("€", "", $obj->{'prezzo'});
+    $query ="UPDATE `listaprodotto` SET `PiattoN`='".$obj->{'piattoId'}."',`PiattoName`='".$obj->{'piattoName'}."',`Categoria`='".$obj->{'categoria'}."',`Prezzo`='".$prezzo."' WHERE `PiattoN`='".$obj->{'piattoId'}."'";
+    $result=$conn->query($query);
+    if($result){
+      echo "ok";
+    }else {
+      echo "errore";
+    }
   }
-
 }else{
   $query ="SELECT DISTINCT (Categoria) FROM listaprodotto";
   $category= $conn->query($query);
@@ -59,13 +71,17 @@ if(isset($_POST["piattoName"])){
           echo "<div class='row'>
           <div class='col-8'>
           <p id=".$row["PiattoN"]."name >".$row["PiattoName"]."</p>
-          <p id=".$row["PiattoN"]."prezzo >€ ".$row["Prezzo"]."</p></div>
-          <div class='col-4 divIcon '>
-          <button class='btn   ordini'style='color:orange;' value=".$row["PiattoN"].">
-          <i class='fa fa-plus' aria-hidden='true'></i>
-          </button>
-          </div>
-          </div>";
+          <p id=".$row["PiattoN"]."prezzo >€ ".$row["Prezzo"]."</p></div>";
+          if(isset($_SESSION["logIn"])==true){
+
+                    echo"<div class='col-4 divIcon '>
+                    <button class='btn ordini'style='color:orange;' value=".$row["PiattoN"].">
+                    <i class='fa fa-plus' aria-hidden='true'></i>
+                    </button>
+                    </div></div>";
+          }else {
+            echo"</div>";
+          }
         }
       }
       echo "</li>";

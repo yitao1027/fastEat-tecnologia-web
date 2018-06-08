@@ -16,17 +16,29 @@ $(document).ready(function () {
 
 
   $("#btn-addProdotto").click(function(){
-    $.post("listaprodottoServer.php",$("#FormProdotto").serialize(),function(data){
-      if(data=="ok"){
-        alert("piatto aggiunto al database");
-        location.reload();
-      }else if(data=="ok new categoria"){
-        alert("Nuova categoria ! piatto aggiunto al database");
-        location.reload();
-      }else{
-        alert("errore controllare i dati inseriti");
-      }
-    },"text");
+
+    var form=$("#FormProdotto");
+    form.validate();
+    if(form.valid()){
+      $.post("listaprodottoServer.php",form.serialize(),function(data){
+        if(data=="ok"){
+
+          alert("piatto aggiunto al database");
+
+           location.reload();
+        }else if(data=="ok new categoria"){
+          alert("Nuova categoria ! piatto aggiunto al database");
+          location.reload();
+        }else if(data=="errore esiste"){
+          alert("piatto ID gia usato errore !");
+
+           location.reload();
+        }
+        else{
+          alert("errore controllare i dati inseriti");
+        }
+      },"text");
+    }
   });
 
 
@@ -54,20 +66,20 @@ $(document).ready(function () {
 
 $(".upload").click(function(){
   var id=$(this).val();
-  $("#"+id+"ID").attr("contenteditable","false");
-  $("#"+id+"name").attr("contenteditable","false");
-  $("#"+id+"prezzo").attr("contenteditable","false");
-  $("#"+id+"categoria").attr("contenteditable","false");
-  $("#"+id+"modifica").css("display","block");
-  $("#"+id+"upload").css("display","none");
-  console.log($("#"+id+"ID").html());
+
   var data={"POST":"upload","piattoId": $("#"+id+"ID").html() , "piattoName":  $("#"+id+"name").html() ,"categoria":  $("#"+id+"categoria").html() , "prezzo":$("#"+id+"prezzo").html()  }
-  $.post("listaprodotto.php",JSON.stringify(data),function(data){
+  $.post("listaprodottoServer.php",JSON.stringify(data),function(data){
     if(data=="ok"){
-      alert("Piatto aggiornato");
-      location.reload();
-    }else{
-      alert(data);
+      alert("Piatto Modoficato");
+      $("#"+id+"ID").attr("contenteditable","false");
+      $("#"+id+"name").attr("contenteditable","false");
+      $("#"+id+"prezzo").attr("contenteditable","false");
+      $("#"+id+"categoria").attr("contenteditable","false");
+      $("#"+id+"modifica").css("display","block");
+      $("#"+id+"upload").css("display","none");
+    }else if(data=="errore id"){
+      alert("Non puoi sovrascrivere un piatto con Id esistente!");
+        $("#"+id+"ID").focus();
     }
   },"text");
 
@@ -75,7 +87,7 @@ $(".upload").click(function(){
 $(".rimuoviDb").click(function(){
   if(confirm("sei sicuro che vuoi eliminare il piatto selezionato ?")){
     var msg={"POST":"elimina","ID":$(this).val()};
-    $.post("listaprodotto.php",JSON.stringify(msg),function(data){
+    $.post("listaprodottoServer.php",JSON.stringify(msg),function(data){
       if(data=="ok"){
         alert("Piatto eliminato dal DB");
         location.reload();

@@ -38,7 +38,7 @@ session_start();
             <?php
             if(isset($_SESSION["logIn"])&&$_SESSION["logIn"]==true){
 
-              echo "<div class='row' style='margin:0;'><div class='col-8' style='padding:0'><a class='nav-link ' href='Administratore.php'><i class='fas fa-user'></i>   ".$_SESSION["user"]."</a></div>";
+              echo "<div class='row' style='margin:0;'><div class='col-8 usernav' style='padding:0'><a class='nav-link ' href='Administratore.php'><i class='fas fa-user'></i>   ".$_SESSION["user"]."</a></div>";
               echo "<div class='col-4' style='padding:0;display:flex; align-items: center;justify-content: flex-end;'><button id='logOutBtn' type='button' class='btn btn-link'><i class='fas fa-sign-out-alt'></i></button></div></div>";
             }
 
