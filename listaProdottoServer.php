@@ -37,10 +37,10 @@ if(isset($_POST["piattoId"])){
   }
 
 }else if(isset($obj->{'POST'}) && $obj->{'POST'}=="upload"){
-  $query ="SELECT PiattoN FROM listaprodotto WHERE PiattoN='".$obj->{'piattoId'}."'";
+  $query ="SELECT PiattoN FROM listaprodotto WHERE PiattoN='".$obj->{'piattoId'}."' OR PiattoName='".$obj->{'piattoName'}."'";
   $res=$conn->query($query);
   if($res->num_rows>0){
-    echo "errore id";
+    echo "errore inserimento";
   }else{
     $prezzo=str_replace("€", "", $obj->{'prezzo'});
     $query ="UPDATE `listaprodotto` SET `PiattoN`='".$obj->{'piattoId'}."',`PiattoName`='".$obj->{'piattoName'}."',`Categoria`='".$obj->{'categoria'}."',`Prezzo`='".$prezzo."' WHERE `PiattoN`='".$obj->{'piattoId'}."'";

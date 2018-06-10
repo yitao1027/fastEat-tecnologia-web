@@ -81,11 +81,20 @@ session_start();
         <img class='img-fluid' src='img/".$esempioImg.".jpg' alt=".$piatto.">
         <small><button class='btn btn-link rimuovi' value='".$piatto."'>rimuovi</button></small>
         </div>
+
         <div class='col'>
         <p>".$piatto."</p>
         <p>Quantità: ".$quantita."</p>
         <p>Prezzo: ".$totalePiatto."€</p>
         </div>
+        <div class='col divIcon '>
+        <button class='btn increment' style='color:orange;' value='".$piatto."'>
+        <i class='fa fa-plus' aria-hidden='true'></i>
+        </button>";
+        if($quantita>0){
+          echo "<button  class='btn decrement' style='color:orange;' value='".$piatto."'><i class='fa fa-minus' aria-hidden='true'></i></button>";
+}
+        echo"</div>
         </div>
         <hr>";
         $subtotale+=$totalePiatto;

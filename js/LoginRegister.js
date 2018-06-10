@@ -54,6 +54,15 @@ $(document).ready(function(){
 
         $("#responseMsg").html(data);
         $("#divMsg").modal('toggle');
+        if(data!="errore" && data!="Errore Registrazione,utente già registrato"){
+          $("#divMsg").on('hidden.bs.modal', function (e) {
+            document.location.href ="Menu.php";
+          });
+        }
+        else {
+          $("#signUpEmail").focus();
+        }
+
 
       },"text");
       $(".invalid-feedback").css("display","none");
@@ -90,4 +99,4 @@ $(document).ready(function(){
 
     });
 
-});
+  });

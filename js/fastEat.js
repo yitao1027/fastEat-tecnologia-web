@@ -54,6 +54,34 @@ $(document).ready(function () {
 
     })
 
+
+
+    $(".increment").click(function(){
+      var request=[{"POST":"incrementa"}];
+      request.push({"piattoName": $(this).attr("value")});
+      $.post("CarrelloServer.php",JSON.stringify(request),function(data){
+        location.reload();
+      },"text");
+
+    })
+
+    $(".decrement").click(function(){
+      var request=[{"POST":"decrementa"}];
+      var piatto= $(this).attr("value");
+      request.push({"piattoName": $(this).attr("value")});
+      $.post("CarrelloServer.php",JSON.stringify(request),function(data){
+
+        if(data!="rimuovi"){
+          location.reload();
+        }else{
+          console.log(piatto);
+          $(".rimuovi[value='"+piatto+"']").click();
+
+        }
+      },"text");
+
+    })
+
     $("#FormRitiro").css("display","none");
 
 

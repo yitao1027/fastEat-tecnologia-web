@@ -77,8 +77,8 @@ $(".upload").click(function(){
       $("#"+id+"categoria").attr("contenteditable","false");
       $("#"+id+"modifica").css("display","block");
       $("#"+id+"upload").css("display","none");
-    }else if(data=="errore id"){
-      alert("Non puoi sovrascrivere un piatto con Id esistente!");
+    }else if(data=="errore inserimento"){
+      alert("Non puoi sovrascrivere un piatto esistente!");
         $("#"+id+"ID").focus();
     }
   },"text");

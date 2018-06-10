@@ -26,6 +26,38 @@ if($obj[0]->{'POST'}=="ordine"){
   }
   $_SESSION["ordine"]=$order;
   print_r ($_SESSION["ordine"]);
+}else if($obj[0]->{'POST'}=="incrementa"){
+
+  $arr=$_SESSION["ordine"];
+  $order=array();
+  for($x=0;$x<count($arr);){
+    array_push($order,$arr[$x]);
+    $x++;
+    if($x<count($arr) && $arr[$x]->{"piattoName"}==$obj[1]->{"piattoName"}){
+      $arr[$x]->{"quantità"}+=1;
+      $order[0]->{"totale"}+=1;
+      $x++;
+    }
+  }
+
+}else if($obj[0]->{'POST'}=="decrementa"){
+
+  $arr=$_SESSION["ordine"];
+  $order=array();
+  for($x=0;$x<count($arr);){
+    array_push($order,$arr[$x]);
+    $x++;
+    if($x<count($arr) && $arr[$x]->{"piattoName"}==$obj[1]->{"piattoName"}){
+      $arr[$x]->{"quantità"}-=1;
+      $order[0]->{"totale"}-=1;
+      if($arr[$x]->{"quantità"}==0){
+      echo "rimuovi";
+      $x++;
+    }
+  }
+
+}
+
 }
 
 
